@@ -1,11 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Praxis Tuition | IB Language & Literature Specialists</title>
+    <meta
+      name="description"
+      content="Expert IB SL Language and Literature tutoring. Personalised lessons, proven results, and dedicated support for IB students worldwide."
+    />
+    <meta
+      name="keywords"
+      content="IB tuition, IB Language and Literature, IB SL English tutor, IB Lang Lit, IB tutor online"
+    />
+
+    <!-- Open Graph (for link previews on WhatsApp, social media etc.) -->
+    <meta property="og:title" content="Praxis Tuition | IB Language & Literature" />
+    <meta
+      property="og:description"
+      content="Personalised IB SL Language and Literature tutoring. Book a free consultation today."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+
+    <!-- Favicon placeholder - replace assets/favicon.ico with your own -->
+    <!-- <link rel="icon" href="assets/favicon.ico" /> -->
+
+    <!-- Tailwind CSS via CDN (no install needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config: custom colours to match your brand -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50:  "#f0f4ff",
+                100: "#dde6ff",
+                200: "#c3d0ff",
+                300: "#9db0ff",
+                400: "#7585fb",
+                500: "#5562f5",   /* primary */
+                600: "#4047e0",
+                700: "#3538c5",
+                800: "#2d2f9f",
+                900: "#1e1f5e",
+              },
+              accent: "#f5a623",
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="font-sans text-gray-800 antialiased">
+
+    <!-- ============================================================
+         NAVIGATION
+    ============================================================ -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-sm">P</span>
+          </div>
+          <span class="font-bold text-xl text-white group-hover:text-brand-200 transition-colors">
+            Praxis Tuition
+          </span>
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-white">
+          <li><a href="#about"        class="nav-link hover:text-brand-200 transition-colors">About</a></li>
+          <li><a href="#services"     class="nav-link hover:text-brand-200 transition-colors">Services</a></li>
+          <li><a href="#results"      class="nav-link hover:text-brand-200 transition-colors">Results</a></li>
+          <li><a href="#faq"          class="nav-link hover:text-brand-200 transition-colors">FAQ</a></li>
+          <li>
+            <a href="#contact"
+              class="bg-accent text-white px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+              Book Free Consultation
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile hamburger button -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile dropdown menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-brand-900 px-6 pb-4 text-white text-sm font-medium">
+        <ul class="flex flex-col gap-4 pt-2">
+          <li><a href="#about"    class="mobile-nav-link block hover:text-brand-200 transition-colors">About</a></li>
+          <li><a href="#services" class="mobile-nav-link block hover:text-brand-200 transition-colors">Services</a></li>
+          <li><a href="#results"  class="mobile-nav-link block hover:text-brand-200 transition-colors">Results</a></li>
+          <li><a href="#faq"      class="mobile-nav-link block hover:text-brand-200 transition-colors">FAQ</a></li>
+          <li>
+            <a href="#contact"
+              class="block bg-accent text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-yellow-500 transition-colors">
+              Book Free Consultation
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center text-white px-6 pt-20">
+      <div class="max-w-4xl mx-auto text-center">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-6">
+          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          Now accepting students for the 2025–2026 academic year
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+          Unlock Your Potential in<br />
+          <span class="text-accent">IB Language &amp; Literature</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
+          Personalised, expert tutoring for IB SL students. We break down Paper 1,
+          Paper 2, and the Individual Oral — so you walk into every exam with confidence.
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact"
+            class="bg-accent hover:bg-yellow-500 text-white font-bold px-8 py-4 rounded-xl text-base transition-transform hover:scale-105 shadow-lg">
+            Book a Free Consultation
+          </a>
+          <a href="#services"
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors">
+            See What We Offer
+          </a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+          <div class="text-center">
+            <p class="text-4xl font-extrabold text-accent">95%</p>
+            <p class="text-sm text-white/70 mt-1">of students improved by<br />at least 1 grade boundary</p>
+          </div>
+          <div class="text-center border-x border-white/20">
+            <p class="text-4xl font-extrabold text-accent">100+</p>
+            <p class="text-sm text-white/70 mt-1">IB students<br />tutored</p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl font-extrabold text-accent">7s</p>
+            <p class="text-sm text-white/70 mt-1">scored by students<br />we have worked with</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         ABOUT
+    ============================================================ -->
+    <section id="about" class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+          <!-- Image placeholder -->
+          <div class="relative">
+            <div class="w-full h-80 bg-brand-100 rounded-2xl flex items-center justify-center text-brand-300">
+              <!-- Replace this div with an <img> tag when you have a photo -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <!-- Floating badge -->
+            <div class="absolute -bottom-4 -right-4 bg-brand-500 text-white rounded-xl px-5 py-3 shadow-lg">
+              <p class="text-sm font-semibold">IB Certified Educator</p>
+            </div>
+          </div>
+
+          <!-- Text content -->
+          <div>
+            <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">About Praxis</p>
+            <h2 class="text-4xl font-bold mb-6 leading-tight">
+              Tutoring built around<br />the way IB actually works
+            </h2>
+            <p class="text-gray-600 mb-5 leading-relaxed">
+              At Praxis, we don't just teach content — we teach the IB system. Language and
+              Literature is as much about assessment strategy as it is about literary analysis,
+              and our tutors know every mark scheme inside out.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Whether you're struggling with unseen commentary, trying to structure a comparative
+              essay, or preparing for your Individual Oral, we tailor every session to where
+              you are right now and where you need to be.
+            </p>
+
+            <!-- Feature list -->
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 w-5 h-5 bg-brand-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-gray-700">100% IB-focused — we only teach what's on your syllabus</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 w-5 h-5 bg-brand-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-gray-700">Flexible online sessions that fit around your school timetable</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 w-5 h-5 bg-brand-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                <span class="text-gray-700">Detailed written feedback on every essay and practice paper</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section id="services" class="py-24 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-16">
+          <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">What We Offer</p>
+          <h2 class="text-4xl font-bold">Tailored support for every part of the course</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Card 1 -->
+          <div class="service-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Paper 1 — Guided Literary Analysis</h3>
+            <p class="text-gray-600 leading-relaxed mb-5">
+              Master the unseen commentary. We drill the analytical framework, teach you how to
+              read any text under time pressure, and give you a structure that scores consistently.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-brand-500">&#10003;</span> Annotating unseen texts</li>
+              <li class="flex items-center gap-2"><span class="text-brand-500">&#10003;</span> Building a timed writing routine</li>
+              <li class="flex items-center gap-2"><span class="text-brand-500">&#10003;</span> Examiner-style feedback</li>
+            </ul>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card bg-brand-500 rounded-2xl p-8 shadow-sm border border-brand-400 hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
+            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">Paper 2 — Comparative Essay</h3>
+            <p class="text-white/80 leading-relaxed mb-5">
+              Build essays that compare across texts with clarity and precision. We focus on
+              thesis construction, point-evidence-analysis, and meeting all four assessment criteria.
+            </p>
+            <ul class="text-sm text-white/70 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-white">&#10003;</span> Choosing and linking texts</li>
+              <li class="flex items-center gap-2"><span class="text-white">&#10003;</span> Essay planning techniques</li>
+              <li class="flex items-center gap-2"><span class="text-white">&#10003;</span> Mark scheme walkthroughs</li>
+            </ul>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Individual Oral (IO) Prep</h3>
+            <p class="text-gray-600 leading-relaxed mb-5">
+              The IO is 15 minutes that can make or break your grade. We run full mock orals,
+              help you choose the right extract, and coach your delivery from first draft to exam day.
+            </p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li class="flex items-center gap-2"><span class="text-brand-500">&#10003;</span> Extract selection strategy</li>
+              <li class="flex items-center gap-2"><span class="text-brand-500">&#10003;</span> Full mock oral + recording review</li>
+              <li class="flex items-center gap-2"><span class="text-brand-500">&#10003;</span> Global issue framing</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Pricing note -->
+        <p class="text-center text-gray-500 text-sm mt-10">
+          All sessions are 1-to-1 and conducted online. Packages available.
+          <a href="#contact" class="text-brand-500 font-medium hover:underline">Get in touch for pricing &rarr;</a>
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         TESTIMONIALS / RESULTS
+    ============================================================ -->
+    <section id="results" class="py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-16">
+          <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Student Results</p>
+          <h2 class="text-4xl font-bold">What our students say</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+            <div class="flex gap-1 mb-4">
+              <span class="text-accent text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-6 italic">
+              "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework
+              for unseen commentary completely changed how I approach texts."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500">S</div>
+              <div>
+                <p class="font-semibold text-sm">Sofia M.</p>
+                <p class="text-gray-500 text-xs">IB Year 2 — achieved a 6</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+            <div class="flex gap-1 mb-4">
+              <span class="text-accent text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-6 italic">
+              "My IO was the component I was most scared of. Praxis ran three full mock
+              orals with me — by the real thing I actually felt prepared."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500">J</div>
+              <div>
+                <p class="font-semibold text-sm">James T.</p>
+                <p class="text-xs text-gray-500">IB Year 2 — achieved a 7</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+            <div class="flex gap-1 mb-4">
+              <span class="text-accent text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-6 italic">
+              "As a parent, I appreciated how structured and responsive the sessions were.
+              My daughter improved a full grade boundary in her mock exams."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500">A</div>
+              <div>
+                <p class="font-semibold text-sm">Amara K. — Parent</p>
+                <p class="text-xs text-gray-500">Student achieved a 6</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section id="faq" class="py-24 px-6 bg-gray-50">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-16">
+          <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
+          <h2 class="text-4xl font-bold">Common questions</h2>
+        </div>
+
+        <div id="faq-list" class="space-y-4">
+
+          <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button class="faq-question w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+              <span>What IB subjects do you cover?</span>
+              <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
+              We specialise exclusively in IB Language and Literature at Standard Level (SL).
+              Our focused approach means we know the syllabus, mark schemes, and assessment
+              criteria in depth — rather than covering many subjects superficially.
+            </div>
+          </div>
+
+          <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button class="faq-question w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+              <span>How are sessions delivered?</span>
+              <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
+              All sessions are delivered online via Zoom or Google Meet, with a shared
+              Google Doc or Notion workspace so students keep all their notes in one place.
+              This means we work with students across any time zone.
+            </div>
+          </div>
+
+          <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button class="faq-question w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+              <span>How many sessions will my child need?</span>
+              <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
+              It depends on the student's starting point and goals. Some students come for
+              intensive pre-exam packages (6–10 sessions), while others prefer regular weekly
+              sessions throughout the year. We assess this in the free consultation.
+            </div>
+          </div>
+
+          <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button class="faq-question w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+              <span>What happens in the free consultation?</span>
+              <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
+              It's a 20-minute no-obligation call where we learn where the student is in the
+              course, identify their biggest challenges, and recommend a plan. There's no
+              pressure — we want to make sure we're the right fit before committing.
+            </div>
+          </div>
+
+          <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+            <button class="faq-question w-full text-left flex justify-between items-center px-6 py-5 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+              <span>Do you offer last-minute exam prep?</span>
+              <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-6 pb-5 text-gray-600 leading-relaxed">
+              Yes — we offer intensive pre-exam packages in the weeks leading up to the
+              May and November exam sessions. These are popular and fill up quickly, so
+              we recommend booking at least 4 weeks before your exam window.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section id="contact" class="py-24 px-6 bg-brand-900 text-white">
+      <div class="max-w-4xl mx-auto">
+
+        <div class="text-center mb-16">
+          <p class="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Get In Touch</p>
+          <h2 class="text-4xl font-bold mb-4">Book your free consultation</h2>
+          <p class="text-white/70 max-w-lg mx-auto">
+            No commitment, no pressure. Just a 20-minute conversation about how we
+            can help your student succeed in IB Lang Lit.
+          </p>
+        </div>
+
+        <form id="contact-form" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-10 space-y-6 max-w-2xl mx-auto">
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-white/80 mb-2">Your name</label>
+              <input
+                id="name" name="name" type="text" required placeholder="Jane Smith"
+                class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-accent transition"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-white/80 mb-2">Email address</label>
+              <input
+                id="email" name="email" type="email" required placeholder="jane@example.com"
+                class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-accent transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="role" class="block text-sm font-medium text-white/80 mb-2">I am a...</label>
+            <select
+              id="role" name="role"
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent transition appearance-none"
+            >
+              <option value="student" class="text-gray-800">Student</option>
+              <option value="parent"  class="text-gray-800">Parent / Guardian</option>
+              <option value="other"   class="text-gray-800">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-white/80 mb-2">Tell us a bit about where you are in the course</label>
+            <textarea
+              id="message" name="message" rows="4" placeholder="e.g. Year 1 student, struggling with Paper 1 commentaries..."
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-accent transition resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-accent hover:bg-yellow-500 text-white font-bold py-4 rounded-xl transition-transform hover:scale-[1.02] shadow-lg text-base"
+          >
+            Send Message &rarr;
+          </button>
+
+          <!-- Success message (hidden by default) -->
+          <div id="form-success" class="hidden text-center py-4 bg-green-500/20 border border-green-400/30 rounded-xl">
+            <p class="text-green-300 font-medium">&#10003; Message sent! We'll be in touch within 24 hours.</p>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="bg-gray-900 text-gray-400 py-10 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 bg-brand-500 rounded flex items-center justify-center">
+            <span class="text-white font-bold text-xs">P</span>
+          </div>
+          <span class="font-semibold text-white">Praxis Tuition</span>
+        </div>
+        <p>&copy; 2026 Praxis Tuition. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#about"    class="hover:text-white transition-colors">About</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#contact"  class="hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,72 @@
+/* =============================================================
+   PRAXIS TUITION — Custom styles
+   These sit on top of Tailwind for things Tailwind can't do
+   easily inline (gradients, scroll behaviour, animations).
+   ============================================================= */
+
+/* Smooth scrolling for all anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Navbar ---- */
+/* Transparent over the hero, solid once user scrolls down */
+#navbar {
+  background: transparent;
+}
+
+#navbar.scrolled {
+  background: #1e1f5e;          /* brand-900 */
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ---- Hero background ---- */
+/* Deep gradient — swap the URL for a real background image when you have one:
+   background: linear-gradient(...), url('assets/hero-bg.jpg') center/cover no-repeat;
+*/
+.hero-bg {
+  background: linear-gradient(135deg, #1e1f5e 0%, #3538c5 50%, #5562f5 100%);
+}
+
+/* ---- Fade-in animation ---- */
+/* Applied by JavaScript to sections as they scroll into view */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- FAQ accordion ---- */
+.faq-answer {
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(180deg);
+}
+
+/* ---- Contact form inputs ---- */
+/* Override browser autofill yellow background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.1) inset;
+  -webkit-text-fill-color: white;
+}
+
+/* ---- Scroll-to-top button ---- */
+#scroll-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
