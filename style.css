@@ -1,39 +1,62 @@
 /* =============================================================
-   PRAXIS TUITION — Custom styles
-   These sit on top of Tailwind for things Tailwind can't do
-   easily inline (gradients, scroll behaviour, animations).
+   PRAXIS TUITION — Global Stylesheet
+   Tailwind handles most styling. This file covers:
+   - Smooth scroll
+   - Navbar transparency / scroll state
+   - Active nav link underline
+   - Hero backgrounds
+   - Fade-in animations
+   - Page hero banners for inner pages
+   - Misc utilities
    ============================================================= */
 
-/* Smooth scrolling for all anchor links */
+/* ---- Base ---- */
 html {
   scroll-behavior: smooth;
 }
 
 /* ---- Navbar ---- */
-/* Transparent over the hero, solid once user scrolls down */
 #navbar {
   background: transparent;
 }
 
 #navbar.scrolled {
-  background: #1e1f5e;          /* brand-900 */
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  background: #1e1f5e; /* brand-900 */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ---- Hero background ---- */
-/* Deep gradient — swap the URL for a real background image when you have one:
-   background: linear-gradient(...), url('assets/hero-bg.jpg') center/cover no-repeat;
-*/
-.hero-bg {
-  background: linear-gradient(135deg, #1e1f5e 0%, #3538c5 50%, #5562f5 100%);
+/* Active nav link — underline indicator */
+.nav-active {
+  position: relative;
+}
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f5a623; /* accent */
+  border-radius: 2px;
 }
 
-/* ---- Fade-in animation ---- */
-/* Applied by JavaScript to sections as they scroll into view */
+/* ---- Hero backgrounds ---- */
+
+/* Home page — gradient */
+.hero-home {
+  background: linear-gradient(135deg, #1e1f5e 0%, #3538c5 55%, #5562f5 100%);
+}
+
+/* Inner pages — slightly different gradient for variety */
+.hero-inner {
+  background: linear-gradient(135deg, #1e1f5e 0%, #2d2f9f 60%, #3538c5 100%);
+}
+
+/* ---- Fade-in scroll animation ---- */
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
 .fade-in.visible {
@@ -41,32 +64,43 @@ html {
   transform: translateY(0);
 }
 
-/* ---- FAQ accordion ---- */
-.faq-answer {
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
+/* Staggered children inside a fade-in parent */
+.fade-in:nth-child(2) { transition-delay: 0.1s; }
+.fade-in:nth-child(3) { transition-delay: 0.2s; }
+.fade-in:nth-child(4) { transition-delay: 0.3s; }
 
-.faq-icon.open {
-  transform: rotate(180deg);
-}
-
-/* ---- Contact form inputs ---- */
-/* Override browser autofill yellow background */
+/* ---- Form autofill override (dark backgrounds) ---- */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.1) inset;
   -webkit-text-fill-color: white;
+  caret-color: white;
 }
 
-/* ---- Scroll-to-top button ---- */
-#scroll-top {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+/* ---- School logo grid placeholders ---- */
+.school-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.school-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-#scroll-top.visible {
-  opacity: 1;
-  pointer-events: auto;
+/* ---- Resource cards ---- */
+.resource-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(85, 98, 245, 0.15);
+}
+
+/* ---- Divider wave between sections ---- */
+.wave-divider {
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-divider svg {
+  display: block;
 }
