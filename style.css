@@ -137,6 +137,14 @@ li {
   opacity: 1;
 }
 
+/* Force GPU compositing layer — eliminates mobile bitmap cache artifacts
+   that appear as white dots after characters are erased               */
+#typewriter-text {
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+}
+
 /* ---- Service cards ---- */
 .service-card {
   transition: box-shadow 0.2s ease;

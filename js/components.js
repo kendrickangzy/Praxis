@@ -1,6 +1,6 @@
 /* =============================================================
    PRAXIS TUITION — Shared Components
-   Injected into every page: header, consultation form, footer.
+   Injected into every page: header and footer.
 
    PATH DETECTION
    index.html lives at the root. All other pages live in /pages/.
@@ -27,13 +27,13 @@ const headerHTML = `
 
     <!-- Logo — always links back to the home page -->
     <a href="${BASE_ROOT}index.html" class="flex items-center gap-2 group">
-      <span class="font-bold font-serif text-2xl text-white group-hover:text-brand-200 transition-colors">
-        Praxis
+      <span class="font-serif text-2xl text-white tracking-tight group-hover:text-brand-200 transition-colors">
+        PRAXIS
       </span>
     </a>
 
     <!-- Desktop nav links -->
-    <ul class="hidden md:flex items-center gap-8 text-xl font-medium text-white">
+    <ul class="hidden md:flex items-center gap-8 text-xl font-medium text-white tracking-tight">
       <li><a href="${BASE_PAGES}about.html"       class="nav-link hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
       <li><a href="${BASE_PAGES}credentials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
       <li><a href="${BASE_PAGES}resources.html"   class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
@@ -59,93 +59,14 @@ const headerHTML = `
       <li><a href="${BASE_PAGES}resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
       <li><a href="${BASE_PAGES}contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
       <li>
-        <a href="#consultation"
-          class="block bg-cream-200 text-ink px-4 py-2 rounded-lg text-center font-semibold font-serif hover:bg-cream-300 transition-colors">
+        <a href="${BASE_PAGES}contact.html"
+          class="block bg-cream-200 text-ink px-4 py-2 rounded-full text-center font-semibold font-serif hover:bg-cream-300 transition-colors">
           Book Free Consultation
         </a>
       </li>
     </ul>
   </div>
 </header>
-`;
-
-
-/* ---------------------------------------------------------------
-   CONSULTATION FORM HTML
-   Appears at the bottom of every page, before the footer.
---------------------------------------------------------------- */
-const consultationHTML = `
-<section id="consultation" class="py-24 px-6 bg-brand-900 text-white">
-  <div class="max-w-4xl mx-auto">
-
-    <div class="text-center mb-12">
-      <p class="text-cream-200 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Free Consultation</p>
-      <h2 class="text-4xl font-bold mb-4">Let's talk about your goals</h2>
-      <p class="text-white/70 max-w-lg mx-auto leading-relaxed">
-        Book a free 20-minute consultation. No commitment — we just want to understand
-        where you are in the course and how we can help.
-      </p>
-    </div>
-
-    <form id="consultation-form" class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-10 space-y-6 max-w-2xl mx-auto" novalidate>
-
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div>
-          <label for="c-name" class="block text-sm font-medium text-white/80 mb-2">Your name *</label>
-          <input id="c-name" name="name" type="text" required placeholder="Jane Smith"
-            class="form-input w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-accent transition" />
-          <p class="form-error hidden text-red-400 text-xs mt-1">Please enter your name.</p>
-        </div>
-        <div>
-          <label for="c-email" class="block text-sm font-medium text-white/80 mb-2">Email address *</label>
-          <input id="c-email" name="email" type="email" required placeholder="jane@example.com"
-            class="form-input w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-accent transition" />
-          <p class="form-error hidden text-red-400 text-xs mt-1">Please enter a valid email.</p>
-        </div>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div>
-          <label for="c-role" class="block text-sm font-medium text-white/80 mb-2">I am a...</label>
-          <select id="c-role" name="role"
-            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent transition appearance-none cursor-pointer">
-            <option value="student" class="text-gray-800">Student</option>
-            <option value="parent"  class="text-gray-800">Parent / Guardian</option>
-            <option value="other"   class="text-gray-800">Other</option>
-          </select>
-        </div>
-        <div>
-          <label for="c-year" class="block text-sm font-medium text-white/80 mb-2">IB Year</label>
-          <select id="c-year" name="year"
-            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent transition appearance-none cursor-pointer">
-            <option value="year1"  class="text-gray-800">Year 1 (DP1)</option>
-            <option value="year2"  class="text-gray-800">Year 2 (DP2)</option>
-            <option value="unsure" class="text-gray-800">Not sure yet</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label for="c-message" class="block text-sm font-medium text-white/80 mb-2">What are you hoping to improve?</label>
-        <textarea id="c-message" name="message" rows="4"
-          placeholder="e.g. Struggling with Paper 1 commentaries, preparing for the IO, need help with essay structure..."
-          class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-accent transition resize-none"></textarea>
-      </div>
-
-      <button type="submit" id="consult-submit"
-        class="w-full bg-cream-200 hover:bg-cream-300 text-ink font-bold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg text-base">
-        Book My Free Consultation &rarr;
-      </button>
-
-      <!-- Success message (hidden by default) -->
-      <div id="consult-success" class="hidden text-center py-4 bg-green-500/20 border border-green-400/30 rounded-xl">
-        <p class="text-green-300 font-semibold">&#10003; We've received your message!</p>
-        <p class="text-green-300/80 text-sm mt-1">We'll be in touch within 24 hours to confirm your consultation.</p>
-      </div>
-
-    </form>
-  </div>
-</section>
 `;
 
 
@@ -191,7 +112,7 @@ const footerHTML = `
             </a>
           </li>
           <li>
-            <a href="#consultation" class="text-cream-200 hover:text-cream-100 font-medium transition-colors">
+            <a href="${BASE_PAGES}contact.html" class="text-cream-200 hover:text-cream-100 font-medium transition-colors">
               Book a free consultation &rarr;
             </a>
           </li>
@@ -215,14 +136,12 @@ const footerHTML = `
 --------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Inject header, consultation form, footer
-  const headerRoot  = document.getElementById("header-root");
-  const consultRoot = document.getElementById("consultation-root");
-  const footerRoot  = document.getElementById("footer-root");
+  // Inject header and footer
+  const headerRoot = document.getElementById("header-root");
+  const footerRoot = document.getElementById("footer-root");
 
-  if (headerRoot)  headerRoot.innerHTML  = headerHTML;
-  if (consultRoot) consultRoot.innerHTML = consultationHTML;
-  if (footerRoot)  footerRoot.innerHTML  = footerHTML;
+  if (headerRoot) headerRoot.innerHTML = headerHTML;
+  if (footerRoot) footerRoot.innerHTML = footerHTML;
 
   // ---- Active nav link — underline the current page ----
   const currentPage = window.location.pathname.split("/").pop().replace(".html", "") || "index";
@@ -236,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const handleScroll = () => navbar?.classList.toggle("scrolled", window.scrollY > 80);
   window.addEventListener("scroll", handleScroll);
-  handleScroll(); // run once on load
+  handleScroll();
 
   // ---- Mobile menu toggle ----
   const menuBtn    = document.getElementById("menu-btn");
@@ -257,60 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
       iconOpen?.classList.remove("hidden");
       iconClose?.classList.add("hidden");
     });
-  });
-
-  // ---- Consultation form: validation + submit ----
-  const consultForm    = document.getElementById("consultation-form");
-  const consultSuccess = document.getElementById("consult-success");
-  const consultSubmit  = document.getElementById("consult-submit");
-
-  consultForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Validate required fields
-    let valid = true;
-    consultForm.querySelectorAll(".form-input[required]").forEach((input) => {
-      const error = input.nextElementSibling;
-      const isEmpty  = !input.value.trim();
-      const badEmail = input.type === "email" && !/\S+@\S+\.\S+/.test(input.value);
-      if (isEmpty || badEmail) {
-        error?.classList.remove("hidden");
-        input.classList.add("border-red-400");
-        valid = false;
-      } else {
-        error?.classList.add("hidden");
-        input.classList.remove("border-red-400");
-      }
-    });
-
-    if (!valid) return;
-
-    // ----------------------------------------------------------------
-    // CONNECT A REAL FORM SERVICE HERE when ready.
-    // Example with Formspree (free tier):
-    //
-    //   fetch("https://formspree.io/f/YOUR_FORM_ID", {
-    //     method: "POST",
-    //     body: new FormData(consultForm),
-    //     headers: { Accept: "application/json" },
-    //   })
-    //   .then(() => showSuccess())
-    //   .catch(() => alert("Something went wrong. Please email us directly."));
-    //
-    // Sign up at formspree.io, create a form, paste the ID above.
-    // ----------------------------------------------------------------
-
-    // Simulated submit (remove once Formspree is wired up)
-    consultSubmit.textContent = "Sending...";
-    consultSubmit.disabled = true;
-
-    setTimeout(() => {
-      consultForm.reset();
-      consultSubmit.textContent = "Book My Free Consultation →";
-      consultSubmit.disabled = false;
-      consultSuccess?.classList.remove("hidden");
-      setTimeout(() => consultSuccess?.classList.add("hidden"), 6000);
-    }, 1200);
   });
 
   // ---- Scroll-to-top button ----

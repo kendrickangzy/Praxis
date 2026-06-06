@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "Creating the educational experience you deserve.",
     ];
 
-    const TYPING_SPEED  = 45;   // ms per character — how fast it types
-    const ERASING_SPEED = 25;   // ms per character — how fast it erases
+    const TYPING_SPEED  = 40;   // ms per character — how fast it types
+    const ERASING_SPEED = 20;   // ms per character — how fast it erases
     const PAUSE_AFTER   = 3500; // ms to hold the completed phrase before erasing
-    const PAUSE_BEFORE  = 500;  // ms to wait before typing the next phrase
+    const PAUSE_BEFORE  = 250;  // ms to wait before typing the next phrase
 
     let phraseIndex = 0;
     let charIndex   = 0;
