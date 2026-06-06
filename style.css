@@ -4,10 +4,16 @@
    - Smooth scroll
    - Navbar transparency / scroll state
    - Active nav link underline
-   - Hero backgrounds
+   - Hero backgrounds (brand red)
    - Fade-in animations
    - Page hero banners for inner pages
    - Misc utilities
+
+   BRAND PALETTE (extracted from praxis.sg Instagram)
+   --praxis-red:    #C8391A  — dominant red, hero backgrounds & CTAs
+   --praxis-cream:  #F5EDE0  — warm parchment, light section backgrounds
+   --praxis-dark:   #3D1010  — near-black maroon, text on cream
+   --praxis-white:  #FFFFFF  — text on red backgrounds
    ============================================================= */
 
 /* ---- Base ---- */
@@ -21,11 +27,11 @@ html {
 }
 
 #navbar.scrolled {
-  background: #1e1f5e; /* brand-900 */
+  background: #3D1007; /* brand-900 — dark maroon */
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Active nav link — underline indicator */
+/* Active nav link — cream underline on red/dark background */
 .nav-active {
   position: relative;
 }
@@ -36,20 +42,20 @@ html {
   left: 0;
   right: 0;
   height: 2px;
-  background: #f5a623; /* accent */
+  background: #F5EDE0; /* cream */
   border-radius: 2px;
 }
 
 /* ---- Hero backgrounds ---- */
 
-/* Home page — gradient */
+/* Home page — deep red to brand red, subtle warmth */
 .hero-home {
-  background: linear-gradient(135deg, #1e1f5e 0%, #3538c5 55%, #5562f5 100%);
+  background: linear-gradient(160deg, #3D1007 0%, #C8391A 55%, #D95030 100%);
 }
 
-/* Inner pages — slightly different gradient for variety */
+/* Inner pages — slightly flatter for editorial feel */
 .hero-inner {
-  background: linear-gradient(135deg, #1e1f5e 0%, #2d2f9f 60%, #3538c5 100%);
+  background: linear-gradient(160deg, #3D1007 0%, #C8391A 75%);
 }
 
 /* ---- Fade-in scroll animation ---- */
@@ -69,7 +75,7 @@ html {
 .fade-in:nth-child(3) { transition-delay: 0.2s; }
 .fade-in:nth-child(4) { transition-delay: 0.3s; }
 
-/* ---- Form autofill override (dark backgrounds) ---- */
+/* ---- Form autofill override (dark/red backgrounds) ---- */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -84,7 +90,7 @@ input:-webkit-autofill:focus {
 }
 .school-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(200, 57, 26, 0.12);
 }
 
 /* ---- Resource cards ---- */
@@ -93,14 +99,13 @@ input:-webkit-autofill:focus {
 }
 .resource-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(85, 98, 245, 0.15);
+  box-shadow: 0 12px 32px rgba(200, 57, 26, 0.18);
 }
 
-/* ---- Divider wave between sections ---- */
-.wave-divider {
-  overflow: hidden;
-  line-height: 0;
+/* ---- Service cards ---- */
+.service-card {
+  transition: box-shadow 0.2s ease;
 }
-.wave-divider svg {
-  display: block;
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(200, 57, 26, 0.12);
 }

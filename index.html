@@ -19,10 +19,12 @@
       theme: {
         extend: {
           colors: {
-            brand: { 50:"#f0f4ff", 100:"#dde6ff", 200:"#c3d0ff", 300:"#9db0ff", 400:"#7585fb", 500:"#5562f5", 600:"#4047e0", 700:"#3538c5", 800:"#2d2f9f", 900:"#1e1f5e", 950:"#13144a" },
-            accent: "#f5a623",
+            brand: { 50:"#FEF2F0", 100:"#FADADD", 200:"#F2A99A", 300:"#E8795E", 400:"#D95030", 500:"#C8391A", 600:"#A32D12", 700:"#7E220C", 800:"#5C1808", 900:"#3D1007", 950:"#220904" },
+            cream: { DEFAULT:"#F5EDE0", 50:"#FDFAF7", 100:"#FAF5EE", 200:"#F5EDE0", 300:"#ECD9C4", 400:"#DEC4A8" },
+            ink:   { DEFAULT:"#3D1010", light:"#6B2828" },
+            accent: "#F5EDE0",
           },
-          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"] },
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"], serif: ["Playfair Display", "Georgia", "ui-serif"] },
         },
       },
     };
@@ -31,7 +33,7 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -56,7 +58,7 @@
 
       <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
         Achieve a 7 in<br />
-        <span class="text-accent">IB Language &amp; Literature</span>
+        <span class="font-serif italic text-cream-200">IB Language &amp; Literature</span>
       </h1>
 
       <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -67,10 +69,10 @@
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#consultation"
-          class="bg-accent hover:bg-yellow-500 text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg text-base">
+          class="bg-cream-200 hover:bg-cream-300 text-ink font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg text-base">
           Book a Free Consultation
         </a>
-        <a href="about.html"
+        <a href="pages/about.html"
           class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base">
           Learn About Us
         </a>
@@ -97,19 +99,19 @@
     <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-accent">95%</p>
+        <p class="text-4xl font-extrabold text-cream-200">95%</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">of students improve<br />by at least 1 grade</p>
       </div>
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-accent">100+</p>
+        <p class="text-4xl font-extrabold text-cream-200">100+</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">IB students<br />tutored</p>
       </div>
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-accent">7s</p>
+        <p class="text-4xl font-extrabold text-cream-200">7s</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">achieved by students<br />we've worked with</p>
       </div>
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-accent">20+</p>
+        <p class="text-4xl font-extrabold text-cream-200">20+</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">IB schools<br />represented</p>
       </div>
 
@@ -120,7 +122,7 @@
   <!-- ============================================================
        SELLING POINTS
   ============================================================ -->
-  <section class="py-24 px-6 bg-white">
+  <section class="py-24 px-6 bg-cream-50">
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-16 fade-in">
@@ -217,7 +219,7 @@
   <!-- ============================================================
        SCHOOLS WE'VE HELPED
   ============================================================ -->
-  <section class="py-20 px-6 bg-gray-50">
+  <section class="py-20 px-6 bg-cream-200">
     <div class="max-w-5xl mx-auto">
 
       <div class="text-center mb-12 fade-in">
@@ -229,28 +231,28 @@
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
 
         <!-- School cards — replace text with <img> tags when you have logos -->
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">United World College<br /><span class="font-normal text-gray-400 text-xs">South East Asia</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">Tanglin Trust School<br /><span class="font-normal text-gray-400 text-xs">Singapore</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">BSKL<br /><span class="font-normal text-gray-400 text-xs">Malaysia</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">International School<br /><span class="font-normal text-gray-400 text-xs">Bangkok</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">Dulwich College<br /><span class="font-normal text-gray-400 text-xs">Beijing</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">Nord Anglia<br /><span class="font-normal text-gray-400 text-xs">Hong Kong</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">ACS International<br /><span class="font-normal text-gray-400 text-xs">Singapore</span></p>
         </div>
-        <div class="school-card fade-in bg-white rounded-xl border border-gray-100 px-5 py-5 text-center shadow-sm">
+        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
           <p class="font-semibold text-gray-700 text-sm leading-snug">Garden International<br /><span class="font-normal text-gray-400 text-xs">Malaysia</span></p>
         </div>
 
@@ -265,7 +267,7 @@
   <!-- ============================================================
        TESTIMONIALS
   ============================================================ -->
-  <section class="py-24 px-6 bg-white">
+  <section class="py-24 px-6 bg-cream-50">
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-16 fade-in">
@@ -275,8 +277,8 @@
 
       <div class="grid md:grid-cols-3 gap-8">
 
-        <div class="fade-in bg-gray-50 rounded-2xl p-8 border border-gray-100">
-          <div class="text-accent text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="fade-in bg-cream-200 rounded-2xl p-8 border border-cream-300">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
             "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework
             for unseen commentary completely changed the way I approach any text."
@@ -290,8 +292,8 @@
           </div>
         </div>
 
-        <div class="fade-in bg-gray-50 rounded-2xl p-8 border border-gray-100">
-          <div class="text-accent text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="fade-in bg-cream-200 rounded-2xl p-8 border border-cream-300">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
             "My IO was the component I was most scared of. Praxis ran three full
             mock orals with me. By the real thing I actually felt prepared — and it showed."
@@ -305,8 +307,8 @@
           </div>
         </div>
 
-        <div class="fade-in bg-gray-50 rounded-2xl p-8 border border-gray-100">
-          <div class="text-accent text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="fade-in bg-cream-200 rounded-2xl p-8 border border-cream-300">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
             "As a parent I appreciated how structured and responsive everything was.
             My daughter improved a full grade boundary in her mock exams and felt

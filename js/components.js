@@ -43,7 +43,7 @@ const headerHTML = `
       <li><a href="${BASE_PAGES}contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
       <li>
         <a href="#consultation"
-          class="bg-accent hover:bg-yellow-500 text-white px-5 py-2 rounded-lg font-semibold transition-all hover:shadow-lg">
+          class="bg-cream-200 hover:bg-cream-300 text-ink px-5 py-2 rounded-lg font-semibold transition-all hover:shadow-lg">
           Book Free Consultation
         </a>
       </li>
@@ -69,7 +69,7 @@ const headerHTML = `
       <li><a href="${BASE_PAGES}contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
       <li>
         <a href="#consultation"
-          class="block bg-accent text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-yellow-500 transition-colors">
+          class="block bg-cream-200 text-ink px-4 py-2 rounded-lg text-center font-semibold hover:bg-cream-300 transition-colors">
           Book Free Consultation
         </a>
       </li>
@@ -88,7 +88,7 @@ const consultationHTML = `
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-12">
-      <p class="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Free Consultation</p>
+      <p class="text-cream-200 font-semibold text-sm uppercase tracking-widest mb-3">Free Consultation</p>
       <h2 class="text-4xl font-bold mb-4">Let's talk about your goals</h2>
       <p class="text-white/70 max-w-lg mx-auto leading-relaxed">
         Book a free 20-minute consultation. No commitment — we just want to understand
@@ -142,7 +142,7 @@ const consultationHTML = `
       </div>
 
       <button type="submit" id="consult-submit"
-        class="w-full bg-accent hover:bg-yellow-500 text-white font-bold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg text-base">
+        class="w-full bg-cream-200 hover:bg-cream-300 text-ink font-bold py-4 rounded-xl transition-all hover:scale-[1.02] shadow-lg text-base">
         Book My Free Consultation &rarr;
       </button>
 
@@ -203,7 +203,7 @@ const footerHTML = `
             </a>
           </li>
           <li>
-            <a href="#consultation" class="text-accent hover:text-yellow-400 font-medium transition-colors">
+            <a href="#consultation" class="text-cream-200 hover:text-cream-100 font-medium transition-colors">
               Book a free consultation &rarr;
             </a>
           </li>
