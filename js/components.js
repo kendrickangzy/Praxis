@@ -27,26 +27,17 @@ const headerHTML = `
 
     <!-- Logo — always links back to the home page -->
     <a href="${BASE_ROOT}index.html" class="flex items-center gap-2 group">
-      <div class="w-9 h-9 bg-brand-500 rounded-lg flex items-center justify-center shadow">
-        <span class="text-white font-bold text-sm">P</span>
-      </div>
-      <span class="font-bold text-xl text-white group-hover:text-brand-200 transition-colors">
-        Praxis Tuition
+      <span class="font-bold font-serif text-2xl text-white group-hover:text-brand-200 transition-colors">
+        Praxis
       </span>
     </a>
 
     <!-- Desktop nav links -->
-    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-white">
+    <ul class="hidden md:flex items-center gap-8 text-xl font-medium text-white">
       <li><a href="${BASE_PAGES}about.html"       class="nav-link hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
       <li><a href="${BASE_PAGES}credentials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
       <li><a href="${BASE_PAGES}resources.html"   class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
       <li><a href="${BASE_PAGES}contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
-      <li>
-        <a href="#consultation"
-          class="bg-cream-200 hover:bg-cream-300 text-ink px-5 py-2 rounded-lg font-semibold transition-all hover:shadow-lg">
-          Book Free Consultation
-        </a>
-      </li>
     </ul>
 
     <!-- Mobile hamburger -->
@@ -69,7 +60,7 @@ const headerHTML = `
       <li><a href="${BASE_PAGES}contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
       <li>
         <a href="#consultation"
-          class="block bg-cream-200 text-ink px-4 py-2 rounded-lg text-center font-semibold hover:bg-cream-300 transition-colors">
+          class="block bg-cream-200 text-ink px-4 py-2 rounded-lg text-center font-semibold font-serif hover:bg-cream-300 transition-colors">
           Book Free Consultation
         </a>
       </li>
@@ -88,7 +79,7 @@ const consultationHTML = `
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-12">
-      <p class="text-cream-200 font-semibold text-sm uppercase tracking-widest mb-3">Free Consultation</p>
+      <p class="text-cream-200 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Free Consultation</p>
       <h2 class="text-4xl font-bold mb-4">Let's talk about your goals</h2>
       <p class="text-white/70 max-w-lg mx-auto leading-relaxed">
         Book a free 20-minute consultation. No commitment — we just want to understand
@@ -170,9 +161,6 @@ const footerHTML = `
       <!-- Brand -->
       <div>
         <div class="flex items-center gap-2 mb-4">
-          <div class="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-sm">P</span>
-          </div>
           <span class="font-bold text-lg text-white">Praxis Tuition</span>
         </div>
         <p class="text-sm leading-relaxed">

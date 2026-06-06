@@ -24,7 +24,7 @@
             ink:   { DEFAULT:"#3D1010", light:"#6B2828" },
             accent: "#F5EDE0",
           },
-          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"], serif: ["Playfair Display", "Georgia", "ui-serif"] },
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui"], serif: ["Times New Roman", "Times", "Georgia", "ui-serif"] },
         },
       },
     };
@@ -33,7 +33,7 @@
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -50,36 +50,30 @@
   <section class="hero-home min-h-screen flex items-center justify-center text-white px-6 pt-24">
     <div class="max-w-4xl mx-auto text-center">
 
-      <!-- Live badge -->
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-7">
-        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-        Now enrolling for the 2025–2026 academic year
+      <!-- Fixed-height wrapper pins the buttons in place.
+           The h1 sizes freely inside it; the wrapper never grows. -->
+      <!-- h-40 mobile → 3 lines at text-3xl (37px/line × 3 = 111px, fits in 160px)  -->
+      <!-- h-44 md    → 2 lines at text-6xl (75px/line × 2 = 150px, fits in 176px)  -->
+      <div class="h-40 md:h-44 flex items-center justify-center mb-10">
+        <h1 class="font-serif italic text-cream-200 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-center">
+          <span id="typewriter-text"></span><span class="typewriter-cursor text-cream-200" aria-hidden="true">|</span>
+        </h1>
       </div>
 
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-        Achieve a 7 in<br />
-        <span class="font-serif italic text-cream-200">IB Language &amp; Literature</span>
-      </h1>
-
-      <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Personalised 1-to-1 tutoring for IB SL students. We break down every
-        component — Paper 1, Paper 2, and the Individual Oral — so you walk
-        into every assessment with a clear strategy and real confidence.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <!-- items-center stops the buttons from stretching to full width in flex-col -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
         <a href="#consultation"
-          class="bg-cream-200 hover:bg-cream-300 text-ink font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg text-base">
+          class="bg-cream-200 hover:bg-cream-300 text-ink font-bold font-sans px-4 py-4 rounded-xl transition-all hover:scale-105 shadow-lg text-sm whitespace-nowrap">
           Book a Free Consultation
         </a>
         <a href="pages/about.html"
-          class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base">
+          class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold font-sans px-4 py-4 rounded-xl transition-colors hover:scale-105 text-sm whitespace-nowrap">
           Learn About Us
         </a>
       </div>
 
       <!-- Scroll indicator -->
-      <div class="mt-16 flex justify-center">
+      <div class="mt-32 flex justify-center">
         <div class="flex flex-col items-center gap-1 text-white/40 text-xs animate-bounce">
           <span>scroll</span>
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -99,19 +93,19 @@
     <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-cream-200">95%</p>
+        <p class="text-4xl font-extrabold font-serif text-cream-200">95%</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">of students improve<br />by at least 1 grade</p>
       </div>
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-cream-200">100+</p>
+        <p class="text-4xl font-extrabold font-serif text-cream-200">100+</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">IB students<br />tutored</p>
       </div>
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-cream-200">7s</p>
+        <p class="text-4xl font-extrabold font-serif text-cream-200">7s</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">achieved by students<br />we've worked with</p>
       </div>
       <div class="fade-in">
-        <p class="text-4xl font-extrabold text-cream-200">20+</p>
+        <p class="text-4xl font-extrabold font-serif text-cream-200">20+</p>
         <p class="text-white/70 text-sm mt-2 leading-snug">IB schools<br />represented</p>
       </div>
 
@@ -126,7 +120,7 @@
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-16 fade-in">
-        <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Why Praxis?</p>
+        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Why Praxis?</p>
         <h2 class="text-4xl font-bold leading-tight">Tutoring that's built around<br />the way IB actually works</h2>
       </div>
 
@@ -223,7 +217,7 @@
     <div class="max-w-5xl mx-auto">
 
       <div class="text-center mb-12 fade-in">
-        <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Our Students Come From</p>
+        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Our Students Come From</p>
         <h2 class="text-3xl font-bold">Schools we've worked with</h2>
         <p class="text-gray-500 mt-3 text-sm">We have tutored students from IB schools across the globe.</p>
       </div>
@@ -271,7 +265,7 @@
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-16 fade-in">
-        <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Student Results</p>
+        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Student Results</p>
         <h2 class="text-4xl font-bold">What students &amp; parents say</h2>
       </div>
 

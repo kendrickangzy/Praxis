@@ -102,6 +102,41 @@ input:-webkit-autofill:focus {
   box-shadow: 0 12px 32px rgba(200, 57, 26, 0.18);
 }
 
+/* ---- Typography: Times New Roman for all UI + structural elements ----
+   CSS handles everything whose font isn't set by an explicit Tailwind class.
+   Lengthy <p> paragraphs inherit Inter from <body class="font-sans"> and
+   are intentionally left untouched.
+-------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+#navbar *,
+footer *,
+button,
+label,
+select,
+li {
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+/* ---- Typewriter cursor ---- */
+.typewriter-cursor {
+  display: inline-block;
+  color: #F5EDE0;           /* cream — matches text-cream-200 */
+  font-weight: 300;
+  margin-left: 1px;
+  animation: cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Pause the cursor while actively typing (class toggled by JS) */
+.typewriter-cursor.typing {
+  animation: none;
+  opacity: 1;
+}
+
 /* ---- Service cards ---- */
 .service-card {
   transition: box-shadow 0.2s ease;
