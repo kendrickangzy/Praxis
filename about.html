@@ -27,40 +27,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.ico" />
 </head>
 
 <body class="bg-cream-200 font-sans text-gray-800 antialiased">
 
   <div id="header-root"></div>
 
-  <!-- ============================================================
-       HEADER
-  ============================================================ -->
-  <section class="pt-36 pb-24 px-6 text-center">
+  <!--HEADER-->
+  <section class="pt-36 pb-20 px-6 text-center">
     <div class="max-w-xl mx-auto">
       <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Who We Are</p>
       <h1 class="text-5xl text-brand-700 font-medium tracking-tighter">An education centre designed by IB students, for IB students.</h1>
     </div>
   </section>
 
-  <!-- ============================================================
-       CONTENT
-  ============================================================ -->
+  <!--OUR VISION-->
   <section class="pb-24 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="max-w-xl lg:max-w-6xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
 
-      <!-- Picture -->
-      <div class="fade-in relative">
-        <div class="w-full h-full flex items-center justify-center">
-          <img src="assets/aboutUs.jpeg"
-               alt="Our Students at PRAXIS"
-               class="w-full h-full rounded-2xl"/>
-        </div>
+      <!--Our Students Image-->
+      <div class="fade-in lg:col-span-1">
+        <img src="assets/aboutUs.jpeg"
+             alt="Our Students at PRAXIS Education Centre"
+             class="vision-photo w-full aspect-square object-cover rounded-2xl"/>
       </div>
 
-      <!-- Text -->
-      <div class="fade-in">
+      <!--Text-->
+      <div class="fade-in lg:col-span-2">
         <h2 class="text-5xl font-medium mb-6 tracking-tighter leading-tight">Our Vision</h2>
         <p class="text-gray-600 mb-5 leading-relaxed">
           PRAXIS is a tutoring centre that specialises in the Humanities subjects, EE, TOK and IA for the International Baccalaureate Diploma Programme (IBDP).
@@ -99,62 +93,157 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       VALUES
-  ============================================================ -->
+  <!--OUR TUTORS-->
   <section class="py-20 px-6 bg-gray-50">
     <div class="max-w-5xl mx-auto">
 
-      <div class="text-center mb-14 fade-in">
-        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">What We Believe</p>
-        <h2 class="text-3xl font-bold">Our approach to tutoring</h2>
+      <div class="text-center mb-8 fade-in">
+        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Meet Our Team</p>
+        <h2 class="text-5xl font-medium tracking-tighter mb-6">Our Tutors</h2>
+        <!-- Short body text — edit this paragraph with your own copy -->
+        <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-5">
+          All our tutors are graduates of the IBDP, have attained exemplary grades (43 and above; A for the EE) and are undergraduates of top universities.
+        </p>
+        <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-5">
+          What this means for YOU: you’re taught by someone who’s cracked the code. You’re taught to succeed in the system.
+        </p>
+        <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-5">
+          Our methodologies are tailored to scoring in the IB: rooted in the marking criteria, comprehensive notes for a one-stop solution, and curricula that follow each school’s timetable.
+        </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
 
-        <div class="fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+        <!--Tutor 1-->
+        <div class="fade-in text-center">
+          <div class="tutor-card-stack">
+            <div class="tutor-photo-wrap">
+              <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="tutor-info-wrap">
+              <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
+              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">English Lang & Lit</p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Achieved an 'A' for her Extended Essay in English, graduating from ACS (Independent).
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Currently an undergraduate at NUS Medicine, bringing proven academic excellence and a genuine passion for teaching Language and Literature.
+              </p>
+            </div>
           </div>
-          <h3 class="font-bold text-lg mb-3">Clarity over complexity</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            We strip away the noise and teach students exactly what they need to
-            know — no unnecessary jargon, no irrelevant content.
+          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
+          <p class="text-xs text-gray-400 mt-1">
+            IB 45 points<br />
+            English EE 'A'<br />
+            ACS (Independent) Alumni<br />
+            NUS Medicine Undergraduate
           </p>
         </div>
 
-        <div class="fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-            </svg>
+        <!--Tutor 2-->
+        <div class="fade-in text-center">
+          <div class="tutor-card-stack">
+            <div class="tutor-photo-wrap">
+              <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="tutor-info-wrap">
+              <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
+              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">English Lang & Lit</p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Achieved an 'A' for her Extended Essay in English, graduating from ACS (Independent).
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Currently an undergraduate at NUS Medicine, bringing proven academic excellence and a genuine passion for teaching Language and Literature.
+              </p>
+            </div>
           </div>
-          <h3 class="font-bold text-lg mb-3">Student confidence first</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            We meet students where they are — no judgement, no pressure. A
-            confident student is a better exam student.
+          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
+          <p class="text-xs text-gray-400 mt-1">
+            IB 45 points<br />
+            English EE 'A'<br />
+            ACS (Independent) Alumni<br />
+            NUS Medicine Undergraduate
           </p>
         </div>
 
-        <div class="fade-in bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
+        <!--Tutor 3-->
+        <div class="fade-in text-center">
+          <div class="tutor-card-stack">
+            <div class="tutor-photo-wrap">
+              <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="tutor-info-wrap">
+              <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
+              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">English Lang & Lit</p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Achieved an 'A' for her Extended Essay in English, graduating from ACS (Independent).
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Currently an undergraduate at NUS Medicine, bringing proven academic excellence and a genuine passion for teaching Language and Literature.
+              </p>
+            </div>
           </div>
-          <h3 class="font-bold text-lg mb-3">Results that speak</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Every decision we make in a session is driven by one question:
-            will this help the student score better marks?
+          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
+          <p class="text-xs text-gray-400 mt-1">
+            IB 45 points<br />
+            English EE 'A'<br />
+            ACS (Independent) Alumni<br />
+            NUS Medicine Undergraduate
+          </p>
+        </div>
+
+        <!--Tutor 4-->
+        <div class="fade-in text-center">
+          <div class="tutor-card-stack">
+            <div class="tutor-photo-wrap">
+              <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="tutor-info-wrap">
+              <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
+              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
+                ACS (Independent) Alumni<br />
+                NUS Medicine Undergraduate
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                Achieved an 'A' for her Extended Essay in English, graduating from ACS (Independent).
+              </p>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Currently an undergraduate at NUS Medicine, bringing proven academic excellence and a genuine passion for teaching Language and Literature.
+              </p>
+            </div>
+          </div>
+          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
+          <p class="text-xs text-gray-400 mt-1">
+            ACS (Independent) Alumni<br />
+            NUS Medicine Undergraduate
           </p>
         </div>
 
       </div>
+
     </div>
   </section>
   <div id="footer-root"></div>
+
+  <!-- Tutor info modal -->
+  <div id="tutor-modal">
+    <div id="tutor-modal-inner">
+      <button id="tutor-modal-close" aria-label="Close">&times;</button>
+      <div id="tutor-modal-body"></div>
+    </div>
+  </div>
 
   <script src="js/components.js"></script>
   <script src="js/script.js"></script>

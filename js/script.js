@@ -125,4 +125,36 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeEls.forEach((el) => observer.observe(el));
   }
 
+
+  /* ---------------------------------------------------------------
+     TUTOR CARD MODAL (about.html)
+     Clicking a .tutor-card-stack opens a floating info panel.
+  --------------------------------------------------------------- */
+  const tutorModal    = document.getElementById("tutor-modal");
+  const tutorModalBody = document.getElementById("tutor-modal-body");
+  const tutorClose    = document.getElementById("tutor-modal-close");
+
+  if (tutorModal) {
+    const tutorModalInner = document.getElementById("tutor-modal-inner");
+
+    document.querySelectorAll(".tutor-card-stack").forEach((card) => {
+      card.addEventListener("click", () => {
+        // Anchor the grow animation to the bottom-centre of the clicked card
+        const rect = card.getBoundingClientRect();
+        const dx = (rect.left + rect.width / 2) - window.innerWidth  / 2;
+        const dy = rect.bottom                  - window.innerHeight / 2;
+        tutorModalInner.style.transformOrigin = `calc(50% + ${dx}px) calc(50% + ${dy}px)`;
+
+        tutorModalBody.innerHTML = card.querySelector(".tutor-info-wrap").innerHTML;
+        tutorModal.classList.add("show");
+      });
+    });
+
+    function closeTutorModal() { tutorModal.classList.remove("show"); }
+
+    tutorClose.addEventListener("click", closeTutorModal);
+    tutorModal.addEventListener("click", (e) => { if (e.target === tutorModal) closeTutorModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeTutorModal(); });
+  }
+
 });
