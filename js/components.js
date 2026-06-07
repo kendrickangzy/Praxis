@@ -1,21 +1,8 @@
 /* =============================================================
    PRAXIS TUITION — Shared Components
    Injected into every page: header and footer.
-
-   PATH DETECTION
-   index.html lives at the root. All other pages live in /pages/.
-   This file auto-detects which level it's being called from so
-   that every link resolves correctly from either location.
+   All pages now live at the root level — no path detection needed.
    ============================================================= */
-
-// Is the current page inside the /pages/ subfolder?
-const isSubpage = window.location.pathname.includes('/pages/');
-
-// PATH HELPERS
-// BASE_ROOT  → path back to the project root  ('' from root, '../' from pages/)
-// BASE_PAGES → path to a file inside /pages/  ('pages/' from root, '' from pages/)
-const BASE_ROOT  = isSubpage ? '../'   : '';
-const BASE_PAGES = isSubpage ? ''      : 'pages/';
 
 
 /* ---------------------------------------------------------------
@@ -26,7 +13,7 @@ const headerHTML = `
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
     <!-- Logo — always links back to the home page -->
-    <a href="${BASE_ROOT}index.html" class="flex items-center gap-2 group">
+    <a href="index.html" class="flex items-center gap-2 group">
       <span class="font-serif text-2xl text-white tracking-tight group-hover:text-brand-200 transition-colors">
         PRAXIS
       </span>
@@ -34,10 +21,10 @@ const headerHTML = `
 
     <!-- Desktop nav links -->
     <ul class="hidden md:flex items-center gap-8 text-xl font-medium text-white tracking-tight">
-      <li><a href="${BASE_PAGES}about.html"       class="nav-link hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
-      <li><a href="${BASE_PAGES}credentials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
-      <li><a href="${BASE_PAGES}resources.html"   class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
-      <li><a href="${BASE_PAGES}contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
+      <li><a href="about.html"       class="nav-link hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
+      <li><a href="credentials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
+      <li><a href="resources.html"   class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
+      <li><a href="contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
     </ul>
 
     <!-- Mobile hamburger -->
@@ -54,16 +41,10 @@ const headerHTML = `
   <!-- Mobile dropdown -->
   <div id="mobile-menu" class="hidden md:hidden bg-brand-900 px-6 pb-5 text-white text-sm font-medium border-t border-white/10">
     <ul class="flex flex-col gap-4 pt-4">
-      <li><a href="${BASE_PAGES}about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
-      <li><a href="${BASE_PAGES}credentials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
-      <li><a href="${BASE_PAGES}resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
-      <li><a href="${BASE_PAGES}contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
-      <li>
-        <a href="${BASE_PAGES}contact.html"
-          class="block bg-cream-200 text-ink px-4 py-2 rounded-full text-center font-semibold font-serif hover:bg-cream-300 transition-colors">
-          Book Free Consultation
-        </a>
-      </li>
+      <li><a href="about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
+      <li><a href="credentials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
+      <li><a href="resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
+      <li><a href="contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
     </ul>
   </div>
 </header>
@@ -82,38 +63,32 @@ const footerHTML = `
       <!-- Brand -->
       <div>
         <div class="flex items-center gap-2 mb-4">
-          <span class="font-bold text-lg text-white">Praxis Tuition</span>
+          <span class="font-medium text-lg text-white tracking-tighter">PRAXIS Education</span>
         </div>
-        <p class="text-sm leading-relaxed">
-          Specialist IB Language &amp; Literature tutoring for SL students worldwide.
-          Results-focused, student-centred, exam-ready.
+        <p class="text-sm tracking-tight leading-relaxed">
+          An education centre designed by IB students, for IB students.
         </p>
       </div>
 
       <!-- Navigation -->
       <div>
         <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-widest">Pages</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="${BASE_ROOT}index.html"       class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="${BASE_PAGES}about.html"       class="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="${BASE_PAGES}credentials.html" class="hover:text-white transition-colors">Credentials</a></li>
-          <li><a href="${BASE_PAGES}resources.html"   class="hover:text-white transition-colors">Resources</a></li>
-          <li><a href="${BASE_PAGES}contact.html"     class="hover:text-white transition-colors">Contact Us</a></li>
+        <ul class="space-y-2 text-sm tracking-tight">
+          <li><a href="index.html"       class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html"       class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="credentials.html" class="hover:text-white transition-colors">Credentials</a></li>
+          <li><a href="resources.html"   class="hover:text-white transition-colors">Resources</a></li>
+          <li><a href="contact.html"     class="hover:text-white transition-colors">Contact Us</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
         <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-widest">Get In Touch</h4>
-        <ul class="space-y-2 text-sm">
+        <ul class="space-y-2 text-sm tracking-tight">
           <li>
             <a href="mailto:hello@praxistuition.com" class="hover:text-white transition-colors">
               hello@praxistuition.com
-            </a>
-          </li>
-          <li>
-            <a href="${BASE_PAGES}contact.html" class="text-cream-200 hover:text-cream-100 font-medium transition-colors">
-              Book a free consultation &rarr;
             </a>
           </li>
         </ul>
@@ -121,9 +96,8 @@ const footerHTML = `
 
     </div>
 
-    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
-      <p>&copy; 2026 Praxis Tuition. All rights reserved.</p>
-      <p>Built with HTML, Tailwind CSS &amp; JavaScript.</p>
+    <div class="border-t border-white/10 pt-6 text-xs">
+      <p>PRAXIS Education. All rights reserved.</p>
     </div>
 
   </div>
@@ -153,7 +127,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---- Navbar: transparent → solid on scroll ----
   const navbar = document.getElementById("navbar");
-  const handleScroll = () => navbar?.classList.toggle("scrolled", window.scrollY > 80);
+  // Inner pages always show the solid navbar; home page only after scrolling 80px
+  // Solid navbar on all pages except the home hero — detect home page by path
+  const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
+  const handleScroll = () => navbar?.classList.toggle("scrolled", !isHome || window.scrollY > 80);
   window.addEventListener("scroll", handleScroll);
   handleScroll();
 
@@ -168,6 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.toggle("hidden", isOpen);
     iconOpen.classList.toggle("hidden", !isOpen);
     iconClose.classList.toggle("hidden", isOpen);
+    // Keep top bar colour consistent with the dropdown beneath it
+    navbar?.classList.toggle("menu-open", !isOpen);
   });
 
   document.querySelectorAll(".mobile-nav-link").forEach((link) => {
@@ -175,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenu?.classList.add("hidden");
       iconOpen?.classList.remove("hidden");
       iconClose?.classList.add("hidden");
+      navbar?.classList.remove("menu-open");
     });
   });
 

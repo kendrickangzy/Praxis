@@ -27,8 +27,15 @@ html {
 }
 
 #navbar.scrolled {
-  background: #3D1007; /* brand-900 — dark maroon */
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  background: #3D1007; /* brand-500 — Praxis red */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile menu open — top bar matches the brand-500 dropdown beneath it.
+   Placed after .scrolled so it wins when both classes are present.     */
+#navbar.menu-open {
+  background: #3D1007; /* brand-500 — same as #mobile-menu bg */
+  box-shadow: none;
 }
 
 /* Active nav link — cream underline on red/dark background */
@@ -112,8 +119,7 @@ h1, h2, h3, h4, h5, h6,
 footer *,
 button,
 label,
-select,
-li {
+select {
   font-family: "Times New Roman", Times, Georgia, serif;
 }
 

@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (typewriterEl) {
     const phrases = [
-      "Achieve a 7 in IB Language & Literature.",
-      "Master Paper 1, Paper 2 & the IO.",
+      "Singapore's Leading IB Humanities Education Centre.",
       "Creating the educational experience you deserve.",
+      "Feel the PRAXIS difference.",
     ];
 
     const TYPING_SPEED  = 40;   // ms per character — how fast it types
     const ERASING_SPEED = 20;   // ms per character — how fast it erases
-    const PAUSE_AFTER   = 3500; // ms to hold the completed phrase before erasing
+    const PAUSE_AFTER   = 3000; // ms to hold the completed phrase before erasing
     const PAUSE_BEFORE  = 250;  // ms to wait before typing the next phrase
 
     let phraseIndex = 0;

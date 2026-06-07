@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>Praxis Tuition | IB Language & Literature Specialists</title>
+  <title>PRAXIS Education</title>
   <meta name="description" content="Expert IB SL Language and Literature tutoring. Personalised 1-to-1 sessions, proven results, and dedicated support for IB students worldwide." />
   <meta name="keywords" content="IB tuition, IB Language and Literature tutor, IB SL English, IB Lang Lit, IB tutor online" />
-  <meta property="og:title" content="Praxis Tuition | IB Language & Literature" />
+  <meta property="og:title" content="PRAXIS Education | IB Language and Literature Tutoring" />
   <meta property="og:description" content="Personalised IB SL Language and Literature tutoring. Book a free consultation today." />
   <meta property="og:type" content="website" />
 
-  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,12 +28,11 @@
     };
   </script>
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 
 <body class="font-sans text-gray-800 antialiased">
@@ -50,11 +47,7 @@
   <section class="hero-home min-h-screen flex items-center justify-center text-white px-6 pt-24">
     <div class="max-w-4xl mx-auto text-center">
 
-      <!-- Fixed-height wrapper pins the buttons in place.
-           The h1 sizes freely inside it; the wrapper never grows. -->
-      <!-- h-40 mobile → 3 lines at text-3xl (37px/line × 3 = 111px, fits in 160px)  -->
-      <!-- h-44 md    → 2 lines at text-6xl (75px/line × 2 = 150px, fits in 176px)  -->
-      <div class="h-40 md:h-44 flex items-center justify-center mb-10">
+      <div class="h-40 md:h-44 flex items-center justify-center mb-10 overflow-hidden">
         <h1 class="font-serif text-cream-200 text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tighter text-center">
           <span id="typewriter-text"></span><span class="typewriter-cursor text-cream-200" aria-hidden="true">|</span>
         </h1>
@@ -62,24 +55,14 @@
 
       <!-- items-center stops the buttons from stretching to full width in flex-col -->
       <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
-        <a href="pages/contact.html"
+        <a href="contact.html"
           class="bg-cream-200 hover:bg-cream-300 text-ink font-sans font-medium px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg text-lg tracking-tight whitespace-nowrap">
           Contact Us
         </a>
-        <a href="pages/about.html"
+        <a href="about.html"
           class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-sans px-8 py-4 rounded-full transition-colors hover:scale-105 text-lg tracking-tight whitespace-nowrap">
           Who We Are
         </a>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div class="mt-24 flex justify-center">
-        <div class="flex flex-col items-center gap-1 text-white/40 text-xs animate-bounce">
-          <span>scroll</span>
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
       </div>
 
     </div>
@@ -89,24 +72,32 @@
   <!-- ============================================================
        STATISTICS BAR
   ============================================================ -->
-  <section class="bg-brand-900 py-14 px-6">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+  <section class="bg-cream-200 py-14 px-6">
+
+    <div class="max-w-sm mx-auto text-center mb-16 fade-in">
+      <p class="text-brand-500 font-extrabold font-serif text-sm uppercase tracking-wider mb-3">Our Proven Track Record</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
 
       <div class="fade-in">
-        <p class="text-4xl font-extrabold font-serif text-cream-200">95%</p>
-        <p class="text-white/70 text-sm mt-2 leading-snug">of students improve<br />by at least 1 grade</p>
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100%</p>
+        <p class="text-sm mt-3 leading-snug">of our students improved by at least 1 grade</p>
       </div>
+
       <div class="fade-in">
-        <p class="text-4xl font-extrabold font-serif text-cream-200">100+</p>
-        <p class="text-white/70 text-sm mt-2 leading-snug">IB students<br />tutored</p>
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">86.4%</p>
+        <p class="text-sm mt-3 leading-snug">scored a '6' or '7' in IB Lang Lit</p>
       </div>
+
       <div class="fade-in">
-        <p class="text-4xl font-extrabold font-serif text-cream-200">7s</p>
-        <p class="text-white/70 text-sm mt-2 leading-snug">achieved by students<br />we've worked with</p>
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">6.1</p>
+        <p class="text-sm mt-3 leading-snug">average grade achieved for IB Lang Lit</p>
       </div>
+
       <div class="fade-in">
-        <p class="text-4xl font-extrabold font-serif text-cream-200">20+</p>
-        <p class="text-white/70 text-sm mt-2 leading-snug">IB schools<br />represented</p>
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100+</p>
+        <p class="text-sm mt-3 leading-snug">students taught</p>
       </div>
 
     </div>
@@ -119,9 +110,9 @@
   <section class="py-24 px-6 bg-cream-50">
     <div class="max-w-6xl mx-auto">
 
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Why Praxis?</p>
-        <h2 class="text-4xl font-bold leading-tight">Tutoring that's built around<br />the way IB actually works</h2>
+      <div class="max-w-sm mx-auto text-center mb-16 fade-in">
+        <p class="text-brand-500 font-extrabold font-serif text-sm uppercase tracking-widest mb-3">Why Praxis?</p>
+        <h2 class="text-4xl font-medium tracking-tight leading-tight">Tutoring that's built around the way IB actually works</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-10">
@@ -216,43 +207,54 @@
   <section class="py-20 px-6 bg-cream-200">
     <div class="max-w-5xl mx-auto">
 
-      <div class="text-center mb-12 fade-in">
-        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Our Students Come From</p>
-        <h2 class="text-3xl font-bold">Schools we've worked with</h2>
-        <p class="text-gray-500 mt-3 text-sm">We have tutored students from IB schools across the globe.</p>
+      <div class="max-w-sm mx-auto text-center mb-12 fade-in">
+        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Our Students</p>
+        <h2 class="text-4xl font-medium tracking-tight leading-tight">We have worked with many different schools</h2>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+      <div class="flex flex-wrap justify-center gap-8">
 
-        <!-- School cards — replace text with <img> tags when you have logos -->
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">United World College<br /><span class="font-normal text-gray-400 text-xs">South East Asia</span></p>
+        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
+          <img src="assets/ACSI.png"
+               alt="ACS (Independent) crest"
+               class="h-24 w-24 object-contain" />
+          <p class="font-semibold text-gray-700 text-sm leading-snug">
+            Anglo-Chinese School (Independent)<br />
+            <span class="font-normal text-gray-400 text-xs">Singapore</span>
+          </p>
         </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">Tanglin Trust School<br /><span class="font-normal text-gray-400 text-xs">Singapore</span></p>
+
+        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
+          <img src="assets/SJI.png"
+               alt="St Joseph's Institution crest"
+               class="h-24 w-24 object-contain" />
+          <p class="font-semibold text-gray-700 text-sm leading-snug">
+            St. Joseph's Institution<br />
+            <span class="font-normal text-gray-400 text-xs">Singapore</span>
+          </p>
         </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">BSKL<br /><span class="font-normal text-gray-400 text-xs">Malaysia</span></p>
+
+        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
+          <img src="assets/ACSI.png"
+               alt="ACS (Independent) crest"
+               class="h-24 w-24 object-contain" />
+          <p class="font-semibold text-gray-700 text-sm leading-snug">
+            Anglo-Chinese School (International)<br />
+            <span class="font-normal text-gray-400 text-xs">Singapore</span>
+          </p>
         </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">International School<br /><span class="font-normal text-gray-400 text-xs">Bangkok</span></p>
-        </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">Dulwich College<br /><span class="font-normal text-gray-400 text-xs">Beijing</span></p>
-        </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">Nord Anglia<br /><span class="font-normal text-gray-400 text-xs">Hong Kong</span></p>
-        </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">ACS International<br /><span class="font-normal text-gray-400 text-xs">Singapore</span></p>
-        </div>
-        <div class="school-card fade-in bg-cream-50 rounded-xl border border-cream-300 px-5 py-5 text-center shadow-sm">
-          <p class="font-semibold text-gray-700 text-sm leading-snug">Garden International<br /><span class="font-normal text-gray-400 text-xs">Malaysia</span></p>
+
+        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
+          <img src="assets/SJI.png"
+               alt="St Joseph's Institution (International) crest"
+               class="h-24 w-24 object-contain" />
+          <p class="font-semibold text-gray-700 text-sm leading-snug">
+            St. Joseph's Institution International<br />
+            <span class="font-normal text-gray-400 text-xs">Singapore</span>
+          </p>
         </div>
 
       </div>
-
-      <p class="text-center text-gray-400 text-sm mt-8 fade-in">…and many more schools worldwide.</p>
 
     </div>
   </section>
