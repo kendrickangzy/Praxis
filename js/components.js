@@ -22,8 +22,9 @@ const headerHTML = `
     <!-- Desktop nav links -->
     <ul class="hidden md:flex items-center gap-8 text-xl font-medium text-white tracking-tight">
       <li><a href="about.html"       class="nav-link hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
-      <li><a href="credentials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
+      <li><a href="testimonials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="testimonials">Testimonials</a></li>
       <li><a href="resources.html"   class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
+      <li><a href="careers.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="careers">Careers</a></li>
       <li><a href="contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
     </ul>
 
@@ -42,8 +43,9 @@ const headerHTML = `
   <div id="mobile-menu" class="hidden md:hidden bg-brand-900 px-6 pb-5 text-white text-sm font-medium border-t border-white/10">
     <ul class="flex flex-col gap-4 pt-4">
       <li><a href="about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
-      <li><a href="credentials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="credentials">Credentials</a></li>
+      <li><a href="testimonials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="testimonials">Testimonials</a></li>
       <li><a href="resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
+      <li><a href="careers.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="careers">Careers</a></li>
       <li><a href="contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
     </ul>
   </div>
@@ -76,8 +78,9 @@ const footerHTML = `
         <ul class="space-y-2 text-sm tracking-tight">
           <li><a href="index.html"       class="hover:text-white transition-colors">Home</a></li>
           <li><a href="about.html"       class="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="credentials.html" class="hover:text-white transition-colors">Credentials</a></li>
+          <li><a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a></li>
           <li><a href="resources.html"   class="hover:text-white transition-colors">Resources</a></li>
+          <li><a href="careers.html"     class="hover:text-white transition-colors">Careers</a></li>
           <li><a href="contact.html"     class="hover:text-white transition-colors">Contact Us</a></li>
         </ul>
       </div>
