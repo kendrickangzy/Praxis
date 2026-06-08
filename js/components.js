@@ -40,13 +40,13 @@ const headerHTML = `
   </nav>
 
   <!-- Mobile dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-brand-900 px-6 pb-5 text-white text-sm font-medium border-t border-white/10">
-    <ul class="flex flex-col gap-4 pt-4">
-      <li><a href="about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
-      <li><a href="testimonials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="testimonials">Testimonials</a></li>
-      <li><a href="resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
-      <li><a href="careers.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="careers">Careers</a></li>
-      <li><a href="contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-900 px-6 pb-4 text-white text-lg font-medium border-t border-white/10 tracking-tight">
+    <ul class="flex flex-col gap-3 pt-4">
+      <li><a href="about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about"><span class="mobile-nav-text">About Us</span></a></li>
+      <li><a href="testimonials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="testimonials"><span class="mobile-nav-text">Testimonials</span></a></li>
+      <li><a href="resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources"><span class="mobile-nav-text">Resources</span></a></li>
+      <li><a href="careers.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="careers"><span class="mobile-nav-text">Careers</span></a></li>
+      <li><a href="contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact"><span class="mobile-nav-text">Contact Us</span></a></li>
     </ul>
   </div>
 </header>

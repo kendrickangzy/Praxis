@@ -38,19 +38,70 @@ html {
   box-shadow: none;
 }
 
-/* Active nav link — cream underline on red/dark background */
-.nav-active {
+/* Nav link — slide-in underline on hover, always-on for active page */
+.nav-link {
   position: relative;
 }
-.nav-active::after {
+.nav-link::after {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   right: 0;
   height: 2px;
-  background: #F5EDE0; /* cream */
+  background: #F2A99A;
   border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-active::after {
+  transform: scaleX(1);
+}
+
+/* Mobile dropdown — underline scoped to text width via inner span */
+.mobile-nav-text {
+  position: relative;
+  display: inline-block;
+}
+.mobile-nav-text::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #F2A99A;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.mobile-nav-link:hover .mobile-nav-text::after,
+.mobile-nav-link.nav-active .mobile-nav-text::after {
+  transform: scaleX(1);
+}
+
+/* Slide-in underline for inline links (e.g. "View all testimonials") */
+.slide-link {
+  position: relative;
+}
+.slide-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #5C1808; /* brand-800 */
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.slide-link:hover::after {
+  transform: scaleX(1);
 }
 
 /* Typography */
@@ -126,18 +177,42 @@ select {
   50%       { opacity: 0; }
 }
 
-/* Pause the cursor while actively typing (class toggled by JS) */
 .typewriter-cursor.typing {
   animation: none;
   opacity: 1;
 }
 
-/* Force GPU compositing layer — eliminates mobile bitmap cache artifacts
-   that appear as white dots after characters are erased               */
 #typewriter-text {
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
   backface-visibility: hidden;
+}
+
+/* Testimonial scroll */
+.testimonial-marquee-outer {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: testimonial-scroll 32s linear infinite;
+}
+
+.testimonial-card {
+  width: 26rem;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #ECD9C4;
+}
+
+@keyframes testimonial-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ---- about.html styling ---- */

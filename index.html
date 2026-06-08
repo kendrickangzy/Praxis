@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/style.css" />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="https://praxiseducationsg.com/assets/apple-touch-icon.png">
 </head>
@@ -98,7 +98,7 @@
 
       <div class="fade-in">
         <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100+</p>
-        <p class="text-sm mt-3 leading-snug">students taught</p>
+        <p class="text-sm mt-3 leading-snug">students taught over 3 years</p>
       </div>
 
     </div>
@@ -203,85 +203,30 @@
 
 
   <!-- ============================================================
-       SCHOOLS WE'VE HELPED
-  ============================================================ -->
-  <section class="py-20 px-6 bg-cream-200">
-    <div class="max-w-5xl mx-auto">
-
-      <div class="max-w-sm mx-auto text-center mb-12 fade-in">
-        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Our Students</p>
-        <h2 class="text-4xl font-medium tracking-tighter leading-tight">We have worked with many different schools</h2>
-      </div>
-
-      <div class="fade-in flex flex-wrap justify-center gap-8">
-
-        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
-          <img src="assets/ACSI.png"
-               alt="ACS (Independent) crest"
-               class="h-24 w-24 object-contain" />
-          <p class="font-semibold text-gray-700 text-sm leading-snug">
-            Anglo-Chinese School (Independent)<br />
-            <span class="font-normal text-gray-400 text-xs">Singapore</span>
-          </p>
-        </div>
-
-        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
-          <img src="assets/SJI.png"
-               alt="St Joseph's Institution crest"
-               class="h-24 w-24 object-contain" />
-          <p class="font-semibold text-gray-700 text-sm leading-snug">
-            St. Joseph's Institution<br />
-            <span class="font-normal text-gray-400 text-xs">Singapore</span>
-          </p>
-        </div>
-
-        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
-          <img src="assets/ACSI.png"
-               alt="ACS (Independent) crest"
-               class="h-24 w-24 object-contain" />
-          <p class="font-semibold text-gray-700 text-sm leading-snug">
-            Anglo-Chinese School (International)<br />
-            <span class="font-normal text-gray-400 text-xs">Singapore</span>
-          </p>
-        </div>
-
-        <div class="school-card fade-in bg-cream-50 rounded-2xl border border-cream-300 px-8 py-8 text-center shadow-sm flex flex-col items-center gap-4 w-48">
-          <img src="assets/SJI.png"
-               alt="St Joseph's Institution crest"
-               class="h-24 w-24 object-contain" />
-          <p class="font-semibold text-gray-700 text-sm leading-snug">
-            St. Joseph's Institution International<br />
-            <span class="font-normal text-gray-400 text-xs">Singapore</span>
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ============================================================
        TESTIMONIALS
   ============================================================ -->
-  <section class="py-24 px-6 bg-cream-50">
-    <div class="max-w-6xl mx-auto">
+  <section class="py-24 bg-cream-200">
 
-      <div class="text-center mb-16 fade-in">
-        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Student Results</p>
-        <h2 class="text-4xl font-bold">What students &amp; parents say</h2>
+    <!-- Heading -->
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 fade-in">
+        <p class="text-brand-500 font-extrabold font-serif text-sm uppercase tracking-widest mb-3">Student Results</p>
+        <h2 class="text-4xl font-medium tracking-tight">What students and parents say</h2>
       </div>
+    </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+    <!-- Marquee strip -->
+    <div class="testimonial-marquee-outer overflow-hidden">
+      <div class="fade-in testimonial-track py-2">
 
-        <div class="fade-in bg-cream-200 rounded-2xl p-8 border border-cream-300">
+        <!-- SET 1 -->
+        <div class="testimonial-card">
           <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework
-            for unseen commentary completely changed the way I approach any text."
+            "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework for unseen commentary completely changed the way I approach any text."
           </p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500">S</div>
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">S</div>
             <div>
               <p class="font-semibold text-sm">Sofia M.</p>
               <p class="text-gray-400 text-xs">IB Year 2 — achieved a 6</p>
@@ -289,14 +234,13 @@
           </div>
         </div>
 
-        <div class="fade-in bg-cream-200 rounded-2xl p-8 border border-cream-300">
+        <div class="testimonial-card">
           <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "My IO was the component I was most scared of. Praxis ran three full
-            mock orals with me. By the real thing I actually felt prepared — and it showed."
+            "My IO was the component I was most scared of. Praxis ran three full mock orals with me. By the real thing I actually felt prepared — and it showed."
           </p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500">J</div>
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">J</div>
             <div>
               <p class="font-semibold text-sm">James T.</p>
               <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
@@ -304,15 +248,13 @@
           </div>
         </div>
 
-        <div class="fade-in bg-cream-200 rounded-2xl p-8 border border-cream-300">
+        <div class="testimonial-card">
           <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "As a parent I appreciated how structured and responsive everything was.
-            My daughter improved a full grade boundary in her mock exams and felt
-            so much more confident going into May."
+            "As a parent I appreciated how structured and responsive everything was. My daughter improved a full grade boundary in her mock exams and felt so much more confident going into May."
           </p>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500">A</div>
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">A</div>
             <div>
               <p class="font-semibold text-sm">Amara K. — Parent</p>
               <p class="text-gray-400 text-xs">Student achieved a 6</p>
@@ -320,8 +262,93 @@
           </div>
         </div>
 
+        <div class="testimonial-card">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
+            "The notes PRAXIS provided broke down the marking rubric in a way my school never did. I finally understood what examiners were actually looking for."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">D</div>
+            <div>
+              <p class="font-semibold text-sm">David L.</p>
+              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SET 2 — duplicate for seamless loop -->
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
+            "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework for unseen commentary completely changed the way I approach any text."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">S</div>
+            <div>
+              <p class="font-semibold text-sm">Sofia M.</p>
+              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 6</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
+            "My IO was the component I was most scared of. Praxis ran three full mock orals with me. By the real thing I actually felt prepared — and it showed."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">J</div>
+            <div>
+              <p class="font-semibold text-sm">James T.</p>
+              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
+            "As a parent I appreciated how structured and responsive everything was. My daughter improved a full grade boundary in her mock exams and felt so much more confident going into May."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">A</div>
+            <div>
+              <p class="font-semibold text-sm">Amara K. — Parent</p>
+              <p class="text-gray-400 text-xs">Student achieved a 6</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
+            "The notes PRAXIS provided broke down the marking rubric in a way my school never did. I finally understood what examiners were actually looking for."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">D</div>
+            <div>
+              <p class="font-semibold text-sm">David L.</p>
+              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <!-- View all link -->
+    <div class="fade-in max-w-6xl mx-auto px-6">
+      <div class="text-center mt-10 fade-in">
+        <a href="testimonials.html"
+           class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
+          View all testimonials
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
   </section>
 
   <!-- Shared footer (injected by components.js) -->
