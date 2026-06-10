@@ -87,19 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const icon     = item.querySelector(".faq-icon");
 
     question?.addEventListener("click", () => {
-      const isOpen = !answer.classList.contains("hidden");
-
-      // Close every item
-      faqItems.forEach((other) => {
-        other.querySelector(".faq-answer")?.classList.add("hidden");
-        other.querySelector(".faq-icon")?.classList.remove("open");
-      });
-
-      // If this one was closed, open it
-      if (!isOpen) {
-        answer.classList.remove("hidden");
-        icon?.classList.add("open");
-      }
+      answer.classList.toggle("hidden");
+      icon?.classList.toggle("open");
     });
   });
 

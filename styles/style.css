@@ -38,6 +38,29 @@ html {
   box-shadow: none;
 }
 
+/* ---- Mobile dropdown smooth slide ---- */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity    0.25s ease;
+}
+#mobile-menu.menu-open {
+  max-height: 320px;
+  opacity: 1;
+}
+
+/* ---- Hamburger → × morph ---- */
+.hamburger-line {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  transform-box: view-box;
+  transform-origin: center;
+}
+#navbar.menu-open .hamburger-top { transform: rotate(45deg)  translateY(6px);  }
+#navbar.menu-open .hamburger-mid { transform: scaleX(0); opacity: 0;           }
+#navbar.menu-open .hamburger-bot { transform: rotate(-45deg) translateY(-6px); }
+
 /* Nav link — slide-in underline on hover, always-on for active page */
 .nav-link {
   position: relative;
@@ -83,27 +106,6 @@ html {
   transform: scaleX(1);
 }
 
-/* Slide-in underline for inline links (e.g. "View all testimonials") */
-.slide-link {
-  position: relative;
-}
-.slide-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #5C1808; /* brand-800 */
-  border-radius: 2px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-.slide-link:hover::after {
-  transform: scaleX(1);
-}
-
 /* Typography */
 h1, h2, h3, h4, h5, h6,
 #navbar *,
@@ -112,6 +114,31 @@ button,
 label,
 select {
   font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+/* ---- Section eyebrow labels ---- */
+.section-label,
+.section-label-light {
+  font-weight: 600;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+.section-label       { color: #C8391A; } /* brand-500 */
+.section-label-light { color: #F5EDE0; } /* accent / cream-200 */
+
+/* ---- Icon box (12×12, brand-100 bg, rounded-xl) ---- */
+.icon-box {
+  width: 3rem;
+  height: 3rem;
+  background-color: #FADADD; /* brand-100 */
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* ---- Hero backgrounds ---- */
@@ -148,11 +175,6 @@ select {
 .fade-in:nth-child(8) { transition-delay: 0.56s; }
 
 /* ---- index.html styling ---- */
-
-/*School logo grid placeholders*/
-.school-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
 /* ---- Resource cards ---- */
 .resource-card {
@@ -306,6 +328,38 @@ select {
   transition: opacity 0.15s;
 }
 #tutor-modal-close:hover { opacity: 1; }
+
+/* ---- FAQ accordion ---- */
+
+/* Smooth dropdown via max-height instead of display:none */
+.faq-answer {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity    0.35s ease;
+  max-height: 400px;
+  opacity: 1;
+}
+.faq-answer.hidden {
+  display: block !important;
+  max-height: 0 !important;
+  opacity: 0;
+}
+
+/* + icon — scale + drop-shadow directly on the shape, rotate when open */
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s ease, filter 0.2s ease;
+}
+.faq-question:hover .faq-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 3px 6px rgba(200, 57, 26, 0.45));
+}
+.faq-icon.open {
+  transform: rotate(45deg);
+}
+.faq-question:hover .faq-icon.open {
+  transform: rotate(45deg) scale(1.2);
+}
 
 /* ---- Service cards ---- */
 .service-card {

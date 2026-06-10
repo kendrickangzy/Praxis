@@ -7,21 +7,7 @@
   <meta name="description" content="Free IB Language and Literature guides, tips for Paper 1, Paper 2, and the Individual Oral from Praxis Tuition." />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { 50:"#FEF2F0", 100:"#FADADD", 200:"#F2A99A", 300:"#E8795E", 400:"#D95030", 500:"#C8391A", 600:"#A32D12", 700:"#7E220C", 800:"#5C1808", 900:"#3D1007", 950:"#220904" },
-            cream: { DEFAULT:"#F5EDE0", 50:"#FDFAF7", 100:"#FAF5EE", 200:"#F5EDE0", 300:"#ECD9C4", 400:"#DEC4A8" },
-            ink:   { DEFAULT:"#3D1010", light:"#6B2828" },
-            accent: "#F5EDE0",
-          },
-          fontFamily: { sans: ["Plus Jakarta Sans", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"], serif: ["Times New Roman", "Times", "Georgia", "ui-serif"] },
-        },
-      },
-    };
-  </script>
+  <script src="js/tailwind-config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -39,8 +25,8 @@
   ============================================================ -->
   <section class="hero-inner pt-36 pb-24 px-6 text-white text-center">
     <div class="max-w-3xl mx-auto">
-      <p class="text-accent font-semibold font-serif text-sm uppercase tracking-widest mb-3">Free Study Materials</p>
-      <h1 class="text-5xl font-extrabold mb-5">IB Lang Lit Resources</h1>
+      <p class="section-label-light">Free Study Materials</p>
+      <h1 class="text-5xl font-extrabold mb-5">Not convinced? See it for yourself:</h1>
       <p class="text-white/75 text-lg leading-relaxed">
         Guides, frameworks, and tips for every component of IB Language &amp; Literature SL.
         Free to use — no sign-up required.
@@ -56,7 +42,7 @@
     <div class="max-w-6xl mx-auto">
 
       <div class="text-center mb-14 fade-in">
-        <p class="text-brand-500 font-semibold font-serif text-sm uppercase tracking-widest mb-3">Guides &amp; Frameworks</p>
+        <p class="section-label">Guides &amp; Frameworks</p>
         <h2 class="text-3xl font-bold">Study materials for every component</h2>
       </div>
 
@@ -64,13 +50,13 @@
 
         <!-- Resource Card 1 -->
         <div class="resource-card fade-in bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+          <div class="icon-box mb-5">
             <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
           </div>
           <span class="inline-block bg-brand-100 text-brand-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">Paper 1</span>
-          <h3 class="font-bold text-lg mb-3">The 5-Step Commentary Framework</h3>
+          <h3 class="font-bold text-lg mb-3">IO Notes</h3>
           <p class="text-gray-600 text-sm leading-relaxed mb-6">
             Our structured approach to any unseen text. Covers how to annotate,
             identify formal features, build a thesis, and write under time pressure.
@@ -83,13 +69,13 @@
 
         <!-- Resource Card 2 -->
         <div class="resource-card fade-in bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+          <div class="icon-box mb-5">
             <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
             </svg>
           </div>
           <span class="inline-block bg-purple-100 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">Paper 2</span>
-          <h3 class="font-bold text-lg mb-3">How to Write a Comparative Essay</h3>
+          <h3 class="font-bold text-lg mb-3">P1 Comments</h3>
           <p class="text-gray-600 text-sm leading-relaxed mb-6">
             Step-by-step guide to structuring a Paper 2 essay that meets all
             four assessment criteria — from thesis to conclusion.
@@ -101,13 +87,13 @@
 
         <!-- Resource Card 3 -->
         <div class="resource-card fade-in bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+          <div class="icon-box mb-5">
             <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
             </svg>
           </div>
           <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Individual Oral</span>
-          <h3 class="font-bold text-lg mb-3">IO Preparation Checklist</h3>
+          <h3 class="font-bold text-lg mb-3">P2 Comments</h3>
           <p class="text-gray-600 text-sm leading-relaxed mb-6">
             Everything you need to do before your IO — choosing an extract, framing
             a global issue, structuring your 10-minute presentation, and preparing for questions.
@@ -119,13 +105,13 @@
 
         <!-- Resource Card 4 -->
         <div class="resource-card fade-in bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+          <div class="icon-box mb-5">
             <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
             </svg>
           </div>
           <span class="inline-block bg-brand-100 text-brand-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">Paper 1</span>
-          <h3 class="font-bold text-lg mb-3">Literary Devices Quick Reference</h3>
+          <h3 class="font-bold text-lg mb-3">Night-before-an-exam condensed tips</h3>
           <p class="text-gray-600 text-sm leading-relaxed mb-6">
             A one-page cheat sheet covering 30+ literary and rhetorical devices
             with definitions and examples — ideal for Paper 1 annotation.
@@ -137,7 +123,7 @@
 
         <!-- Resource Card 5 -->
         <div class="resource-card fade-in bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mb-5">
+          <div class="icon-box mb-5">
             <svg class="w-6 h-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
             </svg>
@@ -193,9 +179,9 @@
             <span>What's the difference between Paper 1 and Paper 2?</span>
             <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            Paper 1 is an unseen literary commentary — you're given a previously unseen text and must analyse it in a timed essay.
-            Paper 2 is a comparative essay based on texts you've studied during the course, responding to an unseen question.
+          <div class="faq-answer hidden text-gray-600 text-sm leading-relaxed">
+            <div class="px-6 pb-5">Paper 1 is an unseen literary commentary — you're given a previously unseen text and must analyse it in a timed essay.
+              Paper 2 is a comparative essay based on texts you've studied during the course, responding to an unseen question.</div>
           </div>
         </div>
 
@@ -204,8 +190,8 @@
             <span>How long is the Individual Oral?</span>
             <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            The IO is 15 minutes in total — 10 minutes for your presentation and analysis of a chosen extract, followed by 5 minutes of questions from your teacher.
+          <div class="faq-answer hidden text-gray-600 text-sm leading-relaxed">
+            <div class="px-6 pb-5">The IO is 15 minutes in total — 10 minutes for your presentation and analysis of a chosen extract, followed by 5 minutes of questions from your teacher.</div>
           </div>
         </div>
 
@@ -214,9 +200,9 @@
             <span>What is a "global issue" for the IO?</span>
             <svg class="faq-icon w-5 h-5 text-brand-500 flex-shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-gray-600 text-sm leading-relaxed">
-            A global issue is a significant topic relevant to the real world and to both the literary and non-literary texts you discuss.
-            It must be specific enough to allow real analysis — for example, "the construction of female identity in post-colonial societies" rather than just "identity."
+          <div class="faq-answer hidden text-gray-600 text-sm leading-relaxed">
+            <div class="px-6 pb-5">A global issue is a significant topic relevant to the real world and to both the literary and non-literary texts you discuss.
+              It must be specific enough to allow real analysis — for example, "the construction of female identity in post-colonial societies" rather than just "identity."</div>
           </div>
         </div>
 

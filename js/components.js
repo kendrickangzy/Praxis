@@ -28,20 +28,19 @@ const headerHTML = `
       <li><a href="contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
     </ul>
 
-    <!-- Mobile hamburger -->
+    <!-- Mobile hamburger (morphs to × via CSS) -->
     <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
-      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line class="hamburger-line hamburger-top" x1="4" y1="6"  x2="20" y2="6"/>
+        <line class="hamburger-line hamburger-mid" x1="4" y1="12" x2="20" y2="12"/>
+        <line class="hamburger-line hamburger-bot" x1="4" y1="18" x2="20" y2="18"/>
       </svg>
     </button>
   </nav>
 
   <!-- Mobile dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-brand-900 px-6 pb-4 text-white text-lg font-medium border-t border-white/10 tracking-tight">
-    <ul class="flex flex-col gap-3 pt-4">
+  <div id="mobile-menu" class="md:hidden bg-brand-900 text-white text-lg font-medium tracking-tight">
+    <ul class="flex flex-col gap-3 px-6 pt-4 pb-4 border-t border-white/10">
       <li><a href="about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about"><span class="mobile-nav-text">About Us</span></a></li>
       <li><a href="testimonials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="testimonials"><span class="mobile-nav-text">Testimonials</span></a></li>
       <li><a href="resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources"><span class="mobile-nav-text">Resources</span></a></li>
@@ -140,23 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---- Mobile menu toggle ----
   const menuBtn    = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-  const iconOpen   = document.getElementById("icon-open");
-  const iconClose  = document.getElementById("icon-close");
 
   menuBtn?.addEventListener("click", () => {
-    const isOpen = !mobileMenu.classList.contains("hidden");
-    mobileMenu.classList.toggle("hidden", isOpen);
-    iconOpen.classList.toggle("hidden", !isOpen);
-    iconClose.classList.toggle("hidden", isOpen);
-    // Keep top bar colour consistent with the dropdown beneath it
+    const isOpen = mobileMenu.classList.contains("menu-open");
+    mobileMenu.classList.toggle("menu-open", !isOpen);
     navbar?.classList.toggle("menu-open", !isOpen);
   });
 
   document.querySelectorAll(".mobile-nav-link").forEach((link) => {
     link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-      iconOpen?.classList.remove("hidden");
-      iconClose?.classList.add("hidden");
+      mobileMenu?.classList.remove("menu-open");
       navbar?.classList.remove("menu-open");
     });
   });
