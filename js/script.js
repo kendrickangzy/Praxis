@@ -102,12 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (fadeEls.length > 0) {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+        // Stagger only the elements that enter the viewport together in
+        // this batch — a lone element scrolled into view gets no delay.
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach((entry, i) => {
+            setTimeout(() => entry.target.classList.add("visible"), i * 80);
             observer.unobserve(entry.target);
-          }
-        });
+          });
       },
       { threshold: 0.08 }
     );
