@@ -27,18 +27,17 @@ html {
 }
 
 #navbar.scrolled {
-  background: #3D1007; /* brand-500 — Praxis red */
+  background: #C8391A;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Mobile menu open — top bar matches the brand-500 dropdown beneath it.
-   Placed after .scrolled so it wins when both classes are present.     */
+/* Mobile menu */
 #navbar.menu-open {
-  background: #3D1007; /* brand-500 — same as #mobile-menu bg */
+  background: #C8391A; 
   box-shadow: none;
 }
 
-/* ---- Mobile dropdown smooth slide ---- */
+/* Mobile dropdown smooth slide */
 #mobile-menu {
   max-height: 0;
   overflow: hidden;
@@ -227,20 +226,25 @@ select {
 .testimonial-card {
   width: 26rem;
   flex-shrink: 0;
-  background: #FFFFFF;
+  background: #F5EDE0;
   border-radius: 1rem;
   padding: 2rem;
   border: 1px solid #ECD9C4;
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   color: inherit;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
 }
 
+.testimonial-card > div:last-child {
+  margin-top: auto;
+}
+
 @media (hover: hover) {
   .testimonial-card:hover {
-    transform: translateY(-3%) scale(1.02);
-    box-shadow: 0 14px 30px #d94f3020;
+    transform: translateY(-1%) scale(1.02);
+    box-shadow: 0 5px 20px #d94f3020;
   }
 }
 
@@ -258,7 +262,7 @@ select {
   left: 0;
   right: 0;
   height: 1.5rem;
-  background: linear-gradient(to bottom, transparent, #fff);
+  background: linear-gradient(to bottom, transparent, #F5EDE0);
   pointer-events: none;
 }
 
@@ -292,6 +296,8 @@ select {
   border-radius: 1rem;
   padding: 2rem;
   cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
 }
 
@@ -311,7 +317,7 @@ select {
 }
 
 .tgc-front:hover .tgc-read-hint {
-  color: #7E220C;
+  color: #E8795E;
 }
 
 #tgc-modal {
@@ -390,20 +396,35 @@ select {
   margin-bottom: 0.75rem;
 }
 
+.tutor-info-icon {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgba(61, 16, 7, 0.55);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F5EDE0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .tutor-card-stack:hover .tutor-info-icon {
+    background: rgba(200, 57, 26, 0.9);
+    transform: scale(1.15);
+  }
+}
+
 .tutor-photo-wrap {
   position: absolute;
   inset: 0;
   z-index: 2;
   border-radius: 1rem;
   overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
-}
-
-@media (hover: hover) {
-  .tutor-card-stack:hover .tutor-photo-wrap {
-    transform: translateY(-3%) scale(1.02);
-    box-shadow: 0 14px 30px #d94f3020;
-  }
 }
 
 .tutor-info-wrap {

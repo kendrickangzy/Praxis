@@ -107,11 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
         entries
           .filter((entry) => entry.isIntersecting)
           .forEach((entry, i) => {
-            setTimeout(() => entry.target.classList.add("visible"), i * 80);
+            setTimeout(() => entry.target.classList.add("visible"), i * 90);
             observer.unobserve(entry.target);
           });
       },
-      { threshold: 0.08 }
+      { threshold: 0.09 }
     );
     fadeEls.forEach((el) => observer.observe(el));
   }

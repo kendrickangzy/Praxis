@@ -40,7 +40,7 @@ const headerHTML = `
   </nav>
 
   <!-- Mobile dropdown -->
-  <div id="mobile-menu" class="md:hidden bg-brand-900 text-white text-lg font-medium tracking-tight">
+  <div id="mobile-menu" class="md:hidden bg-brand-500 text-white text-lg font-medium tracking-tight">
     <ul class="flex flex-col gap-3 px-6 pt-4 pb-4 border-t border-white/10">
       <li><a href="index.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="index"><span class="mobile-nav-text">Home</span></a></li>
       <li><a href="about.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about"><span class="mobile-nav-text">About</span></a></li>

@@ -1,11 +1,6 @@
 /* ===========================================================
    PRAXIS — Central testimonials data
-   Edit this file to update both the home-page marquee and
-   the full testimonials page simultaneously.
-
-   Each entry:
      name           — display name
-     initial        — avatar letter fallback (used if logo is empty)
      logo           — path to school logo image, e.g. "assets/logos/uwcsea.png"
      role           — attribution line
      part1          — teaser shown in the marquee preview
@@ -18,7 +13,6 @@ const TESTIMONIALS = [
 
   {
     name:          "Anonymous",
-    initial:       "",
     logo:          "../assets/ACSI.png",
     role:          "Class of '25 - IB SL LL",
     part1:         "Being Jaden's student has been a truly enriching experience. Although I only attended his lessons for around four months, his guidance and advice equipped me with the skills and confidence needed to approach IB LangLit effectively.",
@@ -27,7 +21,6 @@ const TESTIMONIALS = [
   },
   {
     name:          "Anonymous",
-    initial:       "",
     logo:          "../assets/ACSI.png",
     role:          "Class of '25 - IB SL LL",
     part1:         "I joined Praxis midway through Y6 when I realised how challenging writing a comparative essay for P2 was. The lessons were instrumental in deepening my understanding of the texts, strengthening my writing skills, and ultimately helping me perform well for langlit.",
@@ -36,7 +29,6 @@ const TESTIMONIALS = [
   },
   {
     name:          "Anonymous",
-    initial:       "",
     logo:          "../assets/ACSI.png",
     role:          "Class of '25 - IB English EE",
     part1:         "Jonathan and Jaden gave me much assistance in restructuring and editing my EE. Even though the timeline was extremely short, they gave me precise feedback on areas of improvement for my draft.",
@@ -45,15 +37,12 @@ const TESTIMONIALS = [
   },
   {
     name:          "Bianca Wee",
-    initial:       "",
     logo:          "../assets/ACSI.png",
     role:          "Class of '24 - Top in Level for IB SL LL",
     part1:         "Leanne's steadfast support provided the security I needed in Y6, and her rich ideas and eloquent approach to Langlit reshaped my approach to the subject.",
     part2:         "<br/><br/>For P1, Leanne’s lessons encompassed a lot of exposure to so many question types! Leanne offered insights into my P2 texts and scoped down the most relevant quotes and analysis, giving me a lot more structure and confidence in writing the P2.<br/><br/>I particularly liked how Leanne would often thoroughly review our practises, CTs, prelims and provide targeted feedback.",
     showInMarquee: true,
   },
-
-  /* --- Testimonials page only --- */
 
   {
     name:  "Priya N.",
@@ -108,7 +97,7 @@ function _buildMarqueeCard(t, ariaHidden) {
   }
   const avatarHtml = t.logo
     ? `<img src="${t.logo}" alt="${t.name}" class="w-10 h-10 rounded-full object-contain bg-white p-0.5 flex-shrink-0">`
-    : `<div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">${t.initial || ""}</div>`;
+    : "";
   a.innerHTML = `
     <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
     <div class="testimonial-quote-wrap">
@@ -173,7 +162,7 @@ function _buildGridCard(t) {
     <div class="tgc-front">
       <p class="font-serif text-brand-300 text-5xl leading-none mb-3">"</p>
       <p class="text-gray-700 text-sm leading-relaxed mb-4">${t.part1}</p>
-      <p class="tgc-read-hint">Read more →</p>
+      <p class="tgc-read-hint text-right">Read more →</p>
       ${authorHtml}
     </div>
   `;
