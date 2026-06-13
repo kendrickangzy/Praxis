@@ -21,11 +21,12 @@ const headerHTML = `
 
     <!-- Desktop nav links -->
     <ul class="hidden md:flex items-center gap-8 text-xl font-medium text-white tracking-tight">
-      <li><a href="about.html"       class="nav-link hover:text-brand-200 transition-colors" data-page="about">About Us</a></li>
+      <li><a href="index.html" class="nav-link hover:text-brand-200 transition-colors" data-page="index">Home</a></li>
+      <li><a href="about.html" class="nav-link hover:text-brand-200 transition-colors" data-page="about">About</a></li>
       <li><a href="testimonials.html" class="nav-link hover:text-brand-200 transition-colors" data-page="testimonials">Testimonials</a></li>
-      <li><a href="resources.html"   class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
-      <li><a href="careers.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="careers">Careers</a></li>
-      <li><a href="contact.html"     class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
+      <li><a href="resources.html" class="nav-link hover:text-brand-200 transition-colors" data-page="resources">Resources</a></li>
+      <li><a href="careers.html" class="nav-link hover:text-brand-200 transition-colors" data-page="careers">Careers</a></li>
+      <li><a href="contact.html" class="nav-link hover:text-brand-200 transition-colors" data-page="contact">Contact Us</a></li>
     </ul>
 
     <!-- Mobile hamburger (morphs to × via CSS) -->
@@ -41,11 +42,12 @@ const headerHTML = `
   <!-- Mobile dropdown -->
   <div id="mobile-menu" class="md:hidden bg-brand-900 text-white text-lg font-medium tracking-tight">
     <ul class="flex flex-col gap-3 px-6 pt-4 pb-4 border-t border-white/10">
-      <li><a href="about.html"       class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about"><span class="mobile-nav-text">About Us</span></a></li>
+      <li><a href="index.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="index"><span class="mobile-nav-text">Home</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="about"><span class="mobile-nav-text">About</span></a></li>
       <li><a href="testimonials.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="testimonials"><span class="mobile-nav-text">Testimonials</span></a></li>
-      <li><a href="resources.html"   class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources"><span class="mobile-nav-text">Resources</span></a></li>
-      <li><a href="careers.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="careers"><span class="mobile-nav-text">Careers</span></a></li>
-      <li><a href="contact.html"     class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact"><span class="mobile-nav-text">Contact Us</span></a></li>
+      <li><a href="resources.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="resources"><span class="mobile-nav-text">Resources</span></a></li>
+      <li><a href="careers.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="careers"><span class="mobile-nav-text">Careers</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link block hover:text-brand-200 transition-colors" data-page="contact"><span class="mobile-nav-text">Contact Us</span></a></li>
     </ul>
   </div>
 </header>
@@ -64,7 +66,7 @@ const footerHTML = `
       <!-- Brand -->
       <div>
         <div class="flex items-center gap-2 mb-4">
-          <span class="font-medium text-lg text-white tracking-tighter">PRAXIS Education</span>
+          <span class="font-medium font-serif text-lg text-white tracking-tighter">PRAXIS Education</span>
         </div>
         <p class="text-sm tracking-tight leading-relaxed">
           An education centre designed by IB students, for IB students.
@@ -73,20 +75,20 @@ const footerHTML = `
 
       <!-- Navigation -->
       <div>
-        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-widest">Pages</h4>
+        <h4 class="text-white font-medium text-lg mb-4 uppercase">Pages</h4>
         <ul class="space-y-2 text-sm tracking-tight">
-          <li><a href="index.html"       class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="about.html"       class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="testimonials.html" class="hover:text-white transition-colors">Testimonials</a></li>
-          <li><a href="resources.html"   class="hover:text-white transition-colors">Resources</a></li>
-          <li><a href="careers.html"     class="hover:text-white transition-colors">Careers</a></li>
-          <li><a href="contact.html"     class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="resources.html" class="hover:text-white transition-colors">Resources</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
         </ul>
       </div>
 
       <!-- Contact -->
       <div>
-        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-widest">Get In Touch</h4>
+        <h4 class="text-white font-medium text-lg mb-4 uppercase">Get In Touch</h4>
         <ul class="space-y-2 text-sm tracking-tight">
           <li>
             <a href="mailto:hello@praxistuition.com" class="hover:text-white transition-colors">
@@ -120,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footerRoot) footerRoot.innerHTML = footerHTML;
 
   // ---- Active nav link — underline the current page ----
-  const currentPage = window.location.pathname.split("/").pop().replace(".html", "") || "index";
+  const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
   document.querySelectorAll("[data-page]").forEach((link) => {
     if (link.dataset.page === currentPage) {
       link.classList.add("nav-active");

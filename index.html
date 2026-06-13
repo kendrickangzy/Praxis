@@ -18,7 +18,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/style.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="180x180" href="assets/favicon-lg.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-lg.png">
 </head>
@@ -56,41 +55,44 @@
     </div>
   </section>
 
-
   <!-- ============================================================
-       STATISTICS BAR
+       ABOUT US
   ============================================================ -->
   <section class="bg-cream-200 py-14 px-6">
 
-    <div class="max-w-sm mx-auto text-center mb-16 fade-in">
-      <p class="text-brand-500 font-extrabold font-serif text-sm uppercase tracking-wider mb-3">Our Proven Track Record</p>
-    </div>
+    <div class="max-w-xl lg:max-w-6xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
 
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-
-      <div class="fade-in">
-        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100%</p>
-        <p class="text-sm mt-3 leading-snug">of our students improved by at least 1 grade</p>
+      <!-- Our Students Image -->
+      <div class="fade-in lg:col-span-1">
+        <img src="assets/aboutUs.jpeg"
+             alt="Our Students at PRAXIS Education Centre"
+             class="vision-photo w-full aspect-square object-cover rounded-2xl"/>
       </div>
 
-      <div class="fade-in">
-        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">86.4%</p>
-        <p class="text-sm mt-3 leading-snug">scored a '6' or '7' in IB Lang Lit</p>
-      </div>
+      <!-- Our Story Text -->
+      <div class="fade-in lg:col-span-2">
+        <p class="section-label">Who We Are</p>
+        <h2 class="subpage-label mb-6">Our Story</h2>
+        <p class="text-gray-600 mb-5 leading-relaxed">
+          The predominant culture of education is where students are told, “learn it first, hopefully you can use later”. Such a ‘banking system’ of education grooms students to perceive education as a means to an end, when really, it can be so much more.<br/><br/>
+          That’s where PRAXIS transforms individuals.<br/><br/>
+          PRAXIS emphasises the dynamic interplay between theory and practice: where reflection informs practice and practice, in turn, shapes and refines understanding.
+        </p>
 
-      <div class="fade-in">
-        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">6.1</p>
-        <p class="text-sm mt-3 leading-snug">average grade achieved for IB Lang Lit</p>
-      </div>
-
-      <div class="fade-in">
-        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100+</p>
-        <p class="text-sm mt-3 leading-snug">students taught over 3 years</p>
+        <!-- About Us Link -->
+        <div class="mt-10 max-w-6xl mx-auto fade-in">
+          <a href="testimonials.html"
+            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
+            Learn more about us
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
   </section>
-
 
   <!-- ============================================================
        OFFERINGS
@@ -99,8 +101,8 @@
     <div class="max-w-5xl mx-auto">
 
       <div class="max-w-sm mx-auto text-center mb-16 fade-in">
-        <p class="section-label font-extrabold">What We Teach</p>
-        <h2 class="text-4xl font-medium tracking-tight leading-tight">Our Offerings</h2>
+        <p class="section-label">What We Teach</p>
+        <h2 class="subpage-label">Our Offerings</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
@@ -165,139 +167,56 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       STATISTICS BAR
+  ============================================================ -->
+  <section class="bg-cream-200 py-14 px-6">
+
+    <div class="max-w-sm mx-auto text-center mb-16 fade-in">
+      <p class="section-label mb-3">Our Proven Track Record</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+
+      <div class="fade-in">
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100%</p>
+        <p class="text-sm mt-3 leading-snug">of our students improved by at least 1 grade</p>
+      </div>
+
+      <div class="fade-in">
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">86.4%</p>
+        <p class="text-sm mt-3 leading-snug">scored a '6' or '7' in IB Lang Lit</p>
+      </div>
+
+      <div class="fade-in">
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">6.1</p>
+        <p class="text-sm mt-3 leading-snug">average grade achieved for IB Lang Lit</p>
+      </div>
+
+      <div class="fade-in">
+        <p class="font-semibold font-serif text-brand-600 text-6xl tracking-tighter">100+</p>
+        <p class="text-sm mt-3 leading-snug">students taught over 3 years</p>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ============================================================
        TESTIMONIALS
   ============================================================ -->
-  <section class="py-24 bg-cream-200">
+  <section class="py-24 bg-cream-50">
 
     <!-- Heading -->
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-12 fade-in">
-        <p class="section-label font-extrabold">Student Results</p>
-        <h2 class="text-4xl font-medium tracking-tight">What students and parents say</h2>
+        <p class="section-label">Student Results</p>
+        <h2 class="subpage-label">What students and parents say</h2>
       </div>
     </div>
 
     <!-- Marquee strip -->
     <div class="testimonial-marquee-outer overflow-hidden">
-      <div class="fade-in testimonial-track py-2">
-
-        <!-- SET 1 -->
-        <div class="testimonial-card">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework for unseen commentary completely changed the way I approach any text."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">S</div>
-            <div>
-              <p class="font-semibold text-sm">Sofia M.</p>
-              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 6</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "My IO was the component I was most scared of. Praxis ran three full mock orals with me. By the real thing I actually felt prepared — and it showed."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">J</div>
-            <div>
-              <p class="font-semibold text-sm">James T.</p>
-              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "As a parent I appreciated how structured and responsive everything was. My daughter improved a full grade boundary in her mock exams and felt so much more confident going into May."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">A</div>
-            <div>
-              <p class="font-semibold text-sm">Amara K. — Parent</p>
-              <p class="text-gray-400 text-xs">Student achieved a 6</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "The notes PRAXIS provided broke down the marking rubric in a way my school never did. I finally understood what examiners were actually looking for."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">D</div>
-            <div>
-              <p class="font-semibold text-sm">David L.</p>
-              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- SET 2 — duplicate for seamless loop -->
-        <div class="testimonial-card" aria-hidden="true">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "I went from a 4 to a 6 in Paper 1 after just 6 sessions. The framework for unseen commentary completely changed the way I approach any text."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">S</div>
-            <div>
-              <p class="font-semibold text-sm">Sofia M.</p>
-              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 6</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card" aria-hidden="true">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "My IO was the component I was most scared of. Praxis ran three full mock orals with me. By the real thing I actually felt prepared — and it showed."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">J</div>
-            <div>
-              <p class="font-semibold text-sm">James T.</p>
-              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card" aria-hidden="true">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "As a parent I appreciated how structured and responsive everything was. My daughter improved a full grade boundary in her mock exams and felt so much more confident going into May."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">A</div>
-            <div>
-              <p class="font-semibold text-sm">Amara K. — Parent</p>
-              <p class="text-gray-400 text-xs">Student achieved a 6</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card" aria-hidden="true">
-          <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="text-gray-700 leading-relaxed italic mb-6 text-sm">
-            "The notes PRAXIS provided broke down the marking rubric in a way my school never did. I finally understood what examiners were actually looking for."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-500 flex-shrink-0">D</div>
-            <div>
-              <p class="font-semibold text-sm">David L.</p>
-              <p class="text-gray-400 text-xs">IB Year 2 — achieved a 7</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <div id="testimonial-track" class="fade-in testimonial-track py-2"></div>
     </div>
 
     <!-- View all link -->
@@ -317,6 +236,7 @@
   <div id="footer-root"></div>
 
   <script src="js/components.js"></script>
+  <script src="js/testimonials-data.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 Notes for future me:
-- make all the reused components (headers, small header, paragraph text for the subpages) classes in styles.css or reusability
-- run a clean up of the code to remove redundancies
-- make testimonials open up to show more text
-- bring school logos into the testimonial marquee and testimonial page
+- add "info" icon to tutor cards
+- fix testimonial card expansion
+- add a short "about" section to the home page which links to the about page
+- add PRAXIS & the people

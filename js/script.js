@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Feel the PRAXIS difference.",
     ];
 
-    const TYPING_SPEED  = 40;   // ms per character — how fast it types
+    const TYPING_SPEED  = 25;   // ms per character — how fast it types
     const ERASING_SPEED = 20;   // ms per character — how fast it erases
     const PAUSE_AFTER   = 3000; // ms to hold the completed phrase before erasing
     const PAUSE_BEFORE  = 250;  // ms to wait before typing the next phrase
