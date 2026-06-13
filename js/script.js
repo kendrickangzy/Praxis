@@ -33,13 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let charIndex   = 0;
     let isErasing   = false;
 
+    function renderTyped(pi, ci) {
+      const text = phrases[pi].slice(0, ci);
+      // Phrase 2: italicise "Feel" once fully typed
+      if (pi === 2 && ci > 4) return `<em>Feel</em>${text.slice(4)}`;
+      return text;
+    }
+
     function tick() {
       const current = phrases[phraseIndex];
 
       if (!isErasing) {
         // --- TYPING ---
         charIndex++;
-        typewriterEl.textContent = current.slice(0, charIndex);
+        typewriterEl.innerHTML = renderTyped(phraseIndex, charIndex);
         cursorEl?.classList.add("typing");       // solid cursor while typing
 
         if (charIndex === current.length) {
@@ -54,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         // --- ERASING ---
         charIndex--;
-        typewriterEl.textContent = current.slice(0, charIndex);
+        typewriterEl.innerHTML = renderTyped(phraseIndex, charIndex);
         cursorEl?.classList.add("typing");       // solid cursor while erasing
 
         if (charIndex === 0) {
