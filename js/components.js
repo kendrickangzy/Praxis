@@ -133,8 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   // Inner pages always show the solid navbar; home page only after scrolling 80px
   // Solid navbar on all pages except the home hero — detect home page by path
-  const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
-  const handleScroll = () => navbar?.classList.toggle("scrolled", !isHome || window.scrollY > 80);
+  const handleScroll = () => navbar?.classList.toggle("scrolled", window.scrollY > 80);
   window.addEventListener("scroll", handleScroll);
   handleScroll();
 

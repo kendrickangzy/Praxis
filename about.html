@@ -17,21 +17,25 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-lg.png">
 </head>
 
-<body class="bg-cream-200 font-sans text-gray-800 antialiased">
+<body class="font-sans text-gray-800 antialiased">
 
   <div id="header-root"></div>
 
   <!--HEADER-->
-  <section class="pt-36 pb-20 px-6 text-center">
+  <section class="hero-home pt-36 pb-20 px-6 text-center">
     <div class="max-w-xl mx-auto">
-      <p class="section-label">Who We Are</p>
-      <h1 class="page-label">An education centre designed by IB students, for IB students.</h1>
+      <p class="section-label-light">Who We Are</p>
+      <h1 class="page-label !text-cream-200">An education centre designed by IB students, for IB students.</h1>
     </div>
   </section>
 
   <!--OUR VISION-->
-  <section class="pb-24 px-6">
-    <div class="max-w-xl lg:max-w-6xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
+  <section class="bg-cream-200 py-24 px-6 relative overflow-hidden">
+
+    <div class="absolute inset-0 pointer-events-none lg:hidden" style="background:#ECD9C4; clip-path: polygon(0 0, 100% 0, 100% 20%, 0 80%);"></div>
+    <div class="absolute inset-0 pointer-events-none hidden lg:block" style="background:#ECD9C4; clip-path: polygon(0 0, 50% 0, 25% 100%, 0 100%);"></div>
+
+    <div class="relative max-w-xl lg:max-w-6xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
 
       <!--Our Students Image-->
       <div class="fade-in lg:col-span-1">
@@ -94,17 +98,17 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 
         <!--Tutor 1-->
-        <div class="fade-in text-center">
+        <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
           <div class="tutor-card-stack">
             <div class="tutor-photo-wrap">
               <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
             </div>
             <div class="tutor-info-icon font-serif font-medium text-lg"><i>i</i></div>
             <div class="tutor-info-wrap">
-              <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
+              <p class="font-semibold text-brand-700 text-base mb-1">Leanne Man</p>
               <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">English Lang & Lit</p>
               <p class="text-sm text-gray-600 leading-relaxed mb-3">
                 Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
@@ -117,24 +121,24 @@
               </p>
             </div>
           </div>
-          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
+          <p class="font-semibold text-sm text-gray-800">Leanne Man</p>
           <p class="text-xs text-gray-400 mt-1">
-            IB 45 points<br />
-            English EE 'A'<br />
-            ACS (Independent) Alumni<br />
+            IB 45 points<br/>
+            English EE 'A'<br/>
+            ACS (Independent) Alumni<br/>
             NUS Medicine Undergraduate
           </p>
         </div>
 
         <!--Tutor 2-->
-        <div class="fade-in text-center">
+        <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
           <div class="tutor-card-stack">
             <div class="tutor-photo-wrap">
               <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
             </div>
             <div class="tutor-info-icon font-serif font-medium text-lg"><i>i</i></div>
             <div class="tutor-info-wrap">
-              <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
+              <p class="font-semibold text-brand-700 text-base mb-1">Jaden Soo</p>
               <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">English Lang & Lit</p>
               <p class="text-sm text-gray-600 leading-relaxed mb-3">
                 Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
@@ -147,17 +151,17 @@
               </p>
             </div>
           </div>
-          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
+          <p class="font-semibold text-sm text-gray-800">Jaden Soo</p>
           <p class="text-xs text-gray-400 mt-1">
-            IB 45 points<br />
-            English EE 'A'<br />
-            ACS (Independent) Alumni<br />
+            IB 45 points<br/>
+            English EE 'A'<br/>
+            ACS (Independent) Alumni<br/>
             NUS Medicine Undergraduate
           </p>
         </div>
 
         <!--Tutor 3-->
-        <div class="fade-in text-center">
+        <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
           <div class="tutor-card-stack">
             <div class="tutor-photo-wrap">
               <img src="assets/Jonathan.jpeg" alt="Jonathan Yeoh - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
@@ -166,7 +170,7 @@
             <div class="tutor-info-wrap">
               <p class="font-semibold text-brand-700 text-base mb-1">Jonathan Yeoh</p>
               <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
-                ACS (Independent) Alumni <br />
+                ACS (Independent) Alumni <br/>
                 Incoming NUS Law Undergraduate
               </p>
               <p class="text-sm text-gray-600 leading-relaxed mb-3">
@@ -182,13 +186,13 @@
           </div>
           <p class="font-semibold text-sm text-gray-800">Jonathan Yeoh</p>
           <p class="text-xs text-gray-400 mt-1">
-            ACS (Independent) Alumni<br />
+            ACS (Independent) Alumni<br/>
             Incoming NUS Law Undergraduate
           </p>
         </div>
 
         <!--Tutor 4-->
-        <div class="fade-in text-center">
+        <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
           <div class="tutor-card-stack">
             <div class="tutor-photo-wrap">
               <img src="assets/Erynn.jpeg" alt="Erynn Huen - PRAXIS Tutor" class="w-full h-full object-cover object-top" />
@@ -197,23 +201,19 @@
             <div class="tutor-info-wrap">
               <p class="font-semibold text-brand-700 text-base mb-1">Erynn Huen</p>
               <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
-                ACS (Independent) Alumni<br />
+                ACS (Independent) Alumni<br/>
                 NUS Medicine Undergraduate
               </p>
               <p class="text-sm text-gray-600 leading-relaxed mb-3">
-                Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.
-              </p>
-              <p class="text-sm text-gray-600 leading-relaxed mb-3">
-                Achieved an 'A' for her Extended Essay in English, graduating from ACS (Independent).
-              </p>
-              <p class="text-sm text-gray-600 leading-relaxed">
+                Graduated with a perfect IB score of 45 points — placing her among the top scorers globally.<br/><br/>
+                Achieved an 'A' for her Extended Essay in English, graduating from ACS (Independent).<br/><br/>
                 Currently an undergraduate at NUS Medicine, bringing proven academic excellence and a genuine passion for teaching Language and Literature.
               </p>
             </div>
           </div>
           <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
           <p class="text-xs text-gray-400 mt-1">
-            ACS (Independent) Alumni<br />
+            ACS (Independent) Alumni<br/>
             NUS Medicine Undergraduate
           </p>
         </div>

@@ -9,6 +9,8 @@
      showInMarquee  — true to include in the home-page marquee
    =========================================================== */
 
+let _activeTgcFront = null;
+
 const TESTIMONIALS = [
 
   {
@@ -167,12 +169,13 @@ function _buildGridCard(t) {
     </div>
   `;
 
-  wrapper.querySelector(".tgc-front").addEventListener("click", () => {
+  const front = wrapper.querySelector(".tgc-front");
+  front.addEventListener("click", () => {
     const modal      = document.getElementById("tgc-modal");
     const modalInner = document.getElementById("tgc-modal-inner");
     const modalBody  = document.getElementById("tgc-modal-body");
 
-    const rect = wrapper.querySelector(".tgc-front").getBoundingClientRect();
+    const rect = front.getBoundingClientRect();
     const dx = (rect.left + rect.width  / 2) - window.innerWidth  / 2;
     const dy = rect.bottom                   - window.innerHeight / 2;
     modalInner.style.transformOrigin = `calc(50% + ${dx}px) calc(50% + ${dy}px)`;
@@ -183,6 +186,8 @@ function _buildGridCard(t) {
       ${authorHtml}
     `;
 
+    _activeTgcFront = front;
+    front.classList.add("tgc-shrunk");
     modal.classList.add("show");
   });
 
@@ -217,7 +222,13 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.body.appendChild(tgcModal);
 
-    function closeTgcModal() { tgcModal.classList.remove("show"); }
+    function closeTgcModal() {
+      tgcModal.classList.remove("show");
+      setTimeout(() => {
+        _activeTgcFront?.classList.remove("tgc-shrunk");
+        _activeTgcFront = null;
+      }, 0);
+    }
     tgcModal.querySelector("#tgc-modal-close").addEventListener("click", closeTgcModal);
     tgcModal.addEventListener("click", (e) => { if (e.target === tgcModal) closeTgcModal(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeTgcModal(); });

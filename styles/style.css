@@ -124,7 +124,7 @@ select {
   letter-spacing: -0.05em; 
 }
 .page-label {
-    color: #7E220C;
+    color: #F5EDE0;
 }
 
 
@@ -137,8 +137,8 @@ select {
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
 }
-.section-label       { color: #C8391A; } /* brand-500 */
-.section-label-light { color: #F5EDE0; } /* accent / cream-200 */
+.section-label       { color: #D95030; } /* brand-500 */
+.section-label-light { color: #FFFFFF; } /* accent / cream-200 */
 
 /* ---- Icon box (12×12, brand-100 bg, rounded-xl) ---- */
 .icon-box {
@@ -298,7 +298,13 @@ select {
   cursor: pointer;
   height: 100%;
   box-sizing: border-box;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, opacity 0.3s ease;
+}
+
+.tgc-front.tgc-shrunk {
+  transform: scale(0.7);
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (hover: hover) {
