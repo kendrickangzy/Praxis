@@ -168,12 +168,26 @@ select {
 .fade-in {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.1s ease, transform 0.1s ease;
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ---- Diagonal slash slide-in ---- */
+.slash-overlay,
+.slash-overlay-r {
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slash-overlay   { transform: translateX(-100%); }
+.slash-overlay-r { transform: translateX(100%); }
+
+.slash-overlay.visible,
+.slash-overlay-r.visible {
+  transform: translateX(0);
 }
 
 /* ---- Resource cards ---- */
@@ -309,7 +323,7 @@ select {
 
 @media (hover: hover) {
   .tgc-front:hover {
-    transform: translateY(-3%) scale(1.02);
+    transform: translateY(-1%) scale(1.01);
     box-shadow: 0 14px 30px #d94f3020;
   }
 }

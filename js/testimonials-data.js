@@ -98,7 +98,7 @@ function _buildMarqueeCard(t, ariaHidden) {
     a.setAttribute("tabindex", "-1");
   }
   const avatarHtml = t.logo
-    ? `<img src="${t.logo}" alt="${t.name}" class="w-10 h-10 rounded-full object-contain bg-white p-0.5 flex-shrink-0">`
+    ? `<img src="${t.logo}" alt="${t.name}" class="w-10 h-10 rounded-full object-contain p-0.5 flex-shrink-0">`
     : "";
   a.innerHTML = `
     <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -160,6 +160,15 @@ function _buildGridCard(t) {
       </div>
     </div>`;
 
+  const modalAuthorHtml = `
+    <div class="flex items-center ${t.logo ? "gap-3" : ""} mb-6">
+      ${logoHtml}
+      <div>
+        <p class="font-semibold text-lg text-gray-800">${t.name}</p>
+        <p class="text-sm text-gray-500 mt-0.5">${t.role}</p>
+      </div>
+    </div>`;
+
   wrapper.innerHTML = `
     <div class="tgc-front">
       <p class="font-serif text-brand-300 text-5xl leading-none mb-3">"</p>
@@ -181,9 +190,8 @@ function _buildGridCard(t) {
     modalInner.style.transformOrigin = `calc(50% + ${dx}px) calc(50% + ${dy}px)`;
 
     modalBody.innerHTML = `
-      <p class="font-serif text-brand-300 text-5xl leading-none mb-3">"</p>
-      <p class="text-gray-700 text-sm leading-relaxed mb-6">${t.part1}${t.part2}</p>
-      ${authorHtml}
+      ${modalAuthorHtml}
+      <p class="text-gray-700 text-base leading-relaxed">${t.part1}${t.part2}</p>
     `;
 
     _activeTgcFront = front;

@@ -123,6 +123,22 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeEls.forEach((el) => observer.observe(el));
   }
 
+  const slashEls = document.querySelectorAll(".slash-overlay, .slash-overlay-r");
+  if (slashEls.length > 0) {
+    const slashParents = new Set([...slashEls].map((el) => el.parentElement));
+    const slashObserver = new IntersectionObserver(
+      (entries) => {
+        entries.filter((e) => e.isIntersecting).forEach((e) => {
+          e.target.querySelectorAll(".slash-overlay, .slash-overlay-r")
+            .forEach((el) => el.classList.add("visible"));
+          slashObserver.unobserve(e.target);
+        });
+      },
+      { threshold: 0.15 }
+    );
+    slashParents.forEach((el) => slashObserver.observe(el));
+  }
+
 
   /* ---------------------------------------------------------------
      TUTOR CARD MODAL (about.html)
