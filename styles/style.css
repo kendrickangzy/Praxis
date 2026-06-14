@@ -19,6 +19,7 @@
 /* ---- Base ---- */
 html {
   scroll-behavior: smooth;
+  font-size: 18px
 }
 
 /* ---- Navbar ---- */
@@ -117,15 +118,18 @@ select {
 /* ---- Title Styling ---- */
 /* h1, h2 */
 .page-label,
-.subpage-label {
+.subpage-label,
+.subpage-label-light {
   font-size: 3rem;
   line-height: 1.25; 
   font-weight: 500; 
   letter-spacing: -0.05em; 
 }
 .page-label {
-    color: #F5EDE0;
+  color: #F5EDE0;
 }
+.subpage-label { color: #A32D12; }
+.subpage-label-light { color: #ECD9C4; }
 
 
 .section-label,
