@@ -118,39 +118,17 @@ function _buildMarqueeCard(t, ariaHidden) {
 }
 
 
-/* ---  Full card renderer (testimonials.html)
-        Cards without part2 are static display only.
-        Cards with part2 flip open to fill the screen on click.              */
+/* ---  Unified card renderer (testimonials.html)
+        All cards share one visual style (.tgc-front).
+        Cards with part2 are expandable; cards without are static.          */
 function _buildGridCard(t) {
-
-  /* --- Static card (no expandable content) --- */
-  if (!t.part2) {
-    const div = document.createElement("div");
-    div.className = "fade-in bg-cream-200 rounded-2xl p-8 testimonials-grid-card";
-    const logoHtml = t.logo
-      ? `<img src="${t.logo}" alt="${t.name}" class="h-8 w-auto max-w-[3rem] object-contain flex-shrink-0">`
-      : "";
-    div.innerHTML = `
-      <p class="font-serif text-brand-300 text-5xl leading-none mb-3">"</p>
-      <p class="text-gray-700 text-sm leading-relaxed mb-6">${t.part1}</p>
-      <div class="${t.logo ? "flex items-center gap-3" : ""}">
-        ${logoHtml}
-        <div>
-          <p class="font-semibold text-sm text-gray-800">${t.name}</p>
-          <p class="text-xs text-gray-500 mt-1">${t.role}</p>
-        </div>
-      </div>
-    `;
-    return div;
-  }
-
-  /* --- Expandable card --- */
   const wrapper = document.createElement("div");
   wrapper.className = "fade-in";
 
   const logoHtml = t.logo
     ? `<img src="${t.logo}" alt="${t.name}" class="h-8 w-auto max-w-[3rem] object-contain flex-shrink-0">`
     : "";
+
   const authorHtml = `
     <div class="${t.logo ? "flex items-center gap-3" : ""}">
       ${logoHtml}
@@ -160,44 +138,47 @@ function _buildGridCard(t) {
       </div>
     </div>`;
 
-  const modalAuthorHtml = `
-    <div class="flex items-center ${t.logo ? "gap-3" : ""} mb-6">
-      ${logoHtml}
-      <div>
-        <p class="font-semibold text-lg text-gray-800">${t.name}</p>
-        <p class="text-sm text-gray-500 mt-0.5">${t.role}</p>
-      </div>
-    </div>`;
-
   wrapper.innerHTML = `
-    <div class="tgc-front">
+    <div class="tgc-front${t.part2 ? "" : " tgc-static"}">
       <p class="font-serif text-brand-300 text-5xl leading-none mb-3">"</p>
-      <p class="text-gray-700 text-sm leading-relaxed mb-4">${t.part1}</p>
-      <p class="tgc-read-hint text-right">Read more →</p>
+      <p class="text-gray-700 text-sm leading-relaxed ${t.part2 ? "mb-4" : "mb-6"}">${t.part1}</p>
+      ${t.part2 ? '<p class="tgc-read-hint text-right">Read more →</p>' : ""}
       ${authorHtml}
     </div>
   `;
 
-  const front = wrapper.querySelector(".tgc-front");
-  front.addEventListener("click", () => {
-    const modal      = document.getElementById("tgc-modal");
-    const modalInner = document.getElementById("tgc-modal-inner");
-    const modalBody  = document.getElementById("tgc-modal-body");
+  if (t.part2) {
+    const front = wrapper.querySelector(".tgc-front");
 
-    const rect = front.getBoundingClientRect();
-    const dx = (rect.left + rect.width  / 2) - window.innerWidth  / 2;
-    const dy = rect.bottom                   - window.innerHeight / 2;
-    modalInner.style.transformOrigin = `calc(50% + ${dx}px) calc(50% + ${dy}px)`;
+    const modalAuthorHtml = `
+      <div class="flex items-center ${t.logo ? "gap-3" : ""} mb-6">
+        ${logoHtml}
+        <div>
+          <p class="font-semibold text-lg text-gray-800">${t.name}</p>
+          <p class="text-sm text-gray-500 mt-0.5">${t.role}</p>
+        </div>
+      </div>`;
 
-    modalBody.innerHTML = `
-      ${modalAuthorHtml}
-      <p class="text-gray-700 text-base leading-relaxed">${t.part1}${t.part2}</p>
-    `;
+    front.addEventListener("click", () => {
+      const modal      = document.getElementById("tgc-modal");
+      const modalInner = document.getElementById("tgc-modal-inner");
+      const modalBody  = document.getElementById("tgc-modal-body");
 
-    _activeTgcFront = front;
-    front.classList.add("tgc-shrunk");
-    modal.classList.add("show");
-  });
+      const rect = front.getBoundingClientRect();
+      const dx = (rect.left + rect.width  / 2) - window.innerWidth  / 2;
+      const dy = rect.bottom                   - window.innerHeight / 2;
+      modalInner.style.transformOrigin = `calc(50% + ${dx}px) calc(50% + ${dy}px)`;
+
+      modalBody.innerHTML = `
+        ${modalAuthorHtml}
+        <p class="text-gray-700 text-base leading-relaxed">${t.part1}${t.part2}</p>
+      `;
+
+      _activeTgcFront = front;
+      front.classList.add("tgc-shrunk");
+      modal.classList.add("show");
+    });
+  }
 
   return wrapper;
 }
@@ -209,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* index.html marquee — SET1 then SET2 for the seamless CSS loop */
   const track = document.getElementById("testimonial-track");
   if (track) {
-    const marqueeItems = TESTIMONIALS.filter(t => t.showInMarquee);
+    const marqueeItems = TESTIMONIALS;
     marqueeItems.forEach(t => track.appendChild(_buildMarqueeCard(t, false)));
     marqueeItems.forEach(t => track.appendChild(_buildMarqueeCard(t, true)));
   }

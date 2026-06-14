@@ -171,4 +171,190 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeTutorModal(); });
   }
 
+
+  /* ---------------------------------------------------------------
+     RESOURCE IMAGE CAROUSEL (resources.html)
+     Inline carousel with side peek previews, caption and link.
+  --------------------------------------------------------------- */
+  const rcCarousel = document.getElementById("resource-carousel");
+
+  if (rcCarousel) {
+    const RC_GALLERY = [...document.querySelectorAll("#rc-gallery-data > [data-src]")].map(el => ({
+      src:      el.dataset.src,
+      title:    el.dataset.title   || "",
+      caption:  el.dataset.caption || "",
+      href:     el.dataset.href    || "#",
+      showLink: el.classList.contains("rc-show-link"),
+    }));
+    if (!RC_GALLERY.length) return;
+
+    const rcMainCell = document.getElementById("rc-main-cell");
+    const rcMainImg  = document.getElementById("rc-main-img");
+    const rcPrevImg  = document.getElementById("rc-prev-img");
+    const rcNextImg  = document.getElementById("rc-next-img");
+    const rcPeekPrev = document.getElementById("rc-peek-prev");
+    const rcPeekNext = document.getElementById("rc-peek-next");
+    const rcPrevBtn  = document.getElementById("rc-prev-btn");
+    const rcNextBtn  = document.getElementById("rc-next-btn");
+    const rcTitle    = document.getElementById("rc-caption-title");
+    const rcText     = document.getElementById("rc-caption-text");
+    const rcLink     = document.getElementById("rc-read-link");
+    const rcDotsEl   = document.getElementById("rc-dots");
+
+    RC_GALLERY.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.className = "rc-dot";
+      dot.addEventListener("click", () => rcUpdate(i, true));
+      rcDotsEl.appendChild(dot);
+    });
+
+    let rcIndex     = 0;
+    let rcAnimating = false;
+
+    function rcUpdate(newIndex, animate) {
+      const item = RC_GALLERY[newIndex];
+      const prev = RC_GALLERY[(newIndex - 1 + RC_GALLERY.length) % RC_GALLERY.length];
+      const next = RC_GALLERY[(newIndex + 1) % RC_GALLERY.length];
+
+      rcPrevImg.src = prev.src;
+      rcNextImg.src = next.src;
+      rcPeekPrev.classList.remove("rc-hidden");
+      rcPeekNext.classList.remove("rc-hidden");
+      rcPrevBtn.disabled  = false;
+      rcNextBtn.disabled  = false;
+      rcTitle.textContent = item.title;
+      rcText.textContent  = item.caption;
+      rcLink.href         = item.href;
+      rcLink.style.display = item.showLink ? "" : "none";
+      rcDotsEl.querySelectorAll(".rc-dot").forEach((d, i) => {
+        d.classList.toggle("rc-dot-active", i === newIndex);
+      });
+
+      if (animate && !rcAnimating) {
+        const wrapFwd = rcIndex === RC_GALLERY.length - 1 && newIndex === 0;
+        const wrapBwd = rcIndex === 0 && newIndex === RC_GALLERY.length - 1;
+        const dir     = wrapFwd ? 1 : wrapBwd ? -1 : newIndex > rcIndex ? 1 : -1;
+        rcIndex     = newIndex;
+        rcAnimating = true;
+
+        const DURATION = 380;
+        const EASE     = "cubic-bezier(0.4,0,0.2,1)";
+        const cellH    = rcMainCell.offsetHeight;
+        const SLOT_CSS = "width:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0 1.5rem;box-sizing:border-box";
+        const IMG_CSS  = `max-width:100%;max-height:${cellH}px;object-fit:contain;border-radius:0.75rem;box-shadow:0 16px 48px rgba(61,16,7,0.18);transition:transform ${DURATION}ms ${EASE}`;
+
+        const makeSlot = (src) => {
+          const slot = document.createElement("div");
+          slot.style.cssText = SLOT_CSS;
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "";
+          img.style.cssText = IMG_CSS;
+          slot.appendChild(img);
+          return slot;
+        };
+
+        const outSlot = makeSlot(rcMainImg.src);
+        const incSlot = makeSlot(item.src);
+        const outImg  = outSlot.querySelector("img");
+        const incImg  = incSlot.querySelector("img");
+
+        // Incoming starts at peek scale so it appears to grow from the preview
+        incImg.style.transform = "scale(0.6)";
+
+        // Track is 200% wide; we show either the left or right half
+        const track = document.createElement("div");
+        track.style.cssText = [
+          "position:absolute", "top:0", "left:0",
+          "display:flex", "align-items:center",
+          "width:200%", `height:${cellH}px`,
+          `transform:translateX(${dir > 0 ? "0" : "-50%"})`,
+          `transition:transform ${DURATION}ms ${EASE}`,
+        ].join(";");
+
+        if (dir > 0) {
+          track.appendChild(outSlot); // outgoing (left)
+          track.appendChild(incSlot); // incoming (right)
+        } else {
+          track.appendChild(incSlot); // incoming (left)
+          track.appendChild(outSlot); // outgoing (right)
+        }
+
+        rcMainImg.style.visibility = "hidden";
+        rcMainCell.appendChild(track);
+
+        track.getBoundingClientRect(); // force reflow before transition
+
+        track.style.transform  = `translateX(${dir > 0 ? "-50%" : "0"})`;
+        outImg.style.transform = "scale(0.6)";
+        incImg.style.transform = "scale(1)";
+
+        setTimeout(() => {
+          rcMainImg.src              = item.src;
+          rcMainImg.style.visibility = "";
+          track.remove();
+          rcAnimating = false;
+        }, DURATION);
+
+      } else {
+        rcMainImg.src = item.src;
+        rcIndex = newIndex;
+      }
+    }
+
+    rcUpdate(0, false);
+
+    const rcPrev = () => rcUpdate((rcIndex - 1 + RC_GALLERY.length) % RC_GALLERY.length, true);
+    const rcNext = () => rcUpdate((rcIndex + 1) % RC_GALLERY.length, true);
+
+    rcPeekPrev.addEventListener("click", rcPrev);
+    rcPeekNext.addEventListener("click", rcNext);
+    rcPrevBtn.addEventListener("click", rcPrev);
+    rcNextBtn.addEventListener("click", rcNext);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft")  rcPrev();
+      if (e.key === "ArrowRight") rcNext();
+    });
+
+    /* PDF viewer modal */
+    const pdfModal = document.createElement("div");
+    pdfModal.id = "pdf-modal";
+    pdfModal.innerHTML = `
+      <div id="pdf-modal-inner">
+        <button id="pdf-modal-close" aria-label="Close">×</button>
+        <iframe id="pdf-frame" src="" allow="autoplay"></iframe>
+      </div>`;
+    document.body.appendChild(pdfModal);
+
+    const pdfFrame = document.getElementById("pdf-frame");
+
+    function toEmbedUrl(href) {
+      if (href.includes("docs.google.com/document"))
+        return href.replace(/\/edit.*$/, "/preview");
+      if (href.includes("docs.google.com/spreadsheets") || href.includes("docs.google.com/presentation"))
+        return href.replace(/\/edit.*$/, "/preview");
+      return href;
+    }
+
+    function openPdf(href) {
+      pdfFrame.src = toEmbedUrl(href);
+      pdfModal.classList.add("show");
+    }
+
+    function closePdf() {
+      pdfModal.classList.remove("show");
+      setTimeout(() => { pdfFrame.src = ""; }, 200);
+    }
+
+    rcLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openPdf(rcLink.href);
+    });
+
+    document.getElementById("pdf-modal-close").addEventListener("click", closePdf);
+    pdfModal.addEventListener("click", (e) => { if (e.target === pdfModal) closePdf(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePdf(); });
+  }
+
 });

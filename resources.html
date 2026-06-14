@@ -33,95 +33,112 @@
 
 
   <!-- ============================================================
-       RESOURCE CARDS
+       RESOURCE CAROUSEL
   ============================================================ -->
-  <section class="py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
+  <section class="pt-24 pb-10 bg-cream-200">
 
+    <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-14 fade-in">
         <p class="section-label">Guides &amp; Frameworks</p>
         <h2 class="subpage-label">Study materials for every component</h2>
       </div>
+    </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+    <!-- Add images here — one <div> per slide. No JS changes needed. -->
+    <div id="rc-gallery-data" hidden>
+      <div data-src="assets/Resource-Media/IO-Sample.jpeg"
+           data-title="1-1 Private Consultations"
+           data-caption="IO Sample Script"
+           data-href="https://docs.google.com/document/d/1i-GblR3k2eKiWHnnnNgQCnnkzPGAI3oUwt1OhCaPog8/edit?usp=sharing"
+           class="rc-show-link"></div>
+      <div data-src="assets/Resource-Media/Paper1-Review.jpeg"
+           data-title="IB SL LL Group Classes"
+           data-caption="Going through Paper 1 sample essays"
+           data-href="#"></div>
+      <div data-src="assets/Resource-Media/Paper2-PYP.jpeg"
+           data-title="PRAXIS Signature Services"
+           data-caption="Our 4-Day feedback system"
+           data-href="#"></div>
+      <div data-src="assets/Resource-Media/Paper2-Annotation.jpeg"
+           data-title="IB SL LL Group Classes"
+           data-caption="Annotating P2 literary texts together"
+           data-href="#"></div>
+      <div data-src="assets/Resource-Media/4Day-Feedback.jpeg"
+           data-title="IB SL LL Group Classes"
+           data-caption="Unpacking Past IB questions in class"
+           data-href="#"></div>
+    </div>
 
-        <!-- Resource Card 1 -->
-        <div class="resource-card fade-in bg-cream-200 border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <p class="text-lg text-brand-500 uppercase tracking-widest font-semibold font-serif mb-2">IO Notes</p>
-          <div class="w-8 h-0.5 bg-brand-200 mb-6"></div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">
-            Our structured approach to any unseen text. Covers how to annotate,
-            identify formal features, build a thesis, and write under time pressure.
-          </p>
-          <a href="#"
-            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
-            Read Guide
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
+    <div id="resource-carousel" class="fade-in">
+      <div id="rc-stage">
+        <div id="rc-peek-prev" class="rc-peek">
+          <img id="rc-prev-img" alt="" />
         </div>
-
-        <!-- Resource Card 2 -->
-        <div class="resource-card fade-in bg-cream-200 border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <p class="text-lg text-brand-500 uppercase tracking-widest font-semibold font-serif mb-2">P1 Comments</p>
-          <div class="w-8 h-0.5 bg-brand-200 mb-6"></div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">
-            Our structured approach to any unseen text. Covers how to annotate,
-            identify formal features, build a thesis, and write under time pressure.
-          </p>
-          <a href="#"
-            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
-            Read Guide
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
+        <div id="rc-main-cell">
+          <img id="rc-main-img" alt="" />
         </div>
-
-        <!-- Resource Card 3 -->
-        <div class="resource-card fade-in bg-cream-200 border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <p class="text-lg text-brand-500 uppercase tracking-widest font-semibold font-serif mb-2">P2 Comments</p>
-          <div class="w-8 h-0.5 bg-brand-200 mb-6"></div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">
-            Our structured approach to any unseen text. Covers how to annotate,
-            identify formal features, build a thesis, and write under time pressure.
-          </p>
-          <a href="#"
-            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
-            Read Guide
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
+        <div id="rc-peek-next" class="rc-peek">
+          <img id="rc-next-img" alt="" />
         </div>
+        <button id="rc-prev-btn" aria-label="Previous">&#8249;</button>
+        <button id="rc-next-btn" aria-label="Next">&#8250;</button>
+      </div>
 
-        <!-- Resource Card 4 -->
-        <div class="resource-card fade-in bg-cream-200 border border-gray-100 rounded-2xl p-8 shadow-sm">
-          <p class="text-lg text-brand-500 uppercase tracking-widest font-semibold font-serif mb-2">Night-before-an-exam Condensed Tips</p>
-          <div class="w-8 h-0.5 bg-brand-200 mb-6"></div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6">
-            Our structured approach to any unseen text. Covers how to annotate,
-            identify formal features, build a thesis, and write under time pressure.
-          </p>
-          <a href="#"
-            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
-            Read Guide
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
+      <div id="rc-caption">
+        <div id="rc-dots"></div>
+        <p id="rc-caption-title"></p>
+        <p id="rc-caption-text"></p>
+        <a id="rc-read-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-sm tracking-tight">
+          See Full Document
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
+
   </section>
 
+  <!-- ============================================================
+       PRAXIS&PEOPLE
+  ============================================================ -->
+  <section class="bg-brand-600 overflow-hidden lg:grid lg:grid-cols-2 lg:items-stretch">
+
+    <div class="fade-in px-6 pt-12 pb-12 lg:col-span-2 mx-24">
+      <h2 class="subpage-label text-cream-300 mb-6"><i>PRAXIS&amp;People</i> - our post-IB community</h2>
+      <p class="text-cream-50 leading-relaxed">
+        The predominant culture of education is where students are told, “learn it first, hopefully you can use it later". Such a ‘banking system’ of education grooms students to perceive education as a means to an end when really, it can be so much more.<br/><br/>
+        That’s where praxis transforms individuals.<br/><br/>
+        Praxis emphasises the dynamic interplay between theory and practice: where reflection informs practice and practice, in turn, shapes and refines understanding. At PRAXIS, we show how one’s education applies practically in reality. We show how education can be a tool of empowerment:<br/><br/>
+        For one to discover their passions;<br/>Find and form community that uplifts and inspires; and<br/>Take control of their reality.<br/><br/>
+      </p>
+    </div>
+
+    <!-- Row 2: Video — spans both columns, full-width -->
+    <div class="lg:col-span-2 fade-in px-32 pb-12 bg-brand-600">
+      <video class="w-full block" autoplay muted loop playsinline>
+        <source src="assets/PraxisAndPeople/PRAXISandPeople-Video.MP4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="fade-in px-32 py-12 bg-cream-200">
+      <h2 class="subpage-label text-brand-600 mb-6">Not just any tuition centre</h2>
+      <p class="text-brand-500 mb-5 leading-relaxed">
+        PRAXIS students have access to a network of individuals from various top universities in a diversity of disciplines. This way, our students aren’t alone when navigating the oftentimes confusing post-IB pathways.<br/><br/>
+        In August 2025, PRAXIS organised a PRAXIS&People event, where PRAXIS students could meet seniors studying in different universities, local and overseas, to discover more about the university and the application process. More importantly, it was for our students to meet new people and build community!
+      </p>
+    </div>
+
+    <div class="lg:block relative overflow-hidden fade-in">
+      <img src="assets/PraxisAndPeople/PRAXISandPeople-Group.jpeg"
+           alt="Our Students at PRAXIS Education Centre"
+           class="absolute inset-0 w-full object-cover object-top"/>
+    </div>
+
+  </section>
 
   <!-- ============================================================
        FAQ — Resources-specific
   ============================================================ -->
-  <section class="py-20 px-6 bg-cream-200">
+  <section class="py-20 px-6 bg-cream-50">
     <div class="max-w-3xl mx-auto">
 
       <div class="text-center mb-12 fade-in">

@@ -234,7 +234,7 @@ select {
   display: flex;
   gap: 1.5rem;
   width: max-content;
-  animation: testimonial-scroll 32s linear infinite;
+  animation: testimonial-scroll 64s linear infinite;
 }
 
 .testimonial-card {
@@ -304,9 +304,9 @@ select {
   }
 }
 
-/* ---- Testimonials expandable cards ---- */
+/* ---- Testimonials cards ---- */
 .tgc-front {
-  background: #F5EDE0;
+  background: #ECD9C4;
   border-radius: 1rem;
   padding: 2rem;
   cursor: pointer;
@@ -321,8 +321,12 @@ select {
   pointer-events: none;
 }
 
+.tgc-front.tgc-static {
+  cursor: default;
+}
+
 @media (hover: hover) {
-  .tgc-front:hover {
+  .tgc-front:not(.tgc-static):hover {
     transform: translateY(-1%) scale(1.01);
     box-shadow: 0 14px 30px #d94f3020;
   }
@@ -336,7 +340,7 @@ select {
   transition: color 0.15s ease;
 }
 
-.tgc-front:hover .tgc-read-hint {
+.tgc-front:not(.tgc-static):hover .tgc-read-hint {
   color: #E8795E;
 }
 
@@ -401,7 +405,6 @@ select {
 
 /*Vision photo*/
 .vision-photo {
-  border-radius: 1rem; /* matches rounded-2xl */
   overflow: hidden;    /* clips the image cleanly on scale */
   box-shadow: 0 4px 10px rgba(200, 57, 26, 0.35);
 }
@@ -543,3 +546,219 @@ select {
 .service-card:hover {
   box-shadow: 0 8px 32px rgba(200, 57, 26, 0.12);
 }
+
+/* ---- Resource inline carousel ---- */
+#rc-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 14% 1fr 14%;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Gradient fades blending peek images into the cream background */
+#rc-stage::before,
+#rc-stage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: 2;
+  pointer-events: none;
+}
+#rc-stage::before {
+  left: 0;
+  background: linear-gradient(to right, #F5EDE0 20%, transparent 100%);
+}
+#rc-stage::after {
+  right: 0;
+  background: linear-gradient(to left, #F5EDE0 20%, transparent 100%);
+}
+
+/* Peek panels */
+.rc-peek {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.rc-peek:hover { opacity: 0.78; }
+.rc-peek.rc-hidden { opacity: 0; pointer-events: none; }
+
+#rc-peek-prev { justify-content: flex-end; }
+#rc-peek-next { justify-content: flex-start; }
+
+.rc-peek img {
+  height: 65%;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+}
+
+/* Main image */
+#rc-main-cell {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+#rc-main-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  box-shadow: 0 16px 48px rgba(61, 16, 7, 0.18);
+}
+
+/* Navigation arrows */
+#rc-prev-btn,
+#rc-next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(61, 16, 7, 0.15);
+  color: #C8391A;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+#rc-prev-btn:hover,
+#rc-next-btn:hover {
+  box-shadow: 0 4px 20px rgba(61, 16, 7, 0.22);
+  transform: translateY(-50%) scale(1.08);
+}
+#rc-prev-btn { left: 0.75rem; }
+#rc-next-btn { right: 0.75rem; }
+#rc-prev-btn:disabled,
+#rc-next-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Caption */
+#rc-caption {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0;
+  text-align: center;
+}
+
+#rc-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.rc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(200, 57, 26, 0.25);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.rc-dot.rc-dot-active {
+  background: #C8391A;
+  transform: scale(1.35);
+}
+
+#rc-caption-title {
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #3D1007;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.375rem;
+}
+#rc-caption-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  #rc-stage {
+    grid-template-columns: 1fr;
+  }
+  #rc-peek-prev,
+  #rc-peek-next {
+    display: none;
+  }
+  #rc-stage::before,
+  #rc-stage::after {
+    display: none;
+  }
+}
+
+/* ---- PDF viewer modal ---- */
+#pdf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(20, 6, 3, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+#pdf-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#pdf-modal-inner {
+  position: relative;
+  width: min(92vw, 920px);
+  height: 88vh;
+  background: #fff;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transform: scale(0.96);
+  transition: transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+#pdf-modal.show #pdf-modal-inner {
+  transform: scale(1);
+}
+#pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+#pdf-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  z-index: 1;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #A32D12;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+#pdf-modal-close:hover { opacity: 1; }
+
