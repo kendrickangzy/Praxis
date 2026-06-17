@@ -123,13 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeEls.forEach((el) => observer.observe(el));
   }
 
-  const slashEls = document.querySelectorAll(".slash-overlay, .slash-overlay-r");
+  const slashEls = document.querySelectorAll(".slash-overlay");
   if (slashEls.length > 0) {
     const slashParents = new Set([...slashEls].map((el) => el.parentElement));
     const slashObserver = new IntersectionObserver(
       (entries) => {
         entries.filter((e) => e.isIntersecting).forEach((e) => {
-          e.target.querySelectorAll(".slash-overlay, .slash-overlay-r")
+          e.target.querySelectorAll(".slash-overlay")
             .forEach((el) => el.classList.add("visible"));
           slashObserver.unobserve(e.target);
         });
@@ -216,6 +216,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const prev = RC_GALLERY[(newIndex - 1 + RC_GALLERY.length) % RC_GALLERY.length];
       const next = RC_GALLERY[(newIndex + 1) % RC_GALLERY.length];
 
+      // Compute direction before rcIndex is mutated — needed to identify the source peek
+      const wrapFwd  = rcIndex === RC_GALLERY.length - 1 && newIndex === 0;
+      const wrapBwd  = rcIndex === 0 && newIndex === RC_GALLERY.length - 1;
+      const earlyDir = wrapFwd ? 1 : wrapBwd ? -1 : newIndex > rcIndex ? 1 : -1;
+
+      // Capture peek rects and incoming image's natural dimensions BEFORE src updates
+      const prevPeekRect = rcPrevImg.getBoundingClientRect();
+      const nextPeekRect = rcNextImg.getBoundingClientRect();
+      const srcPeekEl    = earlyDir > 0 ? rcNextImg : rcPrevImg;
+      const incNatW      = srcPeekEl.naturalWidth;
+      const incNatH      = srcPeekEl.naturalHeight;
+
       rcPrevImg.src = prev.src;
       rcNextImg.src = next.src;
       rcPeekPrev.classList.remove("rc-hidden");
@@ -231,68 +243,111 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (animate && !rcAnimating) {
-        const wrapFwd = rcIndex === RC_GALLERY.length - 1 && newIndex === 0;
-        const wrapBwd = rcIndex === 0 && newIndex === RC_GALLERY.length - 1;
-        const dir     = wrapFwd ? 1 : wrapBwd ? -1 : newIndex > rcIndex ? 1 : -1;
+        const dir   = earlyDir;
         rcIndex     = newIndex;
         rcAnimating = true;
 
-        const DURATION = 380;
+        const DURATION = 480;
         const EASE     = "cubic-bezier(0.4,0,0.2,1)";
-        const cellH    = rcMainCell.offsetHeight;
-        const SLOT_CSS = "width:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0 1.5rem;box-sizing:border-box";
-        const IMG_CSS  = `max-width:100%;max-height:${cellH}px;object-fit:contain;border-radius:0.75rem;box-shadow:0 16px 48px rgba(61,16,7,0.18);transition:transform ${DURATION}ms ${EASE}`;
 
-        const makeSlot = (src) => {
-          const slot = document.createElement("div");
-          slot.style.cssText = SLOT_CSS;
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = "";
-          img.style.cssText = IMG_CSS;
-          slot.appendChild(img);
-          return slot;
-        };
+        const stageEl   = rcMainCell.parentElement;
+        const stageRect = stageEl.getBoundingClientRect();
+        const mainRect  = rcMainImg.getBoundingClientRect();
+        const srcRect   = dir > 0 ? nextPeekRect : prevPeekRect;
+        const dstRect   = dir > 0 ? prevPeekRect : nextPeekRect;
 
-        const outSlot = makeSlot(rcMainImg.src);
-        const incSlot = makeSlot(item.src);
-        const outImg  = outSlot.querySelector("img");
-        const incImg  = incSlot.querySelector("img");
+        // Compute where the incoming image will actually render in the main cell,
+        // so incEl has the right aspect ratio and position — no letterboxing, no jerk.
+        const cellRect = rcMainCell.getBoundingClientRect();
+        const cellCS   = getComputedStyle(rcMainCell);
+        const ipadL    = parseFloat(cellCS.paddingLeft);
+        const ipadT    = parseFloat(cellCS.paddingTop);
+        const innerW   = cellRect.width  - ipadL - parseFloat(cellCS.paddingRight);
+        const innerH   = cellRect.height - ipadT - parseFloat(cellCS.paddingBottom);
+        const maxH     = window.innerHeight * 0.6;
 
-        // Incoming starts at peek scale so it appears to grow from the preview
-        incImg.style.transform = "scale(0.6)";
+        let incW = mainRect.width, incH = mainRect.height; // fallback if image not loaded
+        if (incNatW > 0 && incNatH > 0) {
+          const ar = incNatW / incNatH;
+          incW = Math.min(innerW, incNatW);
+          incH = incW / ar;
+          if (incH > maxH) { incH = maxH; incW = incH * ar; }
+        }
+        const incLeft = cellRect.left - stageRect.left + ipadL + (innerW - incW) / 2;
+        const incTop  = cellRect.top  - stageRect.top  + ipadT + (innerH - incH) / 2;
 
-        // Track is 200% wide; we show either the left or right half
-        const track = document.createElement("div");
-        track.style.cssText = [
-          "position:absolute", "top:0", "left:0",
-          "display:flex", "align-items:center",
-          "width:200%", `height:${cellH}px`,
-          `transform:translateX(${dir > 0 ? "0" : "-50%"})`,
-          `transition:transform ${DURATION}ms ${EASE}`,
-        ].join(";");
-
-        if (dir > 0) {
-          track.appendChild(outSlot); // outgoing (left)
-          track.appendChild(incSlot); // incoming (right)
-        } else {
-          track.appendChild(incSlot); // incoming (left)
-          track.appendChild(outSlot); // outgoing (right)
+        // Transform helper for outgoing (uses mainRect center)
+        function outTransform(peekRect) {
+          if (!peekRect.width) return `translate(${-dir * 60}%, 0) scale(0.9)`;
+          const scale = Math.min(peekRect.width / mainRect.width, peekRect.height / mainRect.height);
+          const tx    = (peekRect.left + peekRect.width  / 2) - (mainRect.left + mainRect.width  / 2);
+          const ty    = (peekRect.top  + peekRect.height / 2) - (mainRect.top  + mainRect.height / 2);
+          return `translate(${tx}px,${ty}px) scale(${scale})`;
         }
 
+        // Transform helper for incoming (uses incEl's computed render center)
+        function incTransform(peekRect) {
+          if (!peekRect.width) return `translate(${dir * 60}%, 0) scale(0.9)`;
+          const scale = Math.min(peekRect.width / incW, peekRect.height / incH);
+          const tx    = (peekRect.left + peekRect.width  / 2) - (stageRect.left + incLeft + incW / 2);
+          const ty    = (peekRect.top  + peekRect.height / 2) - (stageRect.top  + incTop  + incH / 2);
+          return `translate(${tx}px,${ty}px) scale(${scale})`;
+        }
+
+        // Outgoing: sized/positioned to exactly match current rcMainImg
+        const outEl = document.createElement("img");
+        outEl.src   = rcMainImg.src;
+        outEl.style.cssText = [
+          "position:absolute",
+          `left:${mainRect.left - stageRect.left}px`,
+          `top:${mainRect.top  - stageRect.top}px`,
+          `width:${mainRect.width}px`,
+          `height:${mainRect.height}px`,
+          "object-fit:contain",
+          "border-radius:0.75rem",
+          "box-shadow:0 16px 48px rgba(61,16,7,0.18)",
+          "z-index:4",
+        ].join(";");
+
+        // Incoming: sized/positioned to where it will actually render — no letterboxing
+        const incEl = document.createElement("img");
+        incEl.src   = item.src;
+        incEl.style.cssText = [
+          "position:absolute",
+          `left:${incLeft}px`,
+          `top:${incTop}px`,
+          `width:${incW}px`,
+          `height:${incH}px`,
+          "object-fit:contain",
+          "border-radius:0.75rem",
+          "box-shadow:0 16px 48px rgba(61,16,7,0.18)",
+          "z-index:5",
+          "opacity:0",
+          `transform:${incTransform(srcRect)}`,
+        ].join(";");
+
         rcMainImg.style.visibility = "hidden";
-        rcMainCell.appendChild(track);
+        stageEl.appendChild(outEl);
+        stageEl.appendChild(incEl);
 
-        track.getBoundingClientRect(); // force reflow before transition
+        stageEl.getBoundingClientRect(); // force reflow before transitions
 
-        track.style.transform  = `translateX(${dir > 0 ? "-50%" : "0"})`;
-        outImg.style.transform = "scale(0.6)";
-        incImg.style.transform = "scale(1)";
+        const FADE = Math.round(DURATION * 0.35);
+        const DEL  = Math.round(DURATION * 0.5);
+
+        outEl.style.transition = `transform ${DURATION}ms ${EASE}, opacity ${FADE}ms ${EASE} ${DEL}ms`;
+        outEl.style.transform  = outTransform(dstRect);
+        outEl.style.opacity    = "0";
+
+        incEl.style.transition = `transform ${DURATION}ms ${EASE}, opacity ${FADE}ms ${EASE}`;
+        incEl.style.opacity    = "1";
+        incEl.style.transform  = "none";
 
         setTimeout(() => {
           rcMainImg.src              = item.src;
           rcMainImg.style.visibility = "";
-          track.remove();
+          outEl.remove();
+          incEl.remove();
           rcAnimating = false;
         }, DURATION);
 

@@ -30,24 +30,17 @@
   </section>
 
   <!--OUR VISION-->
-  <section class="bg-cream-200 py-24 px-6 relative overflow-hidden">
+  <section class="bg-cream-200 grid xl:grid-cols-3">
 
-    <div class="absolute inset-0 pointer-events-none lg:hidden slash-overlay" style="background:#ECD9C4; clip-path: polygon(0 0, 100% 0, 0 80%);"></div>
-    <div class="absolute inset-0 pointer-events-none hidden lg:block slash-overlay" style="background:#ECD9C4; clip-path: polygon(0 0, 50% 0, 25% 100%, 0 100%);"></div>
+    <div class="h-[32rem] xl:h-auto fade-in">
+      <img src="assets/aboutUs.jpeg"
+           alt="Our Students at PRAXIS Education Centre"
+           class="absolute inset-0 w-full h-full object-cover object-centre"/>
+    </div>
 
-    <div class="relative max-w-xl lg:max-w-6xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
-
-      <!--Our Students Image-->
-      <div class="fade-in lg:col-span-1">
-        <img src="assets/aboutUs.jpeg"
-             alt="Our Students at PRAXIS Education Centre"
-             class="vision-photo w-full aspect-square object-cover rounded-2xl"/>
-      </div>
-
-      <!--Text-->
-      <div class="fade-in lg:col-span-2">
-        <h2 class="subpage-label mb-6">Our Vision</h2>
-        <p class="text-gray-600 mb-5 leading-relaxed">
+    <div class="fade-in px-24 xl:px-32 py-12 xl:col-span-2">
+      <h2 class="subpage-label text-brand-600 mb-6">Our Vision</h2>
+      <p class="text-gray-600 mb-5 leading-relaxed">
           PRAXIS is a tutoring centre that specialises in the Humanities subjects, EE, TOK and IA for the International Baccalaureate Diploma Programme (IBDP).<br/><br/>
           We started PRAXIS to solve real problems: packed classrooms with little to no private attention, insufficient personalised feedback and sparse notes tailored to each school’s curriculum.<br/><br/>
           That’s why we have:
@@ -74,13 +67,12 @@
           </li>
         </ul>
         <p class="text-gray-600 font-semibold text-lg leading-relaxed whitespace-pre"><i>This</i>  is the PRAXIS difference.</p>
-      </div>
-
     </div>
+  
   </section>
 
   <!-- Pedagogy -->
-  <section class="bg-brand-600 py-14 px-6">
+  <section class="bg-brand-600 py-20 px-6">
 
     <div class="max-w-5xl mx-auto">
 
@@ -96,7 +88,7 @@
       <div class="grid lg:grid-cols-3 gap-6 mb-12">
 
         <!-- IB Subjects -->
-        <div class="fade-in bg-cream-300 rounded-2xl p-6">
+        <div class="fade-in bg-cream-300 rounded-2xl p-6 stacked-card">
           <div class="w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center mb-4">
             <span class="text-white font-bold font-serif text-lg">1</span>
           </div>
@@ -109,7 +101,7 @@
         </div>
 
         <!-- IA / EE Consultations -->
-        <div class="fade-in bg-cream-300 rounded-2xl p-6">
+        <div class="fade-in bg-cream-300 rounded-2xl p-6 stacked-card">
           <div class="w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center mb-4">
             <span class="text-white font-bold font-serif text-lg">2</span>
           </div>
@@ -122,7 +114,7 @@
         </div>
 
         <!-- TOK -->
-        <div class="fade-in bg-cream-300 rounded-2xl p-6">
+        <div class="fade-in bg-cream-300 rounded-2xl p-6 stacked-card">
           <div class="w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center mb-4">
             <span class="text-white font-bold font-serif text-lg">3</span>
           </div>
@@ -133,29 +125,32 @@
       </div>
 
     <!-- Picture -->
-    <div class="grid grid-cols-2 fade-in pb-24">
+    <div class="grid sm:grid-cols-2 fade-in pb-12 gap-8">
 
-      <div class="fade-in p-4">
+      <div class="fade-in rounded-lg">
         <img src="assets/Class-Pictures/Group-Class.jpeg"
            alt="Our Students at PRAXIS Education Centre"
-           class="vision-photo w-full object-cover"/>
+           class="vision-photo w-full object-cover rounded-lg"/>
       </div>
 
-      <div class="fade-in p-4">
+      <div class="fade-in rounded-lg">
         <img src="assets/Class-Pictures/Class-Wefie.jpeg"
            alt="Our Students at PRAXIS Education Centre"
-           class="vision-photo w-full object-cover"/>
+           class="vision-photo w-full object-cover rounded-lg"/>
       </div>
 
     </div>
+  </section>
 
     <!-- IA/EE -->
+  <section class="bg-brand-500 py-20 px-6">
+
     <div class="text-center mb-8 fade-in">
-      <h2 class="subpage-label-light mb-6">IA / EE Consultations</h2>
-      <p class="text-cream-50 leading-relaxed max-w-2xl mx-auto mb-12 text-justify">
+      <h2 class="subpage-label-light text-cream-400 mb-6">IA / EE Consultations</h2>
+      <p class="text-cream-100 leading-relaxed max-w-2xl mx-auto mb-12 text-justify">
         The IAs and EEs are unique to you – requiring a unique approach. Our IA / EE consultations are ad-hoc and 1-to-1: it’s according to your chosen topic, your schedule and your timelines.
       </p>
-      <p class="section-label-light text-cream-300">Consultation Process</p>
+      <p class="section-label-light text-cream-400">Consultation Process</p>
     </div>
 
     <!-- Vertical timeline -->
@@ -164,24 +159,24 @@
       <div class="space-y-8 pb-8">
 
         <div class="flex gap-6 fade-in">
-          <div class="w-8 h-8 rounded-full bg-cream-200 border-2 border-cream-300 flex items-center justify-center flex-shrink-0 z-10">
-            <span class="text-brand-500 text-sm font-bold font-serif">1</span>
+          <div class="w-8 h-8 rounded-full bg-cream-300 border-2 border-cream-400 shadow-xl flex items-center justify-center flex-shrink-0 z-10">
+            <span class="text-brand-500 text-md font-bold font-serif">1</span>
           </div>
           <div>
-            <p class="font-semibold font-serif text-xl text-cream-300 mb-1">Getting Started</p>
-            <p class="text-sm text-cream-50 leading-relaxed">
+            <p class="font-medium font-serif text-xl text-cream-400 tracking-tight mb-1">Getting Started</p>
+            <p class="text-sm text-cream-100 leading-relaxed">
               You submit your existing draft to us 1 week before the 1st class. If you’ve no draft, we’ll start the brainstorming process with you.
             </p>
           </div>
         </div>
 
         <div class="flex gap-6 fade-in">
-          <div class="w-8 h-8 rounded-full bg-cream-200 border-2 border-cream-300 flex items-center justify-center flex-shrink-0 z-10">
-            <span class="text-brand-500 text-sm font-bold font-serif">2</span>
+          <div class="w-8 h-8 rounded-full bg-cream-300 border-2 border-cream-400 shadow-xl flex items-center justify-center flex-shrink-0 z-10">
+            <span class="text-brand-500 text-md font-bold font-serif">2</span>
           </div>
           <div>
-            <p class="font-semibold font-serif text-xl text-cream-300 mb-1">Pre-Consult</p>
-            <p class="text-sm text-cream-50 leading-relaxed">
+            <p class="font-medium font-serif text-xl text-cream-400 tracking-tight mb-1">Pre-Consult</p>
+            <p class="text-sm text-cream-100 leading-relaxed">
               We give detailed feedback on your draft before your 1st class.<br/>
               This ensures that our tutors clear the simple mistakes out of the way, leaving the precious consultation minutes for the tougher questions.
             </p>
@@ -189,61 +184,71 @@
         </div>
 
         <div class="flex gap-6 fade-in">
-          <div class="w-8 h-8 rounded-full bg-cream-200 border-2 border-cream-300 flex items-center justify-center flex-shrink-0 z-10">
-            <span class="text-brand-500 text-sm font-bold font-serif">3</span>
+          <div class="w-8 h-8 rounded-full bg-cream-300 border-2 border-cream-400 shadow-xl flex items-center justify-center flex-shrink-0 z-10">
+            <span class="text-brand-500 text-md font-bold font-serif">3</span>
           </div>
           <div>
-            <p class="font-semibold font-serif text-xl text-cream-300 mb-1">First Class</p>
-            <p class="text-sm text-cream-50 leading-relaxed">
+            <p class="font-medium font-serif text-xl text-cream-400 tracking-tight mb-1">First Class</p>
+            <p class="text-sm text-cream-100 leading-relaxed">
               Your tutor explains their feedback, suggests ideas and teaches content.
             </p>
           </div>
         </div>
 
         <div class="flex gap-6 fade-in">
-          <div class="w-8 h-8 rounded-full bg-cream-200 border-2 border-cream-300 flex items-center justify-center flex-shrink-0 z-10">
-            <span class="text-brand-500 text-sm font-bold font-serif">4</span>
+          <div class="w-8 h-8 rounded-full bg-cream-300 border-2 border-cream-400 shadow-xl flex items-center justify-center flex-shrink-0 z-10">
+            <span class="text-brand-500 text-md font-bold font-serif">4</span>
           </div>
           <div>
-            <p class="font-semibold font-serif text-xl text-cream-300 mb-1">Post-Class</p>
-            <p class="text-sm text-cream-50 leading-relaxed">
+            <p class="font-medium font-serif text-xl text-cream-400 tracking-tight mb-1">Post-Class</p>
+            <p class="text-sm text-cream-100 leading-relaxed">
               You edit the draft according to in-class feedback.
             </p>
           </div>
         </div>
 
         <div class="flex gap-6 fade-in">
-          <div class="w-8 h-8 rounded-full bg-cream-200 border-2 border-cream-300 flex items-center justify-center flex-shrink-0 z-10">
-            <span class="text-brand-500 text-sm font-bold font-serif">5</span>
+          <div class="w-8 h-8 rounded-full bg-cream-300 border-2 border-cream-400 shadow-xl flex items-center justify-center flex-shrink-0 z-10">
+            <span class="text-brand-500 text-md font-bold font-serif">5</span>
           </div>
           <div>
-            <p class="font-semibold font-serif text-xl text-cream-300 mb-1">The Polishing Process</p>
-            <p class="text-sm text-cream-50 leading-relaxed">
+            <p class="font-medium font-serif text-xl text-cream-400 tracking-tight mb-1">The Polishing Process</p>
+            <p class="text-sm text-cream-100 leading-relaxed">
               And the cycle repeats! Our tutors give feedback, you guys discuss … til’ greatness.
             </p>
           </div>
         </div>
 
         <div class="flex gap-6 fade-in">
-          <div class="w-8 h-8 rounded-full bg-cream-200 border-2 border-cream-300 flex items-center justify-center flex-shrink-0 z-10">
-            <span class="text-brand-500 text-sm font-bold font-serif">6</span>
+          <div class="w-8 h-8 rounded-full bg-cream-300 border-2 border-cream-400 shadow-xl flex items-center justify-center flex-shrink-0 z-10">
+            <span class="text-brand-500 text-md font-bold font-serif">6</span>
           </div>
           <div>
-            <p class="font-semibold font-serif text-xl text-cream-300 mb-1">Final Tweaks &amp; Submission</p>
-            <p class="text-sm text-cream-50 leading-relaxed">A final review of your completed work against the IB assessment criteria. Your tutor checks for consistency, formatting, and remaining gaps before you submit — so you go in with full confidence.</p>
+            <p class="font-medium font-serif text-xl text-cream-400 tracking-tight mb-1">Final Tweaks &amp; Submission</p>
+            <p class="text-sm text-cream-100 leading-relaxed">A final review of your completed work against the IB assessment criteria. Your tutor checks for consistency, formatting, and remaining gaps before you submit — so you go in with full confidence.</p>
           </div>
         </div>
 
       </div>
     </div>
+  </section>
 
+  <section class="bg-brand-600 py-20 px-6">
+    <div class="text-center mb-8 fade-in">
+        <h2 class="subpage-label-light mb-6">Theory of Knowledge</h2>
+        <p class="text-cream-50 leading-relaxed max-w-2xl mx-auto mb-12 text-justify">
+          Our specialist tutors combine their expertise in the Humanities to provide interdisciplinary and nuanced perspectives to the TOK Exhibition and Essay.<br/><br/>
+          We seek to simplify foreign and complicated epistemological questions, providing clear-cut advice to tackle TOK.<br/><br/>
+          Our TOK consultations are ad-hoc and 1-1: it’s according to your chosen topic, your schedule and your timelines.
+        </p>
+      </div>
   </section>
 
   <!--OUR TUTORS-->
   <section class="py-20 px-6 bg-cream-200">
     <div class="max-w-5xl mx-auto">
 
-      <div class="text-center mb-8 fade-in">
+      <div class="text-center mb-16 fade-in">
         <p class="section-label">Meet Our Team</p>
         <h2 class="subpage-label mb-6">Our Tutors</h2>
         <!-- Short body text — edit this paragraph with your own copy -->
@@ -258,102 +263,122 @@
 
         <!--Tutor 1-->
         <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
-          <div class="tutor-card-stack">
+          <div class="tutor-card-stack stacked-card-dark">
             <div class="tutor-photo-wrap">
               <img src="assets/Tutors/Jaden.jpeg" alt="Jaden Soo - PRAXIS IB Language and Literature Tutor" class="w-full h-full object-cover object-top" />
             </div>
             <div class="tutor-info-icon font-serif font-medium text-lg"><i>i</i></div>
             <div class="tutor-info-wrap">
-              <p class="font-semibold text-brand-700 text-lg mb-2">Jaden Soo</p>
-              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
-                ACS (Independent) Alumnus<br/>
+              <p class="font-serif font-medium text-brand-700 text-3xl tracking-tighter mb-2">Jaden Soo</p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
+                ACS (Independent) Alumnus
+              </p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
                 Bachelor of Laws (NUS)
               </p>
-              <p class="text-sm text-gray-600 text-justify leading-relaxed mb-3">
+              <p class="text-md text-gray-600 text-justify leading-relaxed mt-4">
                 Jaden is an empathetic and strategic tutor, who prioritises giving detailed feedback to his students and enhancing the classroom experience. With 25/28 (89%) of his students scoring a ‘6’ or ‘7’ for IB Langlit in 2025, you can trust him to be a trustworthy guide through your IB Langlit journey.
               </p>
             </div>
           </div>
-          <p class="font-semibold text-sm text-gray-800">Jaden Soo</p>
-          <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-            ACS (Independent) Alumnus<br/>
+          <p class="font-medium text-2xl text-brand-600 font-serif tracking-tighter mb-1.5">Jaden Soo</p>
+          <p class="text-xs leading-tight mb-1">
+            ACS (Independent) Alumnus
+          </p>
+          <p class="text-xs leading-tight mb-1">
             Bachelor of Laws (NUS)
           </p>
         </div>
 
         <!--Tutor 2-->
         <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
-          <div class="tutor-card-stack">
+          <div class="tutor-card-stack stacked-card-dark">
             <div class="tutor-photo-wrap">
               <img src="assets/Tutors/Jonathan.jpeg" alt="Jonathan Yeoh - PRAXIS IB Language & Literature Tutor" class="w-full h-full object-cover object-top" />
             </div>
             <div class="tutor-info-icon font-serif font-medium text-lg"><i>i</i></div>
             <div class="tutor-info-wrap">
-              <p class="font-semibold text-brand-700 text-lg mb-2">Jonathan Yeoh</p>
-              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
-                ACS (Independent) Alumnus<br/>
+              <p class="font-serif font-medium text-brand-700 text-3xl tracking-tighter mb-2">Jonathan Yeoh</p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
+                ACS (Independent) Alumnus
+              </p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
                 Bachelor of Laws (NUS)                
               </p>
-              <p class="text-sm text-gray-600 text-justify leading-relaxed mb-3">
+              <p class="text-md text-gray-600 text-justify leading-relaxed mt-4">
                 As a graduate of ACS(I)’s Humanities Scholarship Programme, Jonathan blends expertise with multidisciplinary training, providing nuanced literary analysis to his students. Jonathan is on-task and proactive, always going one step further to meet his students’ needs.
               </p>
             </div>
           </div>
-          <p class="font-semibold text-sm text-gray-800">Jonathan Yeoh</p>
-          <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-            ACS (Independent) Alumnus<br/>
+          <p class="font-medium text-2xl text-brand-600 font-serif tracking-tighter mb-1.5">Jonathan Yeoh</p>
+          <p class="text-xs leading-tight mb-1">
+            ACS (Independent) Alumnus
+          </p>
+          <p class="text-xs leading-tight mb-1">
             Bachelor of Laws (NUS)
           </p>
         </div>
 
         <!--Tutor 3-->
         <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
-          <div class="tutor-card-stack">
+          <div class="tutor-card-stack stacked-card-dark">
             <div class="tutor-photo-wrap">
               <img src="assets/Tutors/Erynn.jpeg" alt="Erynn Huen - PRAXIS IB Language and Literature Tutor" class="w-full h-full object-cover object-top" />
             </div>
             <div class="tutor-info-icon font-serif font-medium text-lg"><i>i</i></div>
             <div class="tutor-info-wrap">
-              <p class="font-semibold text-brand-700 text-lg mb-2">Erynn Huen</p>
-              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
-                ACS (Independent) Alumnus<br/>
+              <p class="font-serif font-medium text-brand-700 text-3xl tracking-tighter mb-2">Erynn Huen</p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
+                ACS (Independent) Alumnus
+              </p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
                 Bachelor of Medicine and Bachelor of Surgery (NUS)
               </p>
-              <p class="text-sm text-gray-600 text-justify leading-relaxed mb-3">
+              <p class="text-md text-gray-600 text-justify leading-relaxed mt-4">
                 Erynn is a driven individual: leading her classes with momentum and productivity. Classes are steady-paced, led clearly with our centre’s lesson plans, such that students know that every second spent in class isn’t wasted.
               </p>
             </div>
           </div>
-          <p class="font-semibold text-sm text-gray-800">Erynn Huen</p>
-          <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-            ACS (Independent) Alumnus<br/>
+          <p class="font-medium text-2xl text-brand-600 font-serif tracking-tighter mb-1.5">Erynn Huen</p>
+          <p class="text-xs leading-tight mb-1">
+            ACS (Independent) Alumnus
+          </p>
+          <p class="text-xs leading-tight mb-1">
             Bachelor of Medicine and Bachelor of Surgery (NUS)
           </p>
         </div>
 
         <!--Tutor 4-->
         <div class="bg-cream-200 py-3 px-3 rounded-2xl fade-in text-center">
-          <div class="tutor-card-stack">
+          <div class="tutor-card-stack stacked-card-dark">
             <div class="tutor-photo-wrap">
               <img src="assets/Tutors/Leanne.jpeg" alt="Leanne Man - PRAXIS Founder" class="w-full h-full object-cover object-top" />
             </div>
             <div class="tutor-info-icon font-serif font-medium text-lg"><i>i</i></div>
             <div class="tutor-info-wrap">
-              <p class="font-semibold text-brand-700 text-lg mb-2">Leanne Man</p>
-              <p class="text-xs text-brand-500 uppercase tracking-widest mb-4">
-                ACS (Independent) Alumnus<br/>
-                Bachelor of Laws (NUS)<br/>
+              <p class="font-serif font-medium text-brand-700 text-3xl tracking-tighter mb-2">Leanne Man</p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
+                ACS (Independent) Alumnus
+              </p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
+                Bachelor of Laws (NUS)
+              </p>
+              <p class="font-serif text-sm text-brand-500 uppercase tracking-wide leading-relaxed mb-1">
                 Master of Laws (NYU)
               </p>
-              <p class="text-sm text-gray-600 text-justify leading-relaxed mb-3">
+              <p class="text-md text-gray-600 text-justify leading-relaxed mt-4">
                 Leanne has consistently produced stellar results for her students, with 50% of her students achieving a ‘7’ for IB Langlit in 2024. She prioritises simplifying complex concepts, developing trustworthy methodologies to tackle all question-types and making lessons an enjoyable space for all her students.
               </p>
             </div>
           </div>
-          <p class="font-semibold text-sm text-gray-800">Leanne Man</p>
-          <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-            ACS (Independent) Alumnus<br/>
-            Bachelor of Laws (NUS)<br/>
+          <p class="font-medium text-2xl text-brand-600 font-serif tracking-tighter mb-1.5">Leanne Man</p>
+          <p class="text-xs leading-tight mb-1">
+            ACS (Independent) Alumnus
+          </p>
+          <p class="text-xs leading-tight mb-1">
+            Bachelor of Laws (NUS)
+          </p>
+          <p class="text-xs leading-tight mb-1">
             Master of Laws (NYU)
           </p>
         </div>

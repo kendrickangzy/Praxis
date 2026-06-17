@@ -58,43 +58,31 @@
   <!-- ============================================================
        ABOUT US
   ============================================================ -->
-  <section class="bg-cream-200 py-24 px-6 relative overflow-hidden">
+  <section class="bg-cream-200 grid xl:grid-cols-5">
 
-    <div class="absolute inset-0 pointer-events-none lg:hidden slash-overlay" style="background:#ECD9C4; clip-path: polygon(0 0, 100% 0, 0 80%);"></div>
-    <div class="absolute inset-0 pointer-events-none hidden lg:block slash-overlay-r" style="background:#ECD9C4; clip-path: polygon(75% 0, 100% 0, 100% 100%, 50% 100%);"></div>
-
-    <div class="relative max-w-xl lg:max-w-6xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
-
-      <!-- Our Story Text -->
-      <div class="fade-in lg:col-span-2">
-        <p class="section-label">Who We Are</p>
-        <h2 class="subpage-label mb-6">Our Vision</h2>
-        <p class="text-gray-600 mb-5 leading-relaxed">
+    <div class="fade-in px-24 xl:px-32 py-24 bg-cream-200 xl:col-span-3">
+      <p class="section-label">Who We Are</p>
+      <h2 class="subpage-label text-brand-600 mb-6">Our Vision</h2>
+      <p class="text-gray-600 mb-5 leading-relaxed">
           PRAXIS is a tutoring centre that specialises in the Humanities subjects, EE, TOK and IA for the International Baccalaureate Diploma Programme (IBDP).<br/><br/>
-          We started PRAXIS to solve real problems: packed classrooms with little to no private attention, insufficient personalised feedback and sparse notes tailored to each school’s curriculum.
-        </p>
+          We started PRAXIS to solve real problems: packed classrooms with little to no private attention, insufficient personalised feedback and sparse notes tailored to each school’s curriculum.<br/><br/>
+      </p>
 
-        <!-- About Us Link -->
-        <div class="mt-10 max-w-6xl mx-auto fade-in">
-          <a href="about.html"
-            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-md tracking-tight">
-            Learn more about us
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Our Students Image -->
-      <div class="fade-in lg:col-span-1">
-        <img src="assets/aboutUs.jpeg"
-            alt="Our Students at PRAXIS Education Centre"
-            class="vision-photo w-full aspect-square object-cover rounded-2xl"/>
-      </div>
-
+      <a href="about.html"
+        class="inline-flex items-center gap-2 text-brand-500 font-semibold hover:text-brand-600 hover:scale-105 transition-all group text-md tracking-tight">
+        Learn more about us
+        <svg class="w-4 h-4 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
     </div>
+        
+    <div class="h-96 lg:h-[32rem] xl:h-auto xl:col-span-2 relative overflow-hidden fade-in">
+      <img src="assets/aboutUs.jpeg"
+           alt="Our Students at PRAXIS Education Centre"
+           class="absolute inset-0 w-full h-full object-cover object-centre"/>
+    </div>
+  
   </section>
 
   <!-- ============================================================
@@ -142,10 +130,10 @@
         <h2 class="subpage-label">Our Offerings</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-12">
 
         <!-- IB Subjects -->
-        <div class="fade-in bg-cream-300 rounded-2xl p-6">
+        <div class="fade-in bg-cream-300 rounded-2xl p-6 stacked-card-dark">
           <div class="icon-box mb-4" style="background:transparent">
             <svg class="w-10 h-10 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
@@ -170,7 +158,7 @@
         </div>
 
         <!-- IA / EE Consultations -->
-        <div class="fade-in bg-cream-300 rounded-2xl p-8">
+        <div class="fade-in bg-cream-300 rounded-2xl p-8 stacked-card-dark">
           <div class="icon-box mb-4" style="background:transparent">
             <svg class="w-10 h-10 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.893L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
@@ -195,7 +183,7 @@
         </div>
 
         <!-- TOK -->
-        <div class="fade-in bg-cream-300 rounded-2xl p-8">
+        <div class="fade-in bg-cream-300 rounded-2xl p-8 stacked-card-dark">
           <div class="icon-box mb-4" style="background:transparent">
             <svg class="w-10 h-10 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
@@ -220,9 +208,9 @@
       <!-- View all link -->
       <div class="text-center mt-10 max-w-6xl mx-auto fade-in">
           <a href="about.html"
-            class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-md tracking-tight">
+            class="inline-flex items-center gap-2 text-brand-500 font-semibold hover:text-brand-600 hover:scale-105 transition-all group text-md tracking-tight">
             What makes us special
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-4 h-4 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </a>
@@ -244,16 +232,16 @@
     </div>
 
     <!-- Marquee strip -->
-    <div class="testimonial-marquee-outer overflow-hidden">
-      <div id="testimonial-track" class="fade-in testimonial-track py-2"></div>
+    <div class="testimonial-marquee-outer overflow-hidden fade-in">
+      <div id="testimonial-track" class="testimonial-track py-2"></div>
     </div>
 
     <!-- View all link -->
     <div class="text-center mt-10 max-w-6xl mx-auto px-6 fade-in">
         <a href="testimonials.html"
-           class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-800 transition-colors group text-md tracking-tight">
+           class="inline-flex items-center gap-2 text-brand-500 font-semibold hover:text-brand-600 hover:scale-105 transition-all group text-md tracking-tight">
           View all testimonials
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-4 h-4 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </a>

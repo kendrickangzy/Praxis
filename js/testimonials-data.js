@@ -46,43 +46,6 @@ const TESTIMONIALS = [
     showInMarquee: true,
   },
 
-  {
-    name:  "Priya N.",
-    role:  "Parent · Student achieved a grade 7",
-    part1: "We started 8 weeks before the May exams and my daughter went up two grade boundaries. The turnaround was remarkable — and the 4-day marking feedback made all the difference.",
-    part2: "",
-  },
-  {
-    name:  "Marcus T.",
-    role:  "IB Year 2 · ACS (Independent) · Achieved a grade 7",
-    part1: "The notes PRAXIS gave me were the only resource I needed for Paper 2. They were tailored to exactly what my school was studying — not some generic guide off the internet.",
-    part2: "",
-  },
-  {
-    name:  "Amelia S.",
-    role:  "IB Year 2 · SJI International · Grade 4 → 6",
-    part1: "I joined PRAXIS in IB Year 1 with a grade 4. By May exams I scored a 6. The small class size meant I actually got proper feedback on my own writing every single session.",
-    part2: "",
-  },
-  {
-    name:  "Daniel K.",
-    role:  "Parent · Student improved by 2 grade boundaries",
-    part1: "My son was struggling to put literary analysis into words. PRAXIS gave him a vocabulary and a method. He is now one of the stronger students in his class.",
-    part2: "",
-  },
-  {
-    name:  "Sophie L.",
-    role:  "IB Year 2 · Achieved a grade 7 in the IO",
-    part1: "I was panicking about my IO and had no idea where to start. One session with PRAXIS and I had a clear structure, a line of inquiry, and the confidence to actually deliver it well.",
-    part2: "",
-  },
-  {
-    name:  "Ryan C.",
-    role:  "IB Year 2 · Anglo-Chinese School (International) · Grade 5 → 7",
-    part1: 'What sets PRAXIS apart is how specific the feedback is. It is not just "analyse more" — it is exactly which sentence to rewrite and why. That level of detail changed everything.',
-    part2: "",
-  },
-
 ];
 
 
