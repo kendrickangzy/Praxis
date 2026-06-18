@@ -103,7 +103,7 @@ function _buildGridCard(t) {
 
   wrapper.innerHTML = `
     <div class="tgc-front${t.part2 ? "" : " tgc-static"}">
-      <p class="font-serif text-brand-300 text-5xl leading-none mb-3">"</p>
+      <p class="font-serif text-brand-300 text-5xl leading-none">"</p>
       <p class="text-gray-700 text-sm leading-relaxed ${t.part2 ? "mb-4" : "mb-6"}">${t.part1}</p>
       ${t.part2 ? '<p class="tgc-read-hint text-right">Read more →</p>' : ""}
       ${authorHtml}

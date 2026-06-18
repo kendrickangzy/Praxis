@@ -224,9 +224,7 @@ select {
 }
 
 #typewriter-text {
-  transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
-  backface-visibility: hidden;
 }
 
 /* Testimonial scroll */
@@ -317,6 +315,7 @@ select {
   cursor: pointer;
   height: 100%;
   box-sizing: border-box;
+  box-shadow: 5px 5px 10px #5c17089e;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, opacity 0.3s ease;
 }
 
@@ -332,8 +331,8 @@ select {
 
 @media (hover: hover) {
   .tgc-front:not(.tgc-static):hover {
-    transform: translateY(-1%) scale(1.01);
-    box-shadow: 0 14px 30px #d94f3020;
+    transform: translate(5px, 5px);
+    box-shadow: 2px 2px 4px #5C1808;
   }
 }
 
@@ -449,7 +448,7 @@ select {
 
 /*Vision photo*/
 .vision-photo {
-  overflow: hidden;    /* clips the image cleanly on scale */
+  overflow: hidden;  
   box-shadow: 7px 7px 10px #5C1808;
 }
 
