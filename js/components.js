@@ -66,7 +66,7 @@ const footerHTML = `
       <!-- Brand -->
       <div>
         <div class="flex items-center gap-2 mb-4">
-          <span class="font-medium font-serif text-lg text-white tracking-tight">PRAXIS Education</span>
+          <span class="font-medium font-serif text-lg text-white tracking-tight">PRAXIS Education Pte. Ltd.</span>
         </div>
         <p class="text-sm tracking-tight leading-relaxed">
           An education centre designed by IB students, for IB students.
@@ -104,7 +104,10 @@ const footerHTML = `
     </div>
 
     <div class="border-t border-white/10 pt-6 text-xs">
-      <p>PRAXIS Education. All rights reserved.</p>
+      <p>
+        PRAXIS Education Pte. Ltd.<br/>
+        All rights reserved.
+      </p>
     </div>
 
   </div>
