@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://praxiseducationsg.com/sitemap.xml
