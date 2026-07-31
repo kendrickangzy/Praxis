@@ -69,7 +69,7 @@ const footerHTML = `
           <span class="font-medium font-serif text-lg text-white tracking-tight">PRAXIS Education Pte. Ltd.</span>
         </div>
         <p class="text-sm tracking-tight leading-relaxed">
-          An education centre designed by IB students, for IB students.
+          A tuition centre specialising in IB English: Language and Literature and Economics, featuring an education methodology designed by IB students, for IB students.
         </p>
       </div>
 

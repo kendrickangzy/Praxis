@@ -216,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let rcAnimating = false;
 
     function rcUpdate(newIndex, animate) {
+      if (animate && rcAnimating) return;
       const item = RC_GALLERY[newIndex];
       const prev = RC_GALLERY[(newIndex - 1 + RC_GALLERY.length) % RC_GALLERY.length];
       const next = RC_GALLERY[(newIndex + 1) % RC_GALLERY.length];
