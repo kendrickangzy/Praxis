@@ -76,8 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Small initial delay so the hero has rendered before typing starts
-    setTimeout(tick, 900);
+    // Phrase 1 is already shown at t=0 (no typing animation); hand off
+    // to the normal erase/type cycle after the usual post-type pause.
+    charIndex = phrases[0].length;
+    isErasing = true;
+    typewriterEl.innerHTML = renderTyped(phraseIndex, charIndex);
+    setTimeout(tick, PAUSE_AFTER);
   }
 
 

@@ -15,7 +15,7 @@ const TESTIMONIALS = [
 
   {
     name:          "Anonymous",
-    logo:          "../assets/ACSI.png",
+    logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB SL LL",
     part1:         "Being Jaden's student has been a truly enriching experience. Although I only attended his lessons for around four months, his guidance and advice equipped me with the skills and confidence needed to approach IB LangLit effectively.",
     part2:         "<br/><br/>His breakdown of question types for Paper 1 helped me stay calm when tackling unfamiliar texts, allowing me to quickly and accurately identify key messages.<br/><br/>For Paper 2, I found it especially helpful that Jaden provided us with clear themes for each text, which served as reliable reference points during revision and exams. Overall, his strong command of language and literature inspired me to delve deeper into LangLit and strive toward that same level of mastery.",
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
   },
   {
     name:          "Anonymous",
-    logo:          "../assets/ACSI.png",
+    logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB SL LL",
     part1:         "I joined Praxis midway through Y6 when I realised how challenging writing a comparative essay for P2 was. The lessons were instrumental in deepening my understanding of the texts, strengthening my writing skills, and ultimately helping me perform well for langlit.",
     part2:         "<br/><br/>Despite joining only in July, the crash course on the P2 texts was highly effective in narrowing down the most relevant themes and quotes for the comparison. In the few months leading up to IB, Praxis covered a wide range of question types, building a strong foundation that allowed me to approach most questions with confidence.<br/><br/>Jaden’s tailored feedback was especially valuable, helping me refine my ideas and structure my essays with greater clarity, which elevated my writing to a higher level.",
@@ -31,7 +31,7 @@ const TESTIMONIALS = [
   },
   {
     name:          "Anonymous",
-    logo:          "../assets/ACSI.png",
+    logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB English EE",
     part1:         "Jonathan and Jaden gave me much assistance in restructuring and editing my EE. Even though the timeline was extremely short, they gave me precise feedback on areas of improvement for my draft.",
     part2:         "<br/><br/>They also gave advice on how I could tweak my research question and structure, such that my EE would be as thorough and cohesive as possible. I’m extremely grateful for their help!",
@@ -39,7 +39,7 @@ const TESTIMONIALS = [
   },
   {
     name:          "Bianca Wee",
-    logo:          "../assets/ACSI.png",
+    logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '24 - Top in Level for IB SL LL",
     part1:         "Leanne's steadfast support provided the security I needed in Y6, and her rich ideas and eloquent approach to Langlit reshaped my approach to the subject.",
     part2:         "<br/><br/>For P1, Leanne’s lessons encompassed a lot of exposure to so many question types! Leanne offered insights into my P2 texts and scoped down the most relevant quotes and analysis, giving me a lot more structure and confidence in writing the P2.<br/><br/>I particularly liked how Leanne would often thoroughly review our practises, CTs, prelims and provide targeted feedback.",
