@@ -64,7 +64,7 @@ function _buildMarqueeCard(t, ariaHidden) {
     ? `<img src="${t.logo}" alt="${t.name}" class="w-10 h-10 rounded-full object-contain p-0.5 flex-shrink-0">`
     : "";
   a.innerHTML = `
-    <div class="text-brand-500 text-lg mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <p class="font-serif text-brand-300 text-5xl leading-none">"</p>
     <div class="testimonial-quote-wrap">
       <p class="text-gray-700 leading-relaxed italic text-sm">"${t.part1}"</p>
     </div>

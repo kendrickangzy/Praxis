@@ -226,9 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const wrapBwd  = rcIndex === 0 && newIndex === RC_GALLERY.length - 1;
       const earlyDir = wrapFwd ? 1 : wrapBwd ? -1 : newIndex > rcIndex ? 1 : -1;
 
-      // Capture peek rects and incoming image's natural dimensions BEFORE src updates
-      const prevPeekRect = rcPrevImg.getBoundingClientRect();
-      const nextPeekRect = rcNextImg.getBoundingClientRect();
+      // Capture incoming image's natural dimensions BEFORE src updates
       const srcPeekEl    = earlyDir > 0 ? rcNextImg : rcPrevImg;
       const incNatW      = srcPeekEl.naturalWidth;
       const incNatH      = srcPeekEl.naturalHeight;
@@ -258,8 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const stageEl   = rcMainCell.parentElement;
         const stageRect = stageEl.getBoundingClientRect();
         const mainRect  = rcMainImg.getBoundingClientRect();
-        const srcRect   = dir > 0 ? nextPeekRect : prevPeekRect;
-        const dstRect   = dir > 0 ? prevPeekRect : nextPeekRect;
 
         // Compute where the incoming image will actually render in the main cell,
         // so incEl has the right aspect ratio and position — no letterboxing, no jerk.
@@ -269,35 +265,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const ipadT    = parseFloat(cellCS.paddingTop);
         const innerW   = cellRect.width  - ipadL - parseFloat(cellCS.paddingRight);
         const innerH   = cellRect.height - ipadT - parseFloat(cellCS.paddingBottom);
-        const maxH     = window.innerHeight * 0.6;
 
         let incW = mainRect.width, incH = mainRect.height; // fallback if image not loaded
         if (incNatW > 0 && incNatH > 0) {
           const ar = incNatW / incNatH;
           incW = Math.min(innerW, incNatW);
           incH = incW / ar;
-          if (incH > maxH) { incH = maxH; incW = incH * ar; }
+          if (incH > innerH) { incH = innerH; incW = incH * ar; }
         }
         const incLeft = cellRect.left - stageRect.left + ipadL + (innerW - incW) / 2;
         const incTop  = cellRect.top  - stageRect.top  + ipadT + (innerH - incH) / 2;
-
-        // Transform helper for outgoing (uses mainRect center)
-        function outTransform(peekRect) {
-          if (!peekRect.width) return `translate(${-dir * 60}%, 0) scale(0.9)`;
-          const scale = Math.min(peekRect.width / mainRect.width, peekRect.height / mainRect.height);
-          const tx    = (peekRect.left + peekRect.width  / 2) - (mainRect.left + mainRect.width  / 2);
-          const ty    = (peekRect.top  + peekRect.height / 2) - (mainRect.top  + mainRect.height / 2);
-          return `translate(${tx}px,${ty}px) scale(${scale})`;
-        }
-
-        // Transform helper for incoming (uses incEl's computed render center)
-        function incTransform(peekRect) {
-          if (!peekRect.width) return `translate(${dir * 60}%, 0) scale(0.9)`;
-          const scale = Math.min(peekRect.width / incW, peekRect.height / incH);
-          const tx    = (peekRect.left + peekRect.width  / 2) - (stageRect.left + incLeft + incW / 2);
-          const ty    = (peekRect.top  + peekRect.height / 2) - (stageRect.top  + incTop  + incH / 2);
-          return `translate(${tx}px,${ty}px) scale(${scale})`;
-        }
 
         // Outgoing: sized/positioned to exactly match current rcMainImg
         const outEl = document.createElement("img");
@@ -310,11 +287,12 @@ document.addEventListener("DOMContentLoaded", () => {
           `height:${mainRect.height}px`,
           "object-fit:contain",
           "border-radius:0.75rem",
-          "box-shadow:0 16px 48px rgba(61,16,7,0.18)",
           "z-index:4",
         ].join(";");
 
-        // Incoming: sized/positioned to where it will actually render — no letterboxing
+        // Incoming: sized/positioned to where it will actually render — no letterboxing.
+        // Starts one full width off to the side (direction of travel), same size
+        // throughout — a clean slide, no scale change.
         const incEl = document.createElement("img");
         incEl.src   = item.src;
         incEl.style.cssText = [
@@ -325,13 +303,14 @@ document.addEventListener("DOMContentLoaded", () => {
           `height:${incH}px`,
           "object-fit:contain",
           "border-radius:0.75rem",
-          "box-shadow:0 16px 48px rgba(61,16,7,0.18)",
           "z-index:5",
           "opacity:0",
-          `transform:${incTransform(srcRect)}`,
+          `transform:translateX(${dir * 100}%)`,
         ].join(";");
 
         rcMainImg.style.visibility = "hidden";
+        rcMainImg.style.transition = "none";
+        rcMainImg.style.boxShadow  = "none";
         stageEl.appendChild(outEl);
         stageEl.appendChild(incEl);
 
@@ -341,16 +320,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const DEL  = Math.round(DURATION * 0.5);
 
         outEl.style.transition = `transform ${DURATION}ms ${EASE}, opacity ${FADE}ms ${EASE} ${DEL}ms`;
-        outEl.style.transform  = outTransform(dstRect);
+        outEl.style.transform  = `translateX(${-dir * 100}%)`;
         outEl.style.opacity    = "0";
 
         incEl.style.transition = `transform ${DURATION}ms ${EASE}, opacity ${FADE}ms ${EASE}`;
         incEl.style.opacity    = "1";
-        incEl.style.transform  = "none";
+        incEl.style.transform  = "translateX(0)";
 
         setTimeout(() => {
           rcMainImg.src              = item.src;
           rcMainImg.style.visibility = "";
+          rcMainImg.getBoundingClientRect(); // force reflow: commit "no shadow" before transitioning
+          rcMainImg.style.transition = "box-shadow 0.3s ease";
+          rcMainImg.style.boxShadow  = ""; // clear override — reappears via the transition above
           outEl.remove();
           incEl.remove();
           rcAnimating = false;

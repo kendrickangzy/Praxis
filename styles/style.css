@@ -316,7 +316,7 @@ select {
   cursor: pointer;
   height: 100%;
   box-sizing: border-box;
-  box-shadow: 5px 5px 10px #5c17089e;
+  box-shadow: 3px 3px 5px #5c17089d;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, opacity 0.3s ease;
 }
 
@@ -332,8 +332,8 @@ select {
 
 @media (hover: hover) {
   .tgc-front:not(.tgc-static):hover {
-    transform: translate(5px, 5px);
-    box-shadow: 2px 2px 4px #5C1808;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 5px 5px 8px #5C18089e;
   }
 }
 
@@ -680,7 +680,7 @@ select {
 }
 
 #resource-carousel.visible #rc-main-img {
-  box-shadow: 14px 14px 10px rgba(61, 16, 7, 0.18);
+  box-shadow: 0 0 18px rgba(61, 16, 7, 0.22);
 }
 
 /* Navigation arrows */
