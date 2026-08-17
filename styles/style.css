@@ -159,12 +159,12 @@ select {
 
 /* Home page — deep red to brand red, subtle warmth */
 .hero-home {
-  background: linear-gradient(160deg, #3D1007 0%, #C8391A 55%, #D95030 100%);
+  background: linear-gradient(180deg, #7E220C 0%, #C8391A 55%, #D95030 100%);
 }
 
 /* Inner pages — slightly flatter for editorial feel */
 .hero-inner {
-  background: linear-gradient(160deg, #3D1007 0%, #C8391A 75%);
+  background: linear-gradient(180deg, #7E220C 0%, #C8391A 75%);
 }
 
 /* ---- Fade-in scroll animation ---- */
