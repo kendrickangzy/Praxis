@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8935", "--directory", "C:\\Users\\kendr\\VSCode-Workspaces\\Curate Kitchen Code"],
       "port": 8935
+    },
+    {
+      "name": "praxis",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8936", "--directory", "C:\\Users\\kendr\\VSCode-Workspaces\\praxis"],
+      "port": 8936
     }
   ]
 }

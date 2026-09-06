@@ -127,6 +127,27 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeEls.forEach((el) => observer.observe(el));
   }
 
+  /* ---------------------------------------------------------------
+     STICKY PROMO BANNER
+     Toggles .is-stuck on #promo-banner once its sentinel (placed
+     just above it) scrolls out from under the fixed navbar — i.e.
+     once the banner has actually reached its sticky position.
+  --------------------------------------------------------------- */
+  const promoBanner  = document.getElementById("promo-banner");
+  const promoSentinel = document.getElementById("promo-banner-sentinel");
+
+  if (promoBanner && promoSentinel) {
+    const stickyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          promoBanner.classList.toggle("is-stuck", !entry.isIntersecting);
+        });
+      },
+      { rootMargin: "-64px 0px 0px 0px", threshold: 0 }
+    );
+    stickyObserver.observe(promoSentinel);
+  }
+
   const slashEls = document.querySelectorAll(".slash-overlay");
   if (slashEls.length > 0) {
     const slashParents = new Set([...slashEls].map((el) => el.parentElement));

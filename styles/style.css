@@ -16,18 +16,52 @@
    --praxis-white:  #FFFFFF  — text on red backgrounds
    ============================================================= */
 
+/* ---- Sticky promo banner ---- */
+#promo-banner {
+  position: sticky;
+  top: 4rem; /* sits flush under the fixed navbar */
+  z-index: 20;
+  background: #3D1010;
+  transition: padding-top 0.3s ease, padding-bottom 0.3s ease;
+}
+/* Background image lives on its own layer so the fade mask only
+   affects the image, not the banner's text/button content. */
+#promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('../assets/Banners/Medea-Banner.jpg');
+  background-size: cover;
+  background-position: top;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%, black 75%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 35%, black 75%, transparent 100%);
+}
+#promo-banner.is-stuck {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#promo-banner .promo-banner-text {
+  transition: font-size 0.3s ease, padding 0.3s ease;
+}
+#promo-banner.is-stuck .promo-banner-text {
+  font-size: 1.5rem;
+}
+
 /* ---- Base ---- */
 html {
   scroll-behavior: smooth;
 }
 
 /* ---- Navbar ---- */
+/* Always solid — the promo banner now sits at the top of every page,
+   so there's no longer a guaranteed dark hero backdrop for a
+   transparent navbar to blend into. */
 #navbar {
-  background: transparent;
+  background: #C8391A;
 }
 
 #navbar.scrolled {
-  background: #C8391A;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
 }
 

@@ -26,32 +26,53 @@
   <!-- Shared header (injected by components.js) -->
   <div id="header-root"></div>
 
+  <!-- Sentinel used to detect when the banner below has stuck -->
+  <div id="promo-banner-sentinel"></div>
+
+  <!-- Announcement banner — sticky for the whole page, not just the hero -->
+  <a id="promo-banner"
+     href="https://docs.google.com/forms/d/e/1FAIpQLScgUXKwGemzaodX-PiigQLcDSdhsCX5k7DoeVgy7BGJ6QLfUQ/viewform?usp=sharing&ouid=114697189825521690190"
+     target="_blank" rel="noopener noreferrer"
+     class="mt-16 w-full px-6 lg:px-24 py-8 flex flex-row items-center justify-between gap-2 tracking-tighter">
+    <div class="promo-banner-text flex flex-col items-center text-2xl lg:text-3xl text-cream-200 font-serif">
+      <p><i><b><u>FREE</u></b> Lit/LL P2 Crash Course</i></p>
+    </div>
+
+    <div class="flex hover:scale-105 transition-transform justify-center rounded-xl bg-cream-200 px-4 lg:px-8 py-2 bg-cream-400 text-md lg:text-xl text-brand-500 font-sans font-bold tracking-tight">
+      SIGN UP NOW
+    </div>
+  </a>
 
   <!-- ============================================================
        HERO
   ============================================================ -->
-  <section class="hero-home min-h-screen flex items-center justify-center text-white px-6 pt-24">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="hero-home min-h-screen flex flex-col text-white">
 
-      <div class="h-40 md:h-44 flex items-center justify-center mb-10 overflow-hidden">
-        <h1 class="font-serif text-cream-200 text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tighter text-center">
-          <span id="typewriter-text"></span><span class="typewriter-cursor text-cream-200" aria-hidden="true">|</span>
-        </h1>
+    <!-- HERO -->
+    <div class="flex-1 flex items-center justify-center px-6">
+      <div class="max-w-4xl mx-auto text-center">
+
+        <div class="h-40 md:h-44 flex items-center justify-center mb-10 overflow-hidden">
+          <h1 class="font-serif text-cream-200 text-4xl sm:text-5xl md:text-6xl leading-tight tracking-tighter text-center">
+            <span id="typewriter-text"></span><span class="typewriter-cursor text-cream-200" aria-hidden="true">|</span>
+          </h1>
+        </div>
+
+        <!-- items-center stops the buttons from stretching to full width in flex-col -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
+          <a href="contact.html"
+            class="bg-cream-200 hover:bg-cream-300 text-ink font-sans font-medium px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg text-lg tracking-tight whitespace-nowrap">
+            Contact Us
+          </a>
+          <a href="about.html"
+            class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-sans px-8 py-4 rounded-full transition-colors hover:scale-105 text-lg tracking-tight whitespace-nowrap">
+            Who We Are
+          </a>
+        </div>
+
       </div>
-
-      <!-- items-center stops the buttons from stretching to full width in flex-col -->
-      <div class="flex flex-col sm:flex-row items-center gap-4 justify-center">
-        <a href="contact.html"
-          class="bg-cream-200 hover:bg-cream-300 text-ink font-sans font-medium px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg text-lg tracking-tight whitespace-nowrap">
-          Contact Us
-        </a>
-        <a href="about.html"
-          class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-sans px-8 py-4 rounded-full transition-colors hover:scale-105 text-lg tracking-tight whitespace-nowrap">
-          Who We Are
-        </a>
-      </div>
-
     </div>
+
   </section>
 
   <!-- ============================================================
