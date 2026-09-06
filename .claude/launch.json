@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "curate-kitchen",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8935", "--directory", "C:\\Users\\kendr\\VSCode-Workspaces\\Curate Kitchen Code"],
+      "port": 8935
+    }
+  ]
+}
