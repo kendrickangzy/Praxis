@@ -14,7 +14,7 @@ let _activeTgcFront = null;
 const TESTIMONIALS = [
 
   {
-    name:          "Anonymous",
+    name:          "Student",
     logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB SL LL",
     part1:         "Being Jaden's student has been a truly enriching experience. Although I only attended his lessons for around four months, his guidance and advice equipped me with the skills and confidence needed to approach IB LangLit effectively.",
@@ -22,7 +22,7 @@ const TESTIMONIALS = [
     showInMarquee: true,
   },
   {
-    name:          "Anonymous",
+    name:          "Student",
     logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB SL LL",
     part1:         "I joined Praxis midway through Y6 when I realised how challenging writing a comparative essay for P2 was. The lessons were instrumental in deepening my understanding of the texts, strengthening my writing skills, and ultimately helping me perform well for langlit.",
@@ -30,7 +30,7 @@ const TESTIMONIALS = [
     showInMarquee: true,
   },
   {
-    name:          "Anonymous",
+    name:          "Student",
     logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB English EE",
     part1:         "Jonathan and Jaden gave me much assistance in restructuring and editing my EE. Even though the timeline was extremely short, they gave me precise feedback on areas of improvement for my draft.",
