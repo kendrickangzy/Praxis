@@ -33,7 +33,7 @@ const TESTIMONIALS = [
     name:          "Student",
     logo:          "../assets/Logos/ACSI.webp",
     role:          "Class of '25 - IB English EE",
-    part1:         "Jonathan and Jaden gave me much assistance in restructuring and editing my EE. Even though the timeline was extremely short, they gave me precise feedback on areas of improvement for my draft.",
+    part1:         "Even though the timeline was extremely short, Jonathan and Jaden gave me precise feedback on areas of improvement for my draft.",
     part2:         "<br/><br/>They also gave advice on how I could tweak my research question and structure, such that my EE would be as thorough and cohesive as possible. I’m extremely grateful for their help!",
     showInMarquee: true,
   },
